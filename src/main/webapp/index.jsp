@@ -3,8 +3,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Amber - Pet Care Bootstrap 5 Template</title>
 
     <!-- Favicons -->
@@ -13,29 +13,25 @@
     <!-- Vendor CSS (Icon Font) -->
 
 
-    <link rel="stylesheet" href="assets/css/vendor/fontawesome.min.css" />
-    <link rel="stylesheet" href="assets/css/vendor/simple-line-icons.min.css" />
-    <link rel="stylesheet" href="assets/css/vendor/themify-icons-min.css" />
-
+    <link rel="stylesheet" href="assets/css/vendor/fontawesome.min.css"/>
+    <link rel="stylesheet" href="assets/css/vendor/simple-line-icons.min.css"/>
+    <link rel="stylesheet" href="assets/css/vendor/themify-icons-min.css"/>
 
 
     <!-- Plugins CSS (All Plugins Files) -->
 
 
-
-    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/animate.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/aos.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/nice-select.min.css" />
-
+    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css"/>
+    <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css"/>
+    <link rel="stylesheet" href="assets/css/plugins/aos.min.css"/>
+    <link rel="stylesheet" href="assets/css/plugins/nice-select.min.css"/>
 
 
     <!-- Main Style CSS -->
 
 
-    <link rel="stylesheet" href="assets/css/style.css" />
-
+    <link rel="stylesheet" href="assets/css/style.css"/>
 
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
@@ -56,189 +52,198 @@
                         <p class="header-top-message">Welcome To our shop !</p>
                     </div>
                 </div>
-                </div>
-                <!-- Header Top Message End -->
             </div>
+            <!-- Header Top Message End -->
         </div>
     </div>
-    <!-- Header Bottom Start -->
-    <div class="header-bottom">
-        <div class="header-sticky">
-            <div class="container">
-                <div class="row align-items-center position-relative">
+</div>
+<!-- Header Bottom Start -->
+<div class="header-bottom">
+    <div class="header-sticky">
+        <div class="container">
+            <div class="row align-items-center position-relative">
 
-                    <!-- Header Logo Start -->
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <div class="header-logo">
-                            <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
-                        </div>
+                <!-- Header Logo Start -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="header-logo">
+                        <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo"/></a>
                     </div>
-                    <!-- Header Logo End -->
+                </div>
+                <!-- Header Logo End -->
 
-                    <!-- Header Menu Start -->
-                    <div class="col-lg-6 d-none d-lg-block">
-                        <div class="main-menu">
-                            <ul>
-                                <li class="has-children">
-                                    <a href="#">Home</a>
-                                </li>
-                                <li class="has-children position-static">
-                                    <a href="#">Shop</a>
-                                </li>
-                                <li class="has-children">
-                                    <a href="#">Pages</a>
-                                </li>
-                                <li class="has-children">
-                                    <a href="#">Blog</a>
-                                </li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </div>
+                <!-- Header Menu Start -->
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="main-menu">
+                        <ul>
+                            <li class="has-children">
+                                <a href="controller?action=home">Home</a>
+                            </li>
+                            <li class="has-children position-static">
+                                <a href="controller?action=shop">Shop</a>
+                            </li>
+                            <li class="has-children">
+                                <a href="#">Pages</a>
+                            </li>
+                            <li class="has-children">
+                                <a href="#">Blog</a>
+                            </li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
                     </div>
-                    <!-- Header Menu End -->
+                </div>
+                <!-- Header Menu End -->
 
-                    <!-- Header Action Start -->
-                    <div class="col-lg-3 col-md-8 col-6">
-                        <div class="header-actions">
+                <!-- Header Action Start -->
+                <div class="col-lg-3 col-md-8 col-6">
+                    <div class="header-actions">
 
-                            <!-- Header Action Search Button Start -->
-                            <div class="header-action-btn header-action-btn-search d-none d-md-flex">
-                                <div class="action-execute">
-                                    <a class="action-search-open" href="javascript:void(0)"><i class="icon-magnifier icons"></i></a>
-                                    <a class="action-search-close" href="javascript:void(0)"><i class="ti-close"></i></a>
-                                </div>
-                                <!-- Search Form and Button Start -->
-                                <form class="header-search-form" action="#">
-                                    <input type="text" class="header-search-input" placeholder="Search Our Store">
-                                    <button class="header-search-button"><i class="icon-magnifier icons"></i></button>
-                                </form>
-                                <!-- Search Form and Button End -->
-
+                        <!-- Header Action Search Button Start -->
+                        <div class="header-action-btn header-action-btn-search d-none d-md-flex">
+                            <div class="action-execute">
+                                <a class="action-search-open" href="javascript:void(0)"><i
+                                        class="icon-magnifier icons"></i></a>
+                                <a class="action-search-close" href="javascript:void(0)"><i class="ti-close"></i></a>
                             </div>
-                            <!-- Header Action Search Button End -->
+                            <!-- Search Form and Button Start -->
+                            <form class="header-search-form" action="#">
+                                <input type="text" class="header-search-input" placeholder="Search Our Store">
+                                <button class="header-search-button"><i class="icon-magnifier icons"></i></button>
+                            </form>
+                            <!-- Search Form and Button End -->
 
-                            <!-- Header My Account Button Start -->
-                            <a href="my-account.html" class="header-action-btn header-action-btn-wishlist">
-                                <i class="icon-user icons"></i>
+                        </div>
+                        <!-- Header Action Search Button End -->
+
+                        <!-- Header My Account Button Start -->
+                        <a href="controller?action=" class="header-action-btn header-action-btn-wishlist">
+                            <i class="icon-user icons"></i>
+                        </a>
+                        <!-- Header My Account Button End -->
+
+                        <!-- Header Action Button Start -->
+                        <div class="header-action-btn header-action-btn-cart d-none d-sm-flex">
+                            <a class="cart-visible" href="javascript:void(0)">
+                                <i class="icon-handbag icons"></i>
+                                <span class="header-action-num">3</span>
                             </a>
-                            <!-- Header My Account Button End -->
 
-                            <!-- Header Action Button Start -->
-                            <div class="header-action-btn header-action-btn-cart d-none d-sm-flex">
-                                <a class="cart-visible" href="javascript:void(0)">
-                                    <i class="icon-handbag icons"></i>
-                                    <span class="header-action-num">3</span>
-                                </a>
+                            <!-- Header Cart Content Start -->
+                            <div class="header-cart-content">
 
-                                <!-- Header Cart Content Start -->
-                                <div class="header-cart-content">
+                                <!-- Cart Procut Wrapper Start  -->
+                                <div class="cart-product-wrapper">
 
-                                    <!-- Cart Procut Wrapper Start  -->
-                                    <div class="cart-product-wrapper">
+                                    <!-- Cart Product/Price Start -->
+                                    <div class="cart-product-inner mb-4 pb-4 border-bottom">
 
-                                        <!-- Cart Product/Price Start -->
-                                        <div class="cart-product-inner mb-4 pb-4 border-bottom">
-
-                                            <!-- Single Cart Product Start -->
-                                            <div class="single-cart-product">
-                                                <div class="cart-product-thumb">
-                                                    <a href="single-product.html"><img src="assets/images/header/header-cart/1.png" alt="Cart Product"></a>
-                                                </div>
-                                                <div class="cart-product-content">
-                                                    <h3 class="title"><a href="single-product.html">Basic Dog Trainning</a></h3>
-                                                    <div class="product-quty-price">
-                                                        <span class="cart-quantity">Qty: <strong class="text-primary"> 1 </strong></span>
-                                                        <span class="price">
+                                        <!-- Single Cart Product Start -->
+                                        <div class="single-cart-product">
+                                            <div class="cart-product-thumb">
+                                                <a href="single-product.html"><img
+                                                        src="assets/images/header/header-cart/1.png" alt="Cart Product"></a>
+                                            </div>
+                                            <div class="cart-product-content">
+                                                <h3 class="title"><a href="single-product.html">Basic Dog Trainning</a>
+                                                </h3>
+                                                <div class="product-quty-price">
+                                                    <span class="cart-quantity">Qty: <strong
+                                                            class="text-primary"> 1 </strong></span>
+                                                    <span class="price">
 															<span class="new">$70.00</span>
                                                             </span>
-                                                    </div>
                                                 </div>
                                             </div>
-                                            <!-- Single Cart Product End -->
-
-                                            <!-- Product Remove Start -->
-                                            <div class="cart-product-remove">
-                                                <a href="#/"><i class="icon-close"></i></a>
-                                            </div>
-                                            <!-- Product Remove End -->
-
                                         </div>
-                                        <!-- Cart Product/Price End -->
+                                        <!-- Single Cart Product End -->
 
-                                        <!-- Cart Product/Price Start -->
-                                        <div class="cart-product-inner mb-4 pb-4 border-bottom">
+                                        <!-- Product Remove Start -->
+                                        <div class="cart-product-remove">
+                                            <a href="#/"><i class="icon-close"></i></a>
+                                        </div>
+                                        <!-- Product Remove End -->
 
-                                            <!-- Single Cart Product Start -->
-                                            <div class="single-cart-product">
-                                                <div class="cart-product-thumb">
-                                                    <a href="single-product.html"><img src="assets/images/header/header-cart/2.png" alt="Cart Product"></a>
-                                                </div>
-                                                <div class="cart-product-content">
-                                                    <h3 class="title"><a href="single-product.html">Wait, You Need This</a></h3>
-                                                    <div class="product-quty-price">
-                                                        <span class="cart-quantity">Qty: <strong class="text-primary"> 1 </strong></span>
-                                                        <span class="price">
+                                    </div>
+                                    <!-- Cart Product/Price End -->
+
+                                    <!-- Cart Product/Price Start -->
+                                    <div class="cart-product-inner mb-4 pb-4 border-bottom">
+
+                                        <!-- Single Cart Product Start -->
+                                        <div class="single-cart-product">
+                                            <div class="cart-product-thumb">
+                                                <a href="single-product.html"><img
+                                                        src="assets/images/header/header-cart/2.png" alt="Cart Product"></a>
+                                            </div>
+                                            <div class="cart-product-content">
+                                                <h3 class="title"><a href="single-product.html">Wait, You Need This</a>
+                                                </h3>
+                                                <div class="product-quty-price">
+                                                    <span class="cart-quantity">Qty: <strong
+                                                            class="text-primary"> 1 </strong></span>
+                                                    <span class="price">
 															<span class="new">$80.00</span>
                                                             </span>
-                                                    </div>
                                                 </div>
                                             </div>
-                                            <!-- Single Cart Product End -->
-
-                                            <!-- Product Remove Start -->
-                                            <div class="cart-product-remove">
-                                                <a href="#/"><i class="icon-close"></i></a>
-                                            </div>
-                                            <!-- Product Remove End -->
-
                                         </div>
-                                        <!-- Cart Product/Price End -->
+                                        <!-- Single Cart Product End -->
+
+                                        <!-- Product Remove Start -->
+                                        <div class="cart-product-remove">
+                                            <a href="#/"><i class="icon-close"></i></a>
+                                        </div>
+                                        <!-- Product Remove End -->
 
                                     </div>
-                                    <!-- Cart Procut Wrapper -->
-
-                                    <!-- Cart Product Total Start -->
-                                    <div class="cart-product-total mb-4 pb-4 border-bottom">
-                                        <span class="value">Total</span>
-                                        <span class="price">200$</span>
-                                    </div>
-                                    <!-- Cart Product Total End -->
-
-                                    <!-- Cart Product Button Start -->
-                                    <div class="cart-product-btn mt-4">
-                                        <a href="cart.html" class="btn btn-outline-light btn-hover-primary w-100">View cart</a>
-                                        <a href="checkout.html" class="btn btn-outline-light btn-hover-primary w-100 mt-4">Checkout</a>
-                                    </div>
-                                    <!-- Cart Product Button End -->
+                                    <!-- Cart Product/Price End -->
 
                                 </div>
-                                <!-- Header Cart Content End -->
+                                <!-- Cart Procut Wrapper -->
+
+                                <!-- Cart Product Total Start -->
+                                <div class="cart-product-total mb-4 pb-4 border-bottom">
+                                    <span class="value">Total</span>
+                                    <span class="price">200$</span>
+                                </div>
+                                <!-- Cart Product Total End -->
+
+                                <!-- Cart Product Button Start -->
+                                <div class="cart-product-btn mt-4">
+                                    <a href="cart.html" class="btn btn-outline-light btn-hover-primary w-100">View
+                                        cart</a>
+                                    <a href="checkout.html" class="btn btn-outline-light btn-hover-primary w-100 mt-4">Checkout</a>
+                                </div>
+                                <!-- Cart Product Button End -->
 
                             </div>
-                            <div class="header-action-btn header-action-btn-cart d-flex d-sm-none">
-                                <a href="cart.html">
-                                    <i class="icon-handbag icons"></i>
-                                    <span class="header-action-num">3</span>
-                                </a>
-                            </div>
-                            <!-- Header Action Button End -->
-
-                            <!-- Mobile Menu Hambarger Action Button Start -->
-                            <a href="javascript:void(0)" class="header-action-btn header-action-btn-menu d-lg-none d-md-flex">
-                                <i class="icon-menu"></i>
-                            </a>
-                            <!-- Mobile Menu Hambarger Action Button End -->
+                            <!-- Header Cart Content End -->
 
                         </div>
-                    </div>
-                    <!-- Header Action End -->
+                        <div class="header-action-btn header-action-btn-cart d-flex d-sm-none">
+                            <a href="cart.html">
+                                <i class="icon-handbag icons"></i>
+                                <span class="header-action-num">3</span>
+                            </a>
+                        </div>
+                        <!-- Header Action Button End -->
 
+                        <!-- Mobile Menu Hambarger Action Button Start -->
+                        <a href="javascript:void(0)"
+                           class="header-action-btn header-action-btn-menu d-lg-none d-md-flex">
+                            <i class="icon-menu"></i>
+                        </a>
+                        <!-- Mobile Menu Hambarger Action Button End -->
+
+                    </div>
                 </div>
+                <!-- Header Action End -->
+
             </div>
         </div>
     </div>
-    <!-- Header Bottom End -->
+</div>
+<!-- Header Bottom End -->
 </div>
 <!-- Header Section End -->
 
@@ -249,7 +254,7 @@
 
             <div class="hero-slide-item swiper-slide">
                 <div class="hero-slide-bg">
-                    <img src="assets/images/slider/slider1-1.png" alt="Slider Image" />
+                    <img src="assets/images/slider/slider1-1.png" alt="Slider Image"/>
                 </div>
                 <div class="container">
                     <div class="hero-slide-content text-start">
@@ -263,7 +268,7 @@
 
             <div class="hero-slide-item swiper-slide">
                 <div class="hero-slide-bg">
-                    <img src="assets/images/slider/slider1-2.png" alt="Slider Image" />
+                    <img src="assets/images/slider/slider1-2.png" alt="Slider Image"/>
                 </div>
                 <div class="container">
                     <div class="hero-slide-content text-center text-md-end">
@@ -281,8 +286,10 @@
         <!-- Swiper Pagination End -->
 
         <!-- Swiper Navigation Start -->
-        <div class="home-slider-prev swiper-button-prev main-slider-nav d-lg-flex d-none"><i class="icon-arrow-left"></i></div>
-        <div class="home-slider-next swiper-button-next main-slider-nav d-lg-flex d-none"><i class="icon-arrow-right"></i></div>
+        <div class="home-slider-prev swiper-button-prev main-slider-nav d-lg-flex d-none"><i
+                class="icon-arrow-left"></i></div>
+        <div class="home-slider-next swiper-button-next main-slider-nav d-lg-flex d-none"><i
+                class="icon-arrow-right"></i></div>
         <!-- Swiper Navigation End -->
     </div>
 </div>
@@ -368,7 +375,8 @@
             <!-- Tab Start -->
             <div class="col-12">
                 <ul class="product-tab-nav nav justify-content-center mb-n3 pb-8 title-border-bottom">
-                    <li class="nav-item mb-3"><a class="nav-link active" data-bs-toggle="tab" href="#tab-product-all">Bestseller</a></li>
+                    <li class="nav-item mb-3"><a class="nav-link active" data-bs-toggle="tab" href="#tab-product-all">Bestseller</a>
+                    </li>
                 </ul>
             </div>
             <!-- Tab End -->
@@ -388,10 +396,12 @@
                                     <!-- Thumb Start  -->
                                     <div class="thumb">
                                         <a href="single-product.html" class="image">
-                                            <img class="fit-image" src="./assets/images/products/medium-product/1.png" alt="Product" />
+                                            <img class="fit-image" src="./assets/images/products/medium-product/1.png"
+                                                 alt="Product"/>
                                         </a>
                                         <div class="action-wrapper">
-                                            <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
+                                            <a href="cart.html" class="action cart" title="Cart"><i
+                                                    class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
                                     <!-- Thumb End  -->
@@ -427,13 +437,13 @@
 
             <!-- Banner Start -->
             <div class="col-md-6 col-12 mb-6" data-aos="fade-up" data-aos-duration="1000">
-                    <img class="fit-image" src="assets/images/banner/1.png" alt="Banner Image" />
+                <img class="fit-image" src="assets/images/banner/1.png" alt="Banner Image"/>
             </div>
             <!-- Banner End -->
 
             <!-- Banner Start -->
             <div class="col-md-6 col-12 mb-6" data-aos="fade-up" data-aos-duration="1400">
-                    <img class="fit-image" src="assets/images/banner/2.png" alt="Banner Image" />
+                <img class="fit-image" src="assets/images/banner/2.png" alt="Banner Image"/>
             </div>
             <!-- Banner End -->
 
@@ -445,7 +455,6 @@
 <!-- Banner Section End -->
 
 
-
 <!-- Footer Section Start -->
 <footer class="section footer-section">
     <!-- Footer Top Start -->
@@ -455,7 +464,8 @@
                 <div class="col-12 col-sm-6 col-lg-3 mb-8" data-aos="fade-up" data-aos-duration="1000">
                     <div class="single-footer-widget">
                         <h1 class="widget-title">About Us</h1>
-                        <p class="desc-content">Lorem ipsum dolor sit amet, co adipisi elit, sed eiusmod tempor incididunt ut labore et dolore</p>
+                        <p class="desc-content">Lorem ipsum dolor sit amet, co adipisi elit, sed eiusmod tempor
+                            incididunt ut labore et dolore</p>
                         <!-- Soclial Link Start -->
                         <div class="widget-social justify-content-start mb-n2">
                             <a title="Twitter" href="#/"><i class="icon-social-twitter"></i></a>
@@ -493,11 +503,13 @@
                     <div class="single-footer-widget">
                         <h2 class="widget-title">Send newsletter</h2>
                         <div class="widget-body">
-                            <p class="desc-content mb-4">Subscribe to our newsletter and get 10% off your first purchase..</p>
+                            <p class="desc-content mb-4">Subscribe to our newsletter and get 10% off your first
+                                purchase..</p>
                             <!-- Newsletter Form Start -->
                             <div class="newsletter-form-wrap pt-1">
                                 <form id="mc-form" class="mc-form">
-                                    <input type="email" id="mc-email" class="form-control email-box" placeholder="demo@example.com" name="EMAIL">
+                                    <input type="email" id="mc-email" class="form-control email-box"
+                                           placeholder="demo@example.com" name="EMAIL">
                                     <button id="mc-submit" class="newsletter-btn" type="submit">Send</button>
                                 </form>
                                 <!-- mailchimp-alerts Start -->
@@ -523,7 +535,8 @@
             <div class="row align-items-center mb-n4">
                 <div class="col-md-6 text-center text-md-start order-2 order-md-1 mb-4">
                     <div class="copyright-content">
-                        <p class="mb-0">© 2021 <strong>Amber </strong> Made with <i class="fa fa-heart text-danger"></i> by <a href="https://hasthemes.com/">HasThemes.</a></p>
+                        <p class="mb-0">© 2021 <strong>Amber </strong> Made with <i class="fa fa-heart text-danger"></i>
+                            by <a href="https://hasthemes.com/">HasThemes.</a></p>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-md-end order-1 order-md-2 mb-4">
