@@ -61,8 +61,6 @@
             </div>
         </div>
     </div>
-    <!-- Header Top End -->
-
     <!-- Header Bottom Start -->
     <div class="header-bottom">
         <div class="header-sticky">
@@ -241,7 +239,6 @@
         </div>
     </div>
     <!-- Header Bottom End -->
-
 </div>
 <!-- Header Section End -->
 
