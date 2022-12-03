@@ -294,8 +294,6 @@
                         <div class="shop_toolbar_btn">
                             <button data-role="grid_3" type="button" class="active btn-grid-3" title="Grid"><i
                                     class="ti-layout-grid4-alt"></i></button>
-                            <button data-role="grid_list" type="button" class="btn-list" title="List"><i
-                                    class="ti-align-justify"></i></button>
                         </div>
                     </div>
                     <!-- Shop Top Bar Left end -->
@@ -336,6 +334,13 @@
                                     <a href="cart.html" class="action cart" title="Cart"><i
                                             class="ti-shopping-cart"></i></a>
                                 </div>
+                                <div class="content">
+                                    <h5 class="title"><a href="single-product.html">An Animal Album</a></h5>
+                                    <span class="price">
+                                            <span class="new">$80.50</span>
+                                    </span>
+                                </div>
+
                             </div>
                         </div>
                     </div>
