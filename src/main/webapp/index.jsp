@@ -40,12 +40,6 @@
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
 
-
-<%--<link rel="stylesheet" href="assets/css/vendor/vendor.min.css">--%>
-<%--<link rel="stylesheet" href="assets/css/plugins/plugins.min.css">--%>
-<%--<link rel="stylesheet" href="assets/css/style.min.css">--%>
-
-
 </head>
 
 <body>
@@ -99,8 +93,8 @@
                                 <li class="has-children">
                                     <a href="#">Blog</a>
                                 </li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -400,14 +394,13 @@
                                     <!-- Thumb Start  -->
                                     <div class="thumb">
                                         <a href="single-product.html" class="image">
-                                            <img class="fit-image" src="assets/images/products/medium-product/1.png" alt="Product" />
+                                            <img class="fit-image" src="./assets/images/products/medium-product/1.png" alt="Product" />
                                         </a>
                                         <span class="badges">
                                             <span class="sale">-18%</span>
                                             </span>
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view" title="Quickview"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
@@ -446,7 +439,6 @@
                                             </span>
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
@@ -481,7 +473,6 @@
                                         </a>
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
@@ -519,7 +510,6 @@
                                             </span>
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
 
@@ -562,7 +552,6 @@
                                             </span>
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
@@ -601,7 +590,6 @@
                                             </span>
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
@@ -636,7 +624,6 @@
                                         </a>
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
@@ -674,7 +661,6 @@
                                             </span>
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" title="Quickview" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
@@ -719,7 +705,6 @@
                                             </span>
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
@@ -758,7 +743,6 @@
                                             </span>
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
@@ -797,7 +781,6 @@
                                             </span>
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
@@ -835,7 +818,6 @@
                                             </span>
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
@@ -870,7 +852,6 @@
                                         </a>
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
@@ -908,7 +889,6 @@
                                             </span>
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view" title="Quickview"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
@@ -947,7 +927,6 @@
                                             </span>
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" title="Quickview" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
@@ -983,7 +962,6 @@
                                         </a>
                                         <div class="action-wrapper">
                                             <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="ti-plus"></i></a>
-                                            <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="ti-heart"></i></a>
                                             <a href="cart.html" class="action cart" title="Cart"><i class="ti-shopping-cart"></i></a>
                                         </div>
                                     </div>
@@ -1156,201 +1134,6 @@
     </div>
 </div>
 <!-- Product Deal Section End -->
-
-<!-- Testimonial Section Start -->
-<div class="section bg-bright section-padding section-margin">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-
-                <!-- Testimonial Carousel Start -->
-                <div class="testimonial-carousel">
-
-                    <!-- Testimonial Gallery Top Start -->
-                    <div class="swiper-container testimonial-gallery-top" data-aos="fade-up" data-aos-duration="1000">
-                        <div class="swiper-wrapper">
-
-                            <!-- Single Swiper Slide Start -->
-                            <div class="swiper-slide">
-
-                                <!-- Testimonial Content Start -->
-                                <div class="testimonial-content text-center">
-                                    <p>Lorem ipsum dolor sit amet, co adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercita ullamco laboris nisi ut aliquip ex ea commodo</p>
-                                </div>
-                                <!-- Testimonial Content End -->
-
-                            </div>
-                            <!-- Single Swiper Slide End -->
-
-                            <!-- Single Swiper Slide Start -->
-                            <div class="swiper-slide">
-
-                                <!-- Testimonial Content Start -->
-                                <div class="testimonial-content text-center">
-                                    <p>Vivamus a lobortis ipsum, vel condimentum magna. Etiam id turpis tortor. Nunc scelerisque, nisi a blandit varius, nunc purus venenatis ligula, sed venenatis orci augue nec sapien. Cum sociis natoque</p>
-                                </div>
-                                <!-- Testimonial Content End -->
-
-                            </div>
-                            <!-- Single Swiper Slide End -->
-                        </div>
-
-                    </div>
-                    <!-- Testimonial Gallery Top End -->
-
-                    <!-- Testimonial Gallery Thumb Start -->
-                    <div class="swiper-container testimonial-gallery-thumbs" data-aos="fade-up" data-aos-duration="1500">
-                        <div class="swiper-wrapper">
-
-                            <!-- Single Swiper Slide Start -->
-                            <div class="swiper-slide">
-                                <!-- Testimonial Thumb Start -->
-                                <div class="testimonial-thumb text-center">
-                                    <img src="assets/images/testimonial/1.png" alt="Testimonial Image">
-                                    <h3 class="thumb-title">Jonathon Jhon</h3>
-                                    <h6 class="thumb-subtitle">Customer</h6>
-                                </div>
-                                <!-- Testimonial Thumb End -->
-                            </div>
-                            <!-- Single Swiper Slide End -->
-
-                            <!-- Single Swiper Slide Start -->
-                            <div class="swiper-slide">
-                                <!-- Testimonial Thumb Start -->
-                                <div class="testimonial-thumb text-center">
-                                    <img src="assets/images/testimonial/2.png" alt="Testimonial Image">
-                                    <h3 class="thumb-title">Cristal Jerry</h3>
-                                    <h6 class="thumb-subtitle">Customer</h6>
-                                </div>
-                                <!-- Testimonial Thumb End -->
-                            </div>
-                            <!-- Single Swiper Slide End -->
-
-                        </div>
-
-                        <!-- Add Pagination -->
-                        <div class="swiper-pagination"></div>
-                    </div>
-                    <!-- Testimonial Gallery Thumb End -->
-
-                </div>
-                <!-- Testimonial Carousel End -->
-
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Testimonial Section End -->
-
-<!-- Blog Section Start -->
-<div class="section section-margin-bottom">
-    <div class="container">
-
-        <div class="row" data-aos="fade-up" data-aos-duration="1000">
-            <div class="col-12">
-                <div class="section-title text-center">
-                    <h2 class="title">From Our Blog</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="row row-cols-lg-3 row-cols-sm-2 row-cols-1 mb-n8">
-
-            <div class="col mb-8" data-aos="fade-up" data-aos-duration="1000">
-                <!-- Single Blog Start -->
-                <div class="single-blog-wrapper">
-
-                    <!-- Blog Thumb Start -->
-                    <div class="blog-thumb thumb-effect">
-                        <a class="image" href="blog-details.html">
-                            <img class="fit-image" src="assets/images/blog/medium-size/1.jpg" alt="Blog Image">
-                        </a>
-                    </div>
-                    <!-- Blog Thumb End -->
-
-                    <!-- Blog Content Start -->
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <ul>
-                                <li><span>By</span><a href="#/">Admin</a></li>
-                                <li><span>27, Jan, 2021</span></li>
-                            </ul>
-                        </div>
-                        <h2 class="blog-title"><a href="blog-details.html">How to take care of your fish</a></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                        <a class="more-link" href="blog-details.html">Read More</a>
-                    </div>
-                    <!-- Blog Content End -->
-
-                </div>
-                <!-- Single Blog End -->
-            </div>
-
-            <div class="col mb-8" data-aos="fade-up" data-aos-duration="1300">
-                <!-- Single Blog Start -->
-                <div class="single-blog-wrapper">
-
-                    <!-- Blog Thumb Start -->
-                    <div class="blog-thumb thumb-effect">
-                        <a class="image" href="blog-details.html">
-                            <img class="fit-image" src="assets/images/blog/medium-size/2.jpg" alt="Blog Image">
-                        </a>
-                    </div>
-                    <!-- Blog Thumb End -->
-
-                    <!-- Blog Content Start -->
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <ul>
-                                <li><span>By</span><a href="#/">Admin</a></li>
-                                <li><span>12, Feb, 2021</span></li>
-                            </ul>
-                        </div>
-                        <h2 class="blog-title"><a href="blog-details.html">Find the male and female fish</a></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                        <a class="more-link" href="blog-details.html">Read More</a>
-                    </div>
-                    <!-- Blog Content End -->
-
-                </div>
-                <!-- Single Blog End -->
-            </div>
-
-            <div class="col mb-8" data-aos="fade-up" data-aos-duration="1600">
-                <!-- Single Blog Start -->
-                <div class="single-blog-wrapper">
-
-                    <!-- Blog Thumb Start -->
-                    <div class="blog-thumb thumb-effect">
-                        <a class="image" href="blog-details.html">
-                            <img class="fit-image" src="assets/images/blog/medium-size/3.jpg" alt="Blog Image">
-                        </a>
-                    </div>
-                    <!-- Blog Thumb End -->
-
-                    <!-- Blog Content Start -->
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <ul>
-                                <li><span>By</span><a href="#/">Admin</a></li>
-                                <li><span>20, March, 2021</span></li>
-                            </ul>
-                        </div>
-                        <h2 class="blog-title"><a href="blog-details.html">Tips for taking care of dogs</a></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut...</p>
-                        <a class="more-link" href="blog-details.html">Read More</a>
-                    </div>
-                    <!-- Blog Content End -->
-
-                </div>
-                <!-- Single Blog End -->
-            </div>
-
-        </div>
-
-    </div>
-</div>
-<!-- Blog Section End -->
 
 <!-- Footer Section Start -->
 <footer class="section footer-section">
