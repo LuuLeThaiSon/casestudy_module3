@@ -4,7 +4,7 @@ public class Users {
     private long id;
     private String userName;
     private String passWord;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
     private String address;
     private int role;
@@ -13,7 +13,7 @@ public class Users {
 
     }
 
-    public Users(long id, String userName, String passWord, int phoneNumber, String email, String address, int role) {
+    public Users(long id, String userName, String passWord, String phoneNumber, String email, String address, int role) {
         this.id = id;
         this.userName = userName;
         this.passWord = passWord;
@@ -47,11 +47,11 @@ public class Users {
         this.passWord = passWord;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

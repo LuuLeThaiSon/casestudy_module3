@@ -30,12 +30,12 @@ public class PetCartDetail {
 
     public void setBillQuantity(int billQuantity) {
         this.billQuantity = billQuantity;
-    }
+                }
 
-    public PetCartDetail(long userId, long petId, int billQuantity) {
+public PetCartDetail(long userId, long petId, int billQuantity) {
         this.userId = userId;
         this.petId = petId;
         this.billQuantity = billQuantity;
 
-    }
-}
+        }
+        }
