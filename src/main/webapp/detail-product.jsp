@@ -15,14 +15,14 @@
   <title>Amber - Pet Care Bootstrap 5 Template</title>
 
   <!-- Favicons -->
-  <link rel="shortcut icon" href="amber/assets/images/favicon.ico">
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
 
   <!-- Vendor CSS (Icon Font) -->
 
 
-  <link rel="stylesheet" href="amber/assets/css/vendor/fontawesome.min.css" />
-  <link rel="stylesheet" href="amber/assets/css/vendor/simple-line-icons.min.css" />
-  <link rel="stylesheet" href="amber/assets/css/vendor/themify-icons-min.css" />
+  <link rel="stylesheet" href="assets/css/vendor/fontawesome.min.css" />
+  <link rel="stylesheet" href="assets/css/vendor/simple-line-icons.min.css" />
+  <link rel="stylesheet" href="assets/css/vendor/themify-icons-min.css" />
 
 
 
@@ -30,18 +30,18 @@
 
 
 
-  <link rel="stylesheet" href="amber/assets/css/plugins/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="amber/assets/css/plugins/animate.min.css" />
-  <link rel="stylesheet" href="amber/assets/css/plugins/lightgallery.min.css" />
-  <link rel="stylesheet" href="amber/assets/css/plugins/aos.min.css" />
-  <link rel="stylesheet" href="amber/assets/css/plugins/nice-select.min.css" />
+  <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/plugins/animate.min.css" />
+  <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css" />
+  <link rel="stylesheet" href="assets/css/plugins/aos.min.css" />
+  <link rel="stylesheet" href="assets/css/plugins/nice-select.min.css" />
 
 
 
   <!-- Main Style CSS -->
 
 
-  <link rel="stylesheet" href="amber/assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 
 
 
@@ -105,7 +105,7 @@
           <!-- Header Logo Start -->
           <div class="col-lg-3 col-md-4 col-6">
             <div class="header-logo">
-              <a href="index.html"><img src="amber/assets/images/logo/logo.png" alt="Site Logo" /></a>
+              <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
             </div>
           </div>
           <!-- Header Logo End -->
@@ -162,7 +162,7 @@
                     <li class="mega-menu-col">
                       <div class="megamenu-image">
                         <a href="shop.html">
-                          <img class="fit-image" src="amber/assets/images/header/mega-menu.png" alt="Megamenu Image">
+                          <img class="fit-image" src="assets/images/header/mega-menu.png" alt="Megamenu Image">
                         </a>
                       </div>
                     </li>
@@ -241,7 +241,7 @@
                       <!-- Single Cart Product Start -->
                       <div class="single-cart-product">
                         <div class="cart-product-thumb">
-                          <a href="single-product.html"><img src="amber/assets/images/header/header-cart/1.png" alt="Cart Product"></a>
+                          <a href="single-product.html"><img src="assets/images/header/header-cart/1.png" alt="Cart Product"></a>
                         </div>
                         <div class="cart-product-content">
                           <h3 class="title"><a href="single-product.html">Basic Dog Trainning</a></h3>
@@ -270,7 +270,7 @@
                       <!-- Single Cart Product Start -->
                       <div class="single-cart-product">
                         <div class="cart-product-thumb">
-                          <a href="single-product.html"><img src="amber/assets/images/header/header-cart/2.png" alt="Cart Product"></a>
+                          <a href="single-product.html"><img src="assets/images/header/header-cart/2.png" alt="Cart Product"></a>
                         </div>
                         <div class="cart-product-content">
                           <h3 class="title"><a href="single-product.html">Wait, You Need This</a></h3>
@@ -373,29 +373,29 @@
           <div class="single-product-img swiper-container product-gallery-top">
             <div class="swiper-wrapper popup-gallery">
 
-              <a class="swiper-slide w-100" href="amber/assets/images/products/large-product/1.png">
-                <img class="w-100" src="amber/assets/images/products/large-product/1.png" alt="Product">
+              <a class="swiper-slide w-100" href="assets/images/products/large-product/1.png">
+                <img class="w-100" src="assets/images/products/large-product/1.png" alt="Product">
               </a>
-              <a class="swiper-slide w-100" href="amber/assets/images/products/large-product/2.png">
-                <img class="w-100" src="amber/assets/images/products/large-product/2.png" alt="Product">
+              <a class="swiper-slide w-100" href="assets/images/products/large-product/2.png">
+                <img class="w-100" src="assets/images/products/large-product/2.png" alt="Product">
               </a>
-              <a class="swiper-slide w-100" href="amber/assets/images/products/large-product/3.png">
-                <img class="w-100" src="amber/assets/images/products/large-product/3.png" alt="Product">
+              <a class="swiper-slide w-100" href="assets/images/products/large-product/3.png">
+                <img class="w-100" src="assets/images/products/large-product/3.png" alt="Product">
               </a>
-              <a class="swiper-slide w-100" href="amber/assets/images/products/large-product/4.png">
-                <img class="w-100" src="amber/assets/images/products/large-product/4.png" alt="Product">
+              <a class="swiper-slide w-100" href="assets/images/products/large-product/4.png">
+                <img class="w-100" src="assets/images/products/large-product/4.png" alt="Product">
               </a>
-              <a class="swiper-slide w-100" href="amber/assets/images/products/large-product/5.png">
-                <img class="w-100" src="amber/assets/images/products/large-product/5.png" alt="Product">
+              <a class="swiper-slide w-100" href="assets/images/products/large-product/5.png">
+                <img class="w-100" src="assets/images/products/large-product/5.png" alt="Product">
               </a>
-              <a class="swiper-slide w-100" href="amber/assets/images/products/large-product/6.png">
-                <img class="w-100" src="amber/assets/images/products/large-product/6.png" alt="Product">
+              <a class="swiper-slide w-100" href="assets/images/products/large-product/6.png">
+                <img class="w-100" src="assets/images/products/large-product/6.png" alt="Product">
               </a>
-              <a class="swiper-slide w-100" href="amber/assets/images/products/large-product/7.png">
-                <img class="w-100" src="amber/assets/images/products/large-product/7.png" alt="Product">
+              <a class="swiper-slide w-100" href="assets/images/products/large-product/7.png">
+                <img class="w-100" src="assets/images/products/large-product/7.png" alt="Product">
               </a>
-              <a class="swiper-slide w-100" href="amber/assets/images/products/large-product/8.png">
-                <img class="w-100" src="amber/assets/images/products/large-product/8.png" alt="Product">
+              <a class="swiper-slide w-100" href="assets/images/products/large-product/8.png">
+                <img class="w-100" src="assets/images/products/large-product/8.png" alt="Product">
               </a>
 
             </div>
@@ -406,28 +406,28 @@
           <div class="single-product-thumb swiper-container product-gallery-thumbs">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="amber/assets/images/products/medium-plus-product/1.png" alt="Product">
+                <img src="assets/images/products/medium-plus-product/1.png" alt="Product">
               </div>
               <div class="swiper-slide">
-                <img src="amber/assets/images/products/medium-plus-product/2.png" alt="Product">
+                <img src="assets/images/products/medium-plus-product/2.png" alt="Product">
               </div>
               <div class="swiper-slide">
-                <img src="amber/assets/images/products/medium-plus-product/3.png" alt="Product">
+                <img src="assets/images/products/medium-plus-product/3.png" alt="Product">
               </div>
               <div class="swiper-slide">
-                <img src="amber/assets/images/products/medium-plus-product/4.png" alt="Product">
+                <img src="assets/images/products/medium-plus-product/4.png" alt="Product">
               </div>
               <div class="swiper-slide">
-                <img src="amber/assets/images/products/medium-plus-product/5.png" alt="Product">
+                <img src="assets/images/products/medium-plus-product/5.png" alt="Product">
               </div>
               <div class="swiper-slide">
-                <img src="amber/assets/images/products/medium-plus-product/6.png" alt="Product">
+                <img src="assets/images/products/medium-plus-product/6.png" alt="Product">
               </div>
               <div class="swiper-slide">
-                <img src="amber/assets/images/products/medium-plus-product/7.png" alt="Product">
+                <img src="assets/images/products/medium-plus-product/7.png" alt="Product">
               </div>
               <div class="swiper-slide">
-                <img src="amber/assets/images/products/medium-plus-product/8.png" alt="Product">
+                <img src="assets/images/products/medium-plus-product/8.png" alt="Product">
               </div>
             </div>
 
@@ -527,7 +527,7 @@
           <div class="payment-option mt-4 d-flex">
             <span><strong>Payment: </strong></span>
             <a href="#">
-              <img class="fit-image ms-1" src="amber/assets/images/payment/payment_large.png" alt="Payment Option Image">
+              <img class="fit-image ms-1" src="assets/images/payment/payment_large.png" alt="Payment Option Image">
             </a>
           </div>
           <!-- Payment Option End -->
@@ -580,7 +580,7 @@
 
                 <!-- Review Thumb Start -->
                 <div class="review_thumb">
-                  <img alt="review images" src="amber/assets/images/review/1.jpg">
+                  <img alt="review images" src="assets/images/review/1.jpg">
                 </div>
                 <!-- Review Thumb End -->
 
@@ -783,7 +783,7 @@
                     <!-- Thumb Start  -->
                     <div class="thumb">
                       <a href="single-product.html" class="image">
-                        <img class="fit-image" src="amber/assets/images/products/medium-product/5.png" alt="Product" />
+                        <img class="fit-image" src="assets/images/products/medium-product/5.png" alt="Product" />
                       </a>
                       <span class="badges">
                                                         <span class="sale">-18%</span>
@@ -828,7 +828,7 @@
                     <!-- Thumb Start  -->
                     <div class="thumb">
                       <a href="single-product.html" class="image">
-                        <img class="fit-image" src="amber/assets/images/products/medium-product/8.png" alt="Product" />
+                        <img class="fit-image" src="assets/images/products/medium-product/8.png" alt="Product" />
                       </a>
                       <div class="action-wrapper">
                         <a href="#/" class="action quickview" data-bs-toggle="modal" data-bs-target="#quick-view"><i class="ti-plus"></i></a>
@@ -865,7 +865,7 @@
                     <!-- Thumb Start  -->
                     <div class="thumb">
                       <a href="single-product.html" class="image">
-                        <img class="fit-image" src="amber/assets/images/products/medium-product/6.png" alt="Product" />
+                        <img class="fit-image" src="assets/images/products/medium-product/6.png" alt="Product" />
                       </a>
                       <span class="badges">
                                                         <span class="sale">-20%</span>
@@ -906,7 +906,7 @@
                     <!-- Thumb Start  -->
                     <div class="thumb">
                       <a href="single-product.html" class="image">
-                        <img class="fit-image" src="amber/assets/images/products/medium-product/1.png" alt="Product" />
+                        <img class="fit-image" src="assets/images/products/medium-product/1.png" alt="Product" />
                       </a>
                       <span class="badges">
                                                         <span class="sale">-18%</span>
@@ -947,7 +947,7 @@
                     <!-- Thumb Start  -->
                     <div class="thumb">
                       <a href="single-product.html" class="image">
-                        <img class="fit-image" src="amber/assets/images/products/medium-product/3.png" alt="Product" />
+                        <img class="fit-image" src="assets/images/products/medium-product/3.png" alt="Product" />
                       </a>
                       <span class="badges">
                                                         <span class="new">New</span>
@@ -1079,7 +1079,7 @@
         <div class="col-md-6 text-center text-md-end order-1 order-md-2 mb-4">
           <div class="payment">
             <a href="#/">
-              <img class="fit-image" src="amber/assets/images/payment/payment_large.png" alt="Payment">
+              <img class="fit-image" src="assets/images/payment/payment_large.png" alt="Payment">
             </a>
           </div>
         </div>
@@ -1105,19 +1105,19 @@
             <div class="swiper-container">
               <div class="swiper-wrapper">
                 <a class="swiper-slide" href="#">
-                  <img class="w-100" src="amber/assets/images/products/large-product/1.png" alt="Product">
+                  <img class="w-100" src="assets/images/products/large-product/1.png" alt="Product">
                 </a>
                 <a class="swiper-slide" href="#">
-                  <img class="w-100" src="amber/assets/images/products/large-product/2.png" alt="Product">
+                  <img class="w-100" src="assets/images/products/large-product/2.png" alt="Product">
                 </a>
                 <a class="swiper-slide" href="#">
-                  <img class="w-100" src="amber/assets/images/products/large-product/3.png" alt="Product">
+                  <img class="w-100" src="assets/images/products/large-product/3.png" alt="Product">
                 </a>
                 <a class="swiper-slide" href="#">
-                  <img class="w-100" src="amber/assets/images/products/large-product/4.png" alt="Product">
+                  <img class="w-100" src="assets/images/products/large-product/4.png" alt="Product">
                 </a>
                 <a class="swiper-slide" href="#">
-                  <img class="w-100" src="amber/assets/images/products/large-product/5.png" alt="Product">
+                  <img class="w-100" src="assets/images/products/large-product/5.png" alt="Product">
                 </a>
               </div>
 
@@ -1219,7 +1219,7 @@
             <div class="payment-option mt-4 d-flex justify-content-start">
               <span><strong>Payment: </strong></span>
               <a href="#">
-                <img class="fit-image ms-1" src="amber/assets/images/payment/payment_large.png" alt="Payment Option Image">
+                <img class="fit-image ms-1" src="assets/images/payment/payment_large.png" alt="Payment Option Image">
               </a>
             </div>
             <!-- Payment Option End -->
@@ -1392,23 +1392,23 @@
 <!-- Vendor JS -->
 
 
-<script src="amber/assets/js/vendor/popper.min.js"></script>
-<script src="amber/assets/js/vendor/bootstrap.min.js"></script>
-<script src="amber/assets/js/vendor/jquery-3.6.0.min.js"></script>
-<script src="amber/assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
-<script src="amber/assets/js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="assets/js/vendor/popper.min.js"></script>
+<script src="assets/js/vendor/bootstrap.min.js"></script>
+<script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+<script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+<script src="assets/js/vendor/modernizr-3.11.2.min.js"></script>
 
 
 <!-- Plugins JS -->
 
 
-<script src="amber/assets/js/plugins/aos.min.js"></script>
-<script src="amber/assets/js/plugins/jquery.ajaxchimp.min.js"></script>
-<script src="amber/assets/js/plugins/jquery-ui.min.js"></script>
-<script src="amber/assets/js/plugins/nice-select.min.js"></script>
-<script src="amber/assets/js/plugins/swiper-bundle.min.js"></script>
-<script src="amber/assets/js/plugins/countdown.min.js"></script>
-<script src="amber/assets/js/plugins/lightgallery-all.min.js"></script>
+<script src="assets/js/plugins/aos.min.js"></script>
+<script src="assets/js/plugins/jquery.ajaxchimp.min.js"></script>
+<script src="assets/js/plugins/jquery-ui.min.js"></script>
+<script src="assets/js/plugins/nice-select.min.js"></script>
+<script src="assets/js/plugins/swiper-bundle.min.js"></script>
+<script src="assets/js/plugins/countdown.min.js"></script>
+<script src="assets/js/plugins/lightgallery-all.min.js"></script>
 
 
 <!-- Use the minified version files listed below for better performance and remove the files listed above -->
@@ -1419,7 +1419,7 @@
 -->
 
 <!--Main JS-->
-<script src="amber/assets/js/main.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 
 </html>
