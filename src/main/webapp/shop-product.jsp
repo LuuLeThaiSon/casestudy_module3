@@ -363,29 +363,6 @@
                 </div>
                 <!-- Shop Wrapper End -->
 
-                <!--shop toolbar start-->
-                <div class="shop_toolbar_wrapper justify-content-center mt-10">
-
-                    <!-- Shopt Top Bar Right Start -->
-                    <div class="shop-top-bar-right">
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link active" href="#/">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#/">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#/">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link rounded-0" href="#/" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- Shopt Top Bar Right End -->
-
-                </div>
-                <!--shop toolbar end-->
-
             </div>
             <div class="col-lg-3 col-12">
                 <!-- Sidebar Widget Start -->
@@ -405,7 +382,7 @@
                             <h3 class="widget-title mb-6">Categories</h3>
                             <div class="sidebar-body">
                                 <ul class="sidebar-list">
-                                    <li><a href="#/">All Product</a></li>
+                                    <li><a href="son?action=selectAllPets">All Product</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -415,8 +392,15 @@
                                 <ul class="checkbox-container categories-list">
                                     <li>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck12">
-                                            <label class="custom-control-label" for="customCheck12">black (20)</label>
+                                            <form action="son?action=selectSpecies" method="post">
+                                                <c:forEach items="${species}" var="s">
+                                                    <input type="radio" class="custom-control-input" id="${s.getId()}" name="speciesId" value="${s.getId()}">
+                                                    <label class="custom-control-label"
+                                                           for="${s.getId()}">${s.getName()}</label>
+                                                    <br>
+                                                </c:forEach>
+                                                <button type="submit">Submit</button>
+                                            </form>
                                         </div>
                                     </li>
                                 </ul>

@@ -17,6 +17,8 @@ public class ControllerSon {
 
     private final String FIND_ALL_PETS = "select * from pets;";
     private final String FIND_SPECIES_BY_ID = "select * from species where id = ?;";
+    private final String FIND_ALL_SPECIES = "select * from species;";
+    private final String FIND_PETS_BY_SPECIES_ID = "select * from pets where species_id = ?;";
 
     public ControllerSon() {
         connection = MyConnection.getConnection();
@@ -53,6 +55,42 @@ public class ControllerSon {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+        return pets;
+    }
+
+    public List<Species> findAllSpecies(HttpServletRequest request) {
+        List<Species> species = new ArrayList<>();
+        try(PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL_SPECIES)) {
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Long id = resultSet.getLong("id");
+                String name = resultSet.getString("name");
+                species.add(new Species(id, name));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return species;
+    }
+
+    public List<Pets> findPetsBySpeciesId(HttpServletRequest request) {
+        String speciesId = request.getParameter("speciesId");
+        List<Pets> pets = new ArrayList<>();
+        try(PreparedStatement preparedStatement = connection.prepareStatement(FIND_PETS_BY_SPECIES_ID)) {
+            preparedStatement.setLong(1, Long.parseLong(speciesId));
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Long id = resultSet.getLong("id");
+                String name = resultSet.getString("name");
+                Integer age = resultSet.getInt("age");
+                Double price = resultSet.getDouble("price");
+                String description = resultSet.getString("description");
+                Integer quantity = resultSet.getInt("quantity");
+                String img = resultSet.getString("img");
+                pets.add(new Pets(id, name, age, price, description, quantity, img, findSpeciesById(Long.parseLong(speciesId))));
+            }            } catch (SQLException ex) {
+            throw new RuntimeException(ex);
         }
         return pets;
     }
