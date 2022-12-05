@@ -30,6 +30,9 @@ public class SonServlet extends HttpServlet {
             case "selectAllPets" :
                 findAllPets(request, response);
                 break;
+            case "sortBy":
+                sortBy(request, response);
+                break;
         }
         findAllPets(request, response);
 
@@ -84,6 +87,14 @@ public class SonServlet extends HttpServlet {
 
     public void selectByPrice(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Pets> pets = controllerSon.selectByPrice(request);
+        List<Species> species = controllerSon.findAllSpecies(request);
+        request.setAttribute("pets", pets);
+        request.setAttribute("species", species);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("shop-product.jsp");
+        requestDispatcher.forward(request, response);
+    }
+    public void sortBy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Pets> pets = controllerSon.sortPets(request);
         List<Species> species = controllerSon.findAllSpecies(request);
         request.setAttribute("pets", pets);
         request.setAttribute("species", species);

@@ -311,14 +311,12 @@
                         <h4 class="title me-2">Sort By: </h4>
 
                         <div class="shop-short-by">
-                            <select class="nice-select" aria-label=".form-select-sm example">
-                                <option selected>Sort by Default</option>
-                                <option value="1">Sort by Popularity</option>
-                                <option value="2">Sort by Rated</option>
-                                <option value="3">Sort by Latest</option>
-                                <option value="3">Sort by Price</option>
-                                <option value="3">Sort by Price</option>
-                            </select>
+                                <select onchange="sort()" class="nice-select" aria-label=".form-select-sm example" name="sort" id="sort">
+                                    <option value="">Sort by Default</option>
+                                    <option value="son?action=sortBy&value=price">Sort by Price</option>
+                                    <option value="son?action=sortBy&value=name">Sort by Name</option>
+                                </select>
+
                         </div>
                     </div>
                     <!-- Shop Top Bar Right End -->
@@ -587,3 +585,9 @@
 </body>
 
 </html>
+<script>
+    function sort() {
+        let path = document.getElementById("sort").value;
+        window.location.href = path;
+    }
+</script>
