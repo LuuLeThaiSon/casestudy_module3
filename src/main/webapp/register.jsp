@@ -128,7 +128,7 @@
         <div class="breadcrumb-wrapper">
           <h2 class="breadcrumb-title">Create Account</h2>
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.jsp">Home</a></li>
             <li>Create Account</li>
           </ul>
         </div>
@@ -152,29 +152,29 @@
           <!-- Register Title & Content End -->
 
           <!-- Form Action Start -->
-          <form action="#" method="post">
+          <form action="/controller?action=register" method="post">
 
             <!-- Input First Name Start -->
             <div class="single-input-item mb-2">
-              <input type="text" placeholder="First Name">
+              <input type="text" placeholder="UserName" id="username">
             </div>
             <!-- Input First Name End -->
 
             <!-- Input Last Name Start -->
             <div class="single-input-item mb-2">
-              <input type="text" placeholder="Last Name">
+              <input type="text" placeholder="PhoneNumber" id="phonenumber">
             </div>
             <!-- Input Last Name End -->
 
             <!-- Input Email Start -->
             <div class="single-input-item mb-2">
-              <input type="email" placeholder="Email">
+              <input type="email" placeholder="Email" id="email">
             </div>
             <!-- Input Email End -->
 
             <!-- Input Password Start -->
             <div class="single-input-item mb-2">
-              <input type="password" placeholder="Password">
+              <input type="password" placeholder="Password" id="password">
             </div>
             <!-- Input Password End -->
 
@@ -330,6 +330,43 @@
 
 <!--Main JS-->
 <script src="assets/js/main.js"></script>
+<script>
+  var username = document.getElementById("username");
+  var password = document.getElementById("password")
+  var phonenumber = document.getElementById("phonenumber")
+  var email = document.getElementById("email")
+  ValidateEmail(email)
+  function ValidateEmail(email)
+  {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+    {
+      return (true)
+    }
+    alert("You have entered an invalid email address!")
+    return (false)
+  }
+  function ValidatePhoneNumber(phonenumber) {
+    if(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/.test(phonenumber))
+    {
+      return (true)
+
+    }
+    alert("You have entered an invalid PhoneNumber address!")
+
+  }
+  function ValidateUsername(username) {
+
+    const res = /^[a-z0-9_\.]+$/.exec(username);
+    const valid = !!res;
+    return valid;
+  }
+  function ValidatePassword(password){
+    if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/.test(password)){
+      return(true)
+    }
+    alert("You have entered an invalid Password address")
+  }
+</script>
 </body>
 
 </html>

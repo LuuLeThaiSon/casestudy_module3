@@ -430,7 +430,7 @@
                         <!-- Soclial Link Start -->
                         <div class="widget-social justify-content-start mb-n2">
                             <a title="Twitter" href="#/"><i class="icon-social-twitter"></i></a>
-                            <a title="Instagram" href="#/"><i class="icon-social-instagram"></i></a>
+                            <a title="Instagram" href="https://www.instagram.com/lee.daegil.165//"><i class="icon-social-instagram"></i></a>
                             <a title="Linkedin" href="#/"><i class="icon-social-linkedin"></i></a>
                             <a title="Skype" href="#/"><i class="icon-social-skype"></i></a>
                             <a title="Dribble" href="#/"><i class="icon-social-dribbble"></i></a>
