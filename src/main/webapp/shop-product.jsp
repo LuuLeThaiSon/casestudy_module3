@@ -337,7 +337,7 @@
                                 <div class="content">
                                     <h5 class="title"><a href="single-product.html">An Animal Album</a></h5>
                                     <span class="price">
-                                            <span class="new">$80.50</span>
+                                                <span class="new">$80.50</span>
                                     </span>
                                 </div>
 

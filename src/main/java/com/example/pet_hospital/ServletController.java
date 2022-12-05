@@ -71,7 +71,7 @@ public class ServletController extends HttpServlet {
                 users.login(request, response);
                 break;
             case "listService":
-                services.showServiceList(request, response);
+//                services.showServiceList(request,response);
                 break;
             case "listPet":
                 pets.showPetList(request, response);

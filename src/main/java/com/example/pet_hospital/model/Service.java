@@ -10,6 +10,13 @@ public class Service {
     public Service() {
     }
 
+    public Service(Long id, String name, double price, int time_box) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.time_box = time_box;
+    }
+
     public Service(Long id, String name, double price, int time_box, ServiceCategory serviceCategory) {
         this.id = id;
         this.name = name;
