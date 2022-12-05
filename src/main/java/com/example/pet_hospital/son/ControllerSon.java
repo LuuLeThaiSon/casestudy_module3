@@ -48,7 +48,7 @@ public class ControllerSon {
                 Integer quantity = resultSet.getInt("quantity");
                 String img = resultSet.getString("img");
                 Long speciesId = resultSet.getLong("species_id");
-                pets.add(id, name, age, price, description, quantity, img, findSpeciesById(speciesId));
+//                pets.add(id, name, age, price, description, quantity, img, findSpeciesById(speciesId));
             }
         } catch (SQLException e) {
             e.printStackTrace();
