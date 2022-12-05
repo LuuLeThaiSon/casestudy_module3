@@ -152,7 +152,7 @@
           <!-- Register Title & Content End -->
 
           <!-- Form Action Start -->
-          <form action="controller?action=register" method="post">
+          <form action="ServletUser?action=register" method="post">
 
 
             <!-- Input Email Start -->

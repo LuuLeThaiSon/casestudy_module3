@@ -1,5 +1,6 @@
-package com.example.pet_hospital.method;
+package com.example.pet_hospital.manger;
 
+import com.example.pet_hospital.dao.UserDAO;
 import com.example.pet_hospital.model.Users;
 
 import javax.servlet.http.Cookie;
@@ -30,16 +31,17 @@ public class UserManager extends Direct {
             response.sendRedirect("register.jsp");
             return;
         }
-
+        UserDAO userDAO = new UserDAO();
         Users users = new Users(0, userName,password,email,phoneNumber,address,0);
-        DAO.updateUser(users);
+        userDAO.updateUser(users);
         response.sendRedirect("login.jsp");
 >>>>>>> 89c26048c2dc8644a70d2c8580709caf7724f59e
     }
     public void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        UserDAO userDAO = new UserDAO();
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
-        List<Users> users = DAO.selectionUser();
+        List<Users> users = userDAO.findAllUser();
         Users user = null;
         for (Users u : users){
             if(u.getUserName().equals(userName) && u.getPassWord().equals(password)){
@@ -70,7 +72,8 @@ public class UserManager extends Direct {
                 if(cookie.getName().equals("userPassword")) password = cookie.getValue();
             }
         }
-        user = DAO.selectOneUser(id);
+        UserDAO userDAO = new UserDAO();
+        user = userDAO.findUserById(id);
         if (user == null || !user.getUserName().equals(userName) || !user.getPassWord().equals(password)){
             user = null;
         }

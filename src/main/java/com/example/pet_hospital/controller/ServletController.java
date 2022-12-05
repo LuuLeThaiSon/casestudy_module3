@@ -1,9 +1,8 @@
-package com.example.pet_hospital;
+package com.example.pet_hospital.controller;
 
-import com.example.pet_hospital.method.DAO;
-import com.example.pet_hospital.method.PetManager;
-import com.example.pet_hospital.method.ServiceManager;
-import com.example.pet_hospital.method.UserManager;
+import com.example.pet_hospital.manger.PetManager;
+import com.example.pet_hospital.manger.ServiceManager;
+import com.example.pet_hospital.manger.UserManager;
 import com.example.pet_hospital.model.Users;
 
 import javax.servlet.*;
@@ -66,12 +65,6 @@ public class ServletController extends HttpServlet {
                 return;
             case "listService":
                 services.showServiceList(request, response);
-                return;
-            case "listPet":
-                pets.showPetList(request, response);
-                return;
-            case "petDetail":
-                pets.petDetail(request, response);
                 return;
         }
     }

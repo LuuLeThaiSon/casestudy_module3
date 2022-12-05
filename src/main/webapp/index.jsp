@@ -76,10 +76,10 @@
                     <div class="main-menu">
                         <ul>
                             <li class="has-children">
-                                <a href="controller?action=home">Home</a>
+                                <a href="index.jsp">Home</a>
                             </li>
                             <li class="has-children position-static">
-                                <a href="controller?action=shop">Shop</a>
+                                <a href="shop-service.jsp">Shop</a>
                             </li>
                             <li class="has-children">
                                 <a href="#">Pages</a>
@@ -116,7 +116,7 @@
                         <!-- Header Action Search Button End -->
 
                         <!-- Header My Account Button Start -->
-                        <a href="controller?action=userDetail" class="header-action-btn header-action-btn-wishlist">
+                        <a href="ServletUser?action=userDetail" class="header-action-btn header-action-btn-wishlist">
                             <i class="icon-user icons"></i>
                         </a>
                         <!-- Header My Account Button End -->

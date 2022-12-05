@@ -1,4 +1,6 @@
-package com.example.pet_hospital.method;
+package com.example.pet_hospital.dao;
+
+import com.example.pet_hospital.dao.IDAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

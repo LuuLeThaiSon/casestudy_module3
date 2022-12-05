@@ -308,20 +308,20 @@
                     <!-- Shopt Top Bar Right Start -->
                     <div class="shop-top-bar-right">
 
-                        <h4 class="title me-2">Short By: </h4>
+                        <h4 class="title me-2">Sort By: </h4>
 
                         <div class="shop-short-by">
                             <select class="nice-select" aria-label=".form-select-sm example">
-                                <option selected>Short by Default</option>
-                                <option value="1">Short by Popularity</option>
-                                <option value="2">Short by Rated</option>
-                                <option value="3">Short by Latest</option>
-                                <option value="3">Short by Price</option>
-                                <option value="3">Short by Price</option>
+                                <option selected>Sort by Default</option>
+                                <option value="1">Sort by Popularity</option>
+                                <option value="2">Sort by Rated</option>
+                                <option value="3">Sort by Latest</option>
+                                <option value="3">Sort by Price</option>
+                                <option value="3">Sort by Price</option>
                             </select>
                         </div>
                     </div>
-                    <!-- Shopt Top Bar Right End -->
+                    <!-- Shop Top Bar Right End -->
 
                 </div>
                 <!--shop toolbar end-->
@@ -363,29 +363,6 @@
                 </div>
                 <!-- Shop Wrapper End -->
 
-                <!--shop toolbar start-->
-                <div class="shop_toolbar_wrapper justify-content-center mt-10">
-
-                    <!-- Shopt Top Bar Right Start -->
-                    <div class="shop-top-bar-right">
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link active" href="#/">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#/">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#/">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link rounded-0" href="#/" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- Shopt Top Bar Right End -->
-
-                </div>
-                <!--shop toolbar end-->
-
             </div>
             <div class="col-lg-3 col-12">
                 <!-- Sidebar Widget Start -->
@@ -393,19 +370,21 @@
                     <div class="widget_inner">
                         <div class="widget-list mb-10">
                             <h3 class="widget-title mb-6">Search</h3>
-                            <div class="search-box">
-                                <input type="text" class="form-control" placeholder="Search Our Store"
-                                       aria-label="Search Our Store">
-                                <button class="search-icon" type="button">
-                                    <i class="icon-magnifier"></i>
-                                </button>
-                            </div>
+                            <form action="son?action=searchByName" method="post">
+                                <div class="search-box">
+                                    <input type="text" class="form-control" placeholder="Search by name"
+                                           aria-label="Search Our Store" name="search">
+                                    <button class="search-icon" type="submit">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                         <div class="widget-list mb-10">
                             <h3 class="widget-title mb-6">Categories</h3>
                             <div class="sidebar-body">
                                 <ul class="sidebar-list">
-                                    <li><a href="#/">All Product</a></li>
+                                    <li><a href="son?action=selectAllPets">All Product</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -415,13 +394,48 @@
                                 <ul class="checkbox-container categories-list">
                                     <li>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck12">
-                                            <label class="custom-control-label" for="customCheck12">black (20)</label>
+                                            <form action="son?action=selectSpecies" method="post">
+                                                <c:forEach items="${species}" var="s">
+                                                    <input type="radio" class="custom-control-input" id="${s.getId()}" name="speciesId" value="${s.getId()}">
+                                                    <label class="custom-control-label"
+                                                           for="${s.getId()}">${s.getName()}</label>
+                                                    <br>
+                                                </c:forEach>
+                                                <button type="submit" class="btn bg-bright mt-3">Submit</button>
+                                            </form>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
                         </div>
+                        <div class="widget-list mb-10">
+                            <h3 class="widget-title mb-6">Select by Price</h3>
+                            <div class="sidebar-body">
+                                <form action="son?action=selectByPrice" method="post">
+                                    <ul class="sidebar-list">
+                                        <li>
+                                            <input type="radio" class="custom-control-input" id="select1" value="1-10000" name="selectByPrice">
+                                            <label class="custom-control-label" for="select1">1$ - 10000$</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" class="custom-control-input" id="select2" value="10000-20000" name="selectByPrice">
+                                            <label class="custom-control-label" for="select2">10000$ - 20000$</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" class="custom-control-input" id="select3" value="20000-30000" name="selectByPrice">
+                                            <label class="custom-control-label" for="select3">20000$ - 30000$</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" class="custom-control-input" id="select4" value="30000-999999" name="selectByPrice">
+                                            <label class="custom-control-label" for="select3">30000$ - Max</label>
+                                        </li>
+                                    </ul>
+                                    <button class="btn bg-bright mt-3">Submit</button>
+                                </form>
+
+                            </div>
+                        </div>
+
                     </div>
                 </aside>
                 <!-- Sidebar Widget End -->
