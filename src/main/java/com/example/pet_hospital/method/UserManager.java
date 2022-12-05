@@ -23,18 +23,10 @@ public class UserManager extends Direct {
         String phonenumber = request.getParameter("phonenumber");
         pattern = Pattern.compile(USERNAME_PATTERN);
         if (!validate(userName)){
-
         }
         pattern = Pattern.compile(EMAIL);
         if (!validate(email)){
-
         }
-
-
-
-
-
-
     }
     public void login(HttpServletRequest request, HttpServletResponse response){
         //parameter:  Username(*),Password(*)
