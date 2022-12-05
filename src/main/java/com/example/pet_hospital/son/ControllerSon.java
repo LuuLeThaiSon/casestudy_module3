@@ -19,6 +19,8 @@ public class ControllerSon {
     private final String FIND_PEST_BY_NAME = "select * from pets where name like concat('%',?,'%');";
     private final String SELECT_BY_PRICE = "select * from pets where price >= ? and price <= ?;";
 
+    private final String SORT_BY = "select * from pets order by ";
+
     public ControllerSon() {
         connection = MyConnection.getConnection();
     }
@@ -125,6 +127,28 @@ public class ControllerSon {
             String[] selectArr = select.split("-");
             preparedStatement.setInt(1, Integer.parseInt(selectArr[0]));
             preparedStatement.setInt(2, Integer.parseInt(selectArr[1]));
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Long id = resultSet.getLong("id");
+                String name = resultSet.getString("name");
+                Integer age = resultSet.getInt("age");
+                Double price = resultSet.getDouble("price");
+                String description = resultSet.getString("description");
+                Integer quantity = resultSet.getInt("quantity");
+                String img = resultSet.getString("img");
+                Long speciesId = resultSet.getLong("species_id");
+                pets.add(new Pets(id, name, age, price, description, quantity, img, findSpeciesById(speciesId)));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return pets;
+    }
+
+    public List<Pets> sortPets(HttpServletRequest request) {
+        List<Pets> pets = new ArrayList<>();
+        String sort = request.getParameter("value");
+        try(PreparedStatement preparedStatement = connection.prepareStatement(SORT_BY + sort );) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Long id = resultSet.getLong("id");
