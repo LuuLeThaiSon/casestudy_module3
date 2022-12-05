@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class UserManager extends Direct {
     public void register(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -15,15 +16,6 @@ public class UserManager extends Direct {
         String password = request.getParameter("password");
         String rePassword = request.getParameter("rePassword");
         String email = request.getParameter("email");
-<<<<<<< HEAD
-        String phonenumber = request.getParameter("phonenumber");
-        pattern = Pattern.compile(USERNAME_PATTERN);
-        if (!validate(userName)){
-        }
-        pattern = Pattern.compile(EMAIL);
-        if (!validate(email)){
-        }
-=======
         String phoneNumber = request.getParameter("phoneNumber");
         String address = request.getParameter("address");
 
@@ -35,7 +27,6 @@ public class UserManager extends Direct {
         Users users = new Users(0, userName,password,email,phoneNumber,address,0);
         userDAO.updateUser(users);
         response.sendRedirect("login.jsp");
->>>>>>> 89c26048c2dc8644a70d2c8580709caf7724f59e
     }
     public void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
         UserDAO userDAO = new UserDAO();

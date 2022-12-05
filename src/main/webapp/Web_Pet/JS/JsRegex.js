@@ -1,8 +1,12 @@
 var username = document.getElementById("username");
-var password = document.getElementById("password")
-var phonenumber = document.getElementById("phonenumber")
-var email = document.getElementById("email")
-ValidateEmail(email)
+var password = document.getElementById("password");
+var phone = document.getElementById("phonenumber");
+var email = document.getElementById("email");
+var name = document.getElementById("name");
+var age = document.getElementById("age");
+var price = document.getElementById("price");
+var description = document.getElementById("description");
+var hobbit = document.getElementById("hobbit");
 function ValidateEmail(email)
 {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
@@ -59,4 +63,11 @@ function ValidateDescription(description){
         return true
     }
     alert("you have entered an invalid description address")
+}
+function ValidateHobbit(hobbit){
+    if (// Chữ cái và số có bao gồm khoảng trắng
+        /^[a-zA-Z0-9 ]*$/.test(hobbit)){
+        return true
+    }
+    alert("you have entered an invalid hobbit address")
 }
