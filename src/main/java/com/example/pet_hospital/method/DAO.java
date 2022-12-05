@@ -11,7 +11,8 @@ public class DAO {
     private static String username = "root";
     private static String password = "12345678";
     private static Connection connection;
-    private static  final String SELECT_ALL_USER = "select * from user ;";
+    private static final String SELECT_ALL_USER = "select * from users ;";//sai đường dẫn
+    private static final String SELECT_ONE_USER = "select * from users where (id = ?);";//sai đường dẫn
 
     public static Connection getConnection() {
         try {
@@ -91,7 +92,8 @@ public class DAO {
 
     static public List<Users> selectionUser() {
         List<Users> users = new ArrayList<>();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USER)) {
+        // ở đây gọi phương thức connec đưuọc gán đường dẫn không phải giọi thuộc tinh connect vì nó null;
+        try (PreparedStatement preparedStatement = getConnection().prepareStatement(SELECT_ALL_USER)) {
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -108,6 +110,28 @@ public class DAO {
         }
         return users;
     }
+
+    public static Users selectOneUser(long index) {
+        Users users = null;
+        try (PreparedStatement preparedStatement = getConnection().prepareStatement(SELECT_ONE_USER)) {
+            preparedStatement.setLong(1, index);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                long id = resultSet.getLong("id");
+                String name = resultSet.getString("username");
+                String password = resultSet.getString("password");
+                String phone = resultSet.getString("phone_number");
+                String email = resultSet.getString("email");
+                String address = resultSet.getString("address");
+                int role = resultSet.getInt("role");
+                users = new Users(id, name, password, phone, email, address, role);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
+
     static public boolean deleteUser(int index) {
         return false;
     }
