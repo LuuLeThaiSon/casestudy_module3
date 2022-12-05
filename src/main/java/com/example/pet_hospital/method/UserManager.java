@@ -9,20 +9,24 @@ import java.io.IOException;
 import java.util.List;
 
 public class UserManager extends Direct {
-    // Chứa Các phương thuc đăng ky dăng nhập, PHương thức đều là static
-    public void register(HttpServletRequest request, HttpServletResponse response){
-        //parameter:  Username(*),Password(*),PhoneNumber(*),Email(*),Address(*)
-        //check hết tất cả các dữ liệu
-        //updateUser từ DAO
-        //gán lại user cho attribute có tên là user
-        //điều hướng về trang chủ
-        // nếu quá trình đăng ký lỗi trong khi check điều hướng về login
+    public void register(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String userName = request.getParameter("userName");
+        String password = request.getParameter("password");
+        String rePassword = request.getParameter("rePassword");
+        String email = request.getParameter("email");
+        String phoneNumber = request.getParameter("phoneNumber");
+        String address = request.getParameter("address");
+
+        if (!password.equals(rePassword)){
+            response.sendRedirect("register.jsp");
+            return;
+        }
+
+        Users users = new Users(0, userName,password,email,phoneNumber,address,0);
+        DAO.updateUser(users);
+        response.sendRedirect("login.jsp");
     }
     public void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        //parameter:  Username(*),Password(*)
-        //check hết tất cả các dữ liệu
-        //gán lại user cho attribute có tên là user
-        //điều hướng về trang chủ
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         List<Users> users = DAO.selectionUser();
@@ -67,7 +71,7 @@ public class UserManager extends Direct {
         Users users = (Users) request.getAttribute("user");
         if (users == null){
             response.sendRedirect("login.jsp");
-        }else{
+                    }else{
             response.sendRedirect("my-account.jsp");
         }
     }

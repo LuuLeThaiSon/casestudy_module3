@@ -152,31 +152,43 @@
           <!-- Register Title & Content End -->
 
           <!-- Form Action Start -->
-          <form action="#" method="post">
+          <form action="controller?action=register" method="post">
 
-            <!-- Input First Name Start -->
-            <div class="single-input-item mb-2">
-              <input type="text" placeholder="First Name">
-            </div>
-            <!-- Input First Name End -->
-
-            <!-- Input Last Name Start -->
-            <div class="single-input-item mb-2">
-              <input type="text" placeholder="Last Name">
-            </div>
-            <!-- Input Last Name End -->
 
             <!-- Input Email Start -->
             <div class="single-input-item mb-2">
-              <input type="email" placeholder="Email">
+              <input type="text" placeholder="Username" name="userName">
             </div>
             <!-- Input Email End -->
 
             <!-- Input Password Start -->
             <div class="single-input-item mb-2">
-              <input type="password" placeholder="Password">
+              <input type="password" name="password" placeholder="Password">
             </div>
             <!-- Input Password End -->
+
+            <!-- Input rePassword Start -->
+            <div class="single-input-item mb-2">
+              <input type="password" name="rePassword" placeholder="Password">
+            </div>
+            <!-- Input rePassword End -->
+
+            <!-- Input Email Start -->
+            <div class="single-input-item mb-2">
+              <input type="email" placeholder="Email" name="email">
+            </div>
+            <!-- Input Email End -->
+
+            <!-- Input Address Start -->
+            <div class="single-input-item mb-2">
+              <input type="text" placeholder="Address" name="address">
+            </div>
+            <!-- Input Address End -->
+            <!-- Input Address Start -->
+            <div class="single-input-item mb-2">
+              <input type="tel" placeholder="Number" name="phoneNumber">
+            </div>
+            <!-- Input Address End -->
 
             <!-- Button/Forget Password Start -->
             <div class="single-input-item">
