@@ -5,16 +5,16 @@ public class UserPet {
     private String name;
     private int age;
     private String hobbit;
-    private long speciesId;
-    private  long userId;
+    private Species species;
+    private  Users users;
 
-    public UserPet(long id, String name, int age, String hobbit, long speciesId, long userId) {
+    public UserPet(long id, String name, int age, String hobbit, Species species, Users users) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.hobbit = hobbit;
-        this.speciesId = speciesId;
-        this.userId = userId;
+        this.species = species;
+        this.users  = users;
     }
 
     public UserPet() {
@@ -52,19 +52,19 @@ public class UserPet {
         this.hobbit = hobbit;
     }
 
-    public long getSpeciesId() {
-        return speciesId;
+    public Species getSpecies() {
+        return species;
     }
 
-    public void setSpeciesId(long speciesId) {
-        this.speciesId = speciesId;
+    public void setSpeciesId(Species species) {
+        this.species = species;
     }
 
-    public long getUserId() {
-        return userId;
+    public Users getUsers() {
+        return users;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public void setUserId(Users users) {
+        this.users = users;
     }
 }

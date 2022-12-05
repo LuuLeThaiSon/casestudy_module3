@@ -1,5 +1,6 @@
 package com.example.pet_hospital;
 
+import com.example.pet_hospital.method.DAO;
 import com.example.pet_hospital.method.PetManager;
 import com.example.pet_hospital.method.ServiceManager;
 import com.example.pet_hospital.method.UserManager;
@@ -12,32 +13,71 @@ import java.io.IOException;
 
 @WebServlet(name = "Controller", value = "/controller")
 public class ServletController extends HttpServlet {
+    UserManager users;
+    PetManager pets;
+    ServiceManager services;
+
+    @Override
+    public void init() throws ServletException {
+        users = new UserManager();
+        pets = new PetManager();
+        services = new ServiceManager();
+    }
+
+
+    private void direct(HttpServletRequest request, HttpServletResponse response, String path) throws ServletException, IOException {
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
+        requestDispatcher.forward(request, response);
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Users user = users.getUserCookie(request);
+        request.setAttribute("user", user);
 
+
+        String action = request.getParameter("action");
+        if (action == null) action = "";
+        switch (action) {
+            case "home":
+                direct(request, response, "index.jsp");
+                break;
+            case "shop":
+                direct(request, response, "shop-product.jsp");
+                break;
+            case "userDetail":
+                users.userDetail(request, response);
+                break;
+            case "logout":
+                users.logout(request, response);
+            default:
+                request.setAttribute("ac", new Object());
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+                requestDispatcher.forward(request, response);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Users users = (Users) request.getAttribute("user");
+        Users user = (Users) request.getAttribute("user");
         String action = request.getParameter("action");
-        if(action == null) action = "";
-        if(users == null) action = "login";
-        switch (action){
+        if (action == null) action = "";
+        if (users == null) action = "login";
+        switch (action) {
             case "register":
-                UserManager.register(request);
+                users.register(request, response);
                 break;
             case "login":
-                UserManager.login(request);
+                users.login(request, response);
                 break;
             case "listService":
-                ServiceManager.showServiceList(request);
+                services.showServiceList(request, response);
                 break;
             case "listPet":
-                PetManager.showPetList(request);
+                pets.showPetList(request, response);
                 break;
             case "petDetail":
-                PetManager.petDetail(request);
+                pets.petDetail(request, response);
                 break;
         }
     }
