@@ -128,7 +128,7 @@
         <div class="breadcrumb-wrapper">
           <h2 class="breadcrumb-title">Create Account</h2>
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.jsp">Home</a></li>
             <li>Create Account</li>
           </ul>
         </div>
@@ -345,8 +345,26 @@
     alert("You have entered an invalid email address!")
     return (false)
   }
+  function ValidatePhoneNumber(phonenumber) {
+    if(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/.test(phonenumber))
+    {
+      return (true)
+
+    }
+    alert("You have entered an invalid PhoneNumber address!")
+
+  }
   function ValidateUsername(username) {
 
+    const res = /^[a-z0-9_\.]+$/.exec(username);
+    const valid = !!res;
+    return valid;
+  }
+  function ValidatePassword(password){
+    if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/.test(password)){
+      return(true)
+    }
+    alert("You have entered an invalid Password address")
   }
 </script>
 </body>
