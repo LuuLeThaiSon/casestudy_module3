@@ -2,8 +2,10 @@ package com.example.pet_hospital.method;
 
 import com.example.pet_hospital.model.Users;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -28,7 +30,7 @@ public class UserManager extends Direct {
         if (!validate(email)){
         }
     }
-    public void login(HttpServletRequest request, HttpServletResponse response){
+    public void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //parameter:  Username(*),Password(*)
         //check hết tất cả các dữ liệu
         //gán lại user cho attribute có tên là user
@@ -44,21 +46,62 @@ public class UserManager extends Direct {
             }
         }
         if (user == null){
-            direct(request,response, "Web_Pet/login.jsp" );
+            response.sendRedirect("login.jsp" );
         }else {
-            request.setAttribute("user", user);
-            direct(request,response,"controller" );
+            response.addCookie(new Cookie("userId", String.valueOf(user.getId())));
+            response.addCookie(new Cookie("userName", user.getUserName()));
+            response.addCookie(new Cookie("userPassword", user.getPassWord()));
+            response.sendRedirect("controller");
         }
 
     }
 
-    public void userDetail(HttpServletRequest request, HttpServletResponse response){
+    public Users getUserCookie(HttpServletRequest request){
+        Users user;
+        long id = 0;
+        String userName = null;
+        String password = null;
+        if(request.getCookies() != null){
+            for(Cookie cookie : request.getCookies()){
+                if(cookie.getName().equals("userId")) id = Long.parseLong(cookie.getValue());
+                if(cookie.getName().equals("userName")) userName = cookie.getValue();
+                if(cookie.getName().equals("userPassword")) password = cookie.getValue();
+            }
+        }
+        user = DAO.selectOneUser(id);
+        if (user == null || !user.getUserName().equals(userName) || !user.getPassWord().equals(password)){
+            user = null;
+        }
+        return user;
+    }
+
+    public void userDetail(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Users users = (Users) request.getAttribute("user");
         if (users == null){
-            direct(request,response,"Web_Pet/login.jsp");
+            response.sendRedirect("login.jsp");
         }else{
-            direct(request,response,"Web_Pet/my-account.jsp");
+            response.sendRedirect("my-account.jsp");
         }
+    }
+
+    public void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        if (request.getCookies() != null){
+            for(Cookie cookie : request.getCookies()){
+                if(cookie.getName().equals("userId")){
+                    cookie.setMaxAge(0);
+                    response.addCookie(cookie);
+                }
+                if(cookie.getName().equals("userName")){
+                    cookie.setMaxAge(0);
+                    response.addCookie(cookie);
+                }
+                if(cookie.getName().equals("userPassword")){
+                    cookie.setMaxAge(0);
+                    response.addCookie(cookie);
+                }
+            }
+        }
+        response.sendRedirect("controller");
     }
 
 

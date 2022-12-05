@@ -1,21 +1,21 @@
 package com.example.pet_hospital.model;
 
 public class Service {
-   private Long id;
-   private String name;
-   private double price;
-   private int time_box;
-   private Long category_id;
+    private Long id;
+    private String name;
+    private double price;
+    private int time_box;
+    private ServiceCategory serviceCategory;
 
     public Service() {
     }
 
-    public Service(Long id, String name, double price, int time_box, Long category_id) {
+    public Service(Long id, String name, double price, int time_box, ServiceCategory serviceCategory) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.time_box = time_box;
-        this.category_id = category_id;
+        this.serviceCategory = serviceCategory;
     }
 
     public Long getId() {
@@ -50,11 +50,13 @@ public class Service {
         this.time_box = time_box;
     }
 
-    public Long getCategory_id() {
-        return category_id;
+    public ServiceCategory getServiceCategory() {
+        return serviceCategory;
     }
 
-    public void setCategory_id(Long category_id) {
-        this.category_id = category_id;
+    public void setServiceCategory(ServiceCategory serviceCategory) {
+        this.serviceCategory = serviceCategory;
     }
 }
+
+
