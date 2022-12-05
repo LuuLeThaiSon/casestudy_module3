@@ -152,17 +152,17 @@
                     <!-- Login Title & Content End -->
 
                     <!-- Form Action Start -->
-                    <form action="#" method="post">
+                    <form action="controller?action=login" method="post">
 
                         <!-- Input Email Start -->
                         <div class="single-input-item mb-2">
-                            <input type="email" placeholder="Email or Username">
+                            <input type="text" name="userName" placeholder="Email or Username">
                         </div>
                         <!-- Input Email End -->
 
                         <!-- Input Password Start -->
                         <div class="single-input-item mb-2">
-                            <input type="password" placeholder="Enter your Password">
+                            <input type="password" name="password" placeholder="Enter your Password">
                         </div>
                         <!-- Input Password End -->
 
@@ -179,7 +179,7 @@
 
                         <!-- Lost Password & Creat New Account Start -->
                         <div class="lost-password">
-                            <a href="register.html">Creat Account</a>
+                            <a href="register.jsp">Creat Account</a>
                         </div>
                         <!-- Lost Password & Creat New Account End -->
                     </form>

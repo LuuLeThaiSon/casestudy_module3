@@ -8,9 +8,12 @@ public class Pets {
     private  String description;
     private int quantity;
     private String img;
-    private long speciesId;
+    private Species species;
 
-    public Pets(long id, String name, int age, double price, String description, int quantity, String img, long speciesId) {
+    public Pets() {
+    }
+
+    public Pets(long id, String name, int age, double price, String description, int quantity, String img, Species species) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -18,10 +21,7 @@ public class Pets {
         this.description = description;
         this.quantity = quantity;
         this.img = img;
-        this.speciesId = speciesId;
-    }
-
-    public Pets() {
+        this.species = species;
     }
 
     public long getId() {
@@ -80,11 +80,11 @@ public class Pets {
         this.img = img;
     }
 
-    public long getSpeciesId() {
-        return speciesId;
+    public Species getSpecies() {
+        return species;
     }
 
-    public void setSpeciesId(long speciesId) {
-        this.speciesId = speciesId;
+    public void setSpecies(Species species) {
+        this.species = species;
     }
 }

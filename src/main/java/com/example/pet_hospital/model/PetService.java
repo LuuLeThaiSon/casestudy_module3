@@ -1,31 +1,30 @@
 package com.example.pet_hospital.model;
 
 public class PetService {
-    private long ServiceId;
-    private long PetId;
+    private Service service;
+    private Pets pets;
 
     public PetService() {
     }
 
-    public PetService(long serviceId, long petId) {
-        ServiceId = serviceId;
-        PetId = petId;
-
+    public PetService(Service service, Pets pets) {
+        this.service = service;
+        this.pets = pets;
     }
 
-    public long getServiceId() {
-        return ServiceId;
+    public Service getService() {
+        return service;
     }
 
-    public void setServiceId(long serviceId) {
-        ServiceId = serviceId;
+    public void setService(Service service) {
+        this.service = service;
     }
 
-    public long getPetId() {
-        return PetId;
+    public Pets getPets() {
+        return pets;
     }
 
-    public void setPetId(long petId) {
-        PetId = petId;
+    public void setPets(Pets pets) {
+        this.pets = pets;
     }
 }
