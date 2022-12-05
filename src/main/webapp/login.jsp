@@ -152,7 +152,7 @@
                     <!-- Login Title & Content End -->
 
                     <!-- Form Action Start -->
-                    <form action="controller?action=login" method="post">
+                    <form action="ServletUser?action=login" method="post">
 
                         <!-- Input Email Start -->
                         <div class="single-input-item mb-2">
