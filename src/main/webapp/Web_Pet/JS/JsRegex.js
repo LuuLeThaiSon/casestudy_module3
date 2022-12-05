@@ -33,3 +33,30 @@ function ValidatePassword(password){
     }
     alert("You have entered an invalid Password address")
 }
+function ValidateAddName(name){
+    if (/^[a-z0-9_-]{3,16}$/.test(name)){
+        return(true)
+    }
+    alert("You have entered an invalid name address")
+}
+function ValidateAddAge(age){
+    if (// Số nguyên, số thập phân và phân số
+        /[-]?[0-9]+[,.]?[0-9]*([\/][0-9]+[,.]?[0-9]*)*/.test(age)){
+        return(true)
+    }
+    alert("you have entered an invalid age address")
+}
+function ValidateAddPrice(price){
+    if (// Số nguyên, số thập phân và phân số
+        /[-]?[0-9]+[,.]?[0-9]*([\/][0-9]+[,.]?[0-9]*)*/.test(price)){
+        return true
+    }
+    alert("you have entered an invalid price address")
+}
+function ValidateDescription(description){
+    if (// Chữ cái và số có bao gồm khoảng trắng
+        /^[a-zA-Z0-9 ]*$/.test(description)){
+        return true
+    }
+    alert("you have entered an invalid description address")
+}
