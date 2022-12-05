@@ -66,12 +66,6 @@ public class ServletController extends HttpServlet {
             case "listService":
                 services.showServiceList(request, response);
                 return;
-            case "listPet":
-                pets.showPetList(request, response);
-                return;
-            case "petDetail":
-                pets.petDetail(request, response);
-                return;
         }
     }
 }
