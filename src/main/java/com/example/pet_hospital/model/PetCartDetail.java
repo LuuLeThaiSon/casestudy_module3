@@ -1,27 +1,33 @@
 package com.example.pet_hospital.model;
 
 public class PetCartDetail {
-    private long userId;
-    private long petId;
+    private Users users;
+    private Pets pets;
     private int billQuantity;
+
+    public PetCartDetail(Users users, Pets pets, int billQuantity) {
+        this.users = users;
+        this.pets = pets;
+        this.billQuantity = billQuantity;
+    }
 
     public PetCartDetail() {
     }
 
-    public long getUserId() {
-        return userId;
+    public Users getUsers() {
+        return users;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public void setUsers(Users users) {
+        this.users = users;
     }
 
-    public long getPetId() {
-        return petId;
+    public Pets getPets() {
+        return pets;
     }
 
-    public void setPetId(long petId) {
-        this.petId = petId;
+    public void setPets(Pets pets) {
+        this.pets = pets;
     }
 
     public int getBillQuantity() {
@@ -30,12 +36,7 @@ public class PetCartDetail {
 
     public void setBillQuantity(int billQuantity) {
         this.billQuantity = billQuantity;
-                }
+    }
+}
 
-public PetCartDetail(long userId, long petId, int billQuantity) {
-        this.userId = userId;
-        this.petId = petId;
-        this.billQuantity = billQuantity;
 
-        }
-        }
