@@ -1,9 +1,8 @@
-package com.example.pet_hospital;
+package com.example.pet_hospital.controller;
 
-import com.example.pet_hospital.method.DAO;
-import com.example.pet_hospital.method.PetManager;
-import com.example.pet_hospital.method.ServiceManager;
-import com.example.pet_hospital.method.UserManager;
+import com.example.pet_hospital.manger.PetManager;
+import com.example.pet_hospital.manger.ServiceManager;
+import com.example.pet_hospital.manger.UserManager;
 import com.example.pet_hospital.model.Users;
 
 import javax.servlet.*;
@@ -24,12 +23,6 @@ public class ServletController extends HttpServlet {
         services = new ServiceManager();
     }
 
-
-    private void direct(HttpServletRequest request, HttpServletResponse response, String path) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
-        requestDispatcher.forward(request, response);
-    }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Users user = users.getUserCookie(request);
@@ -40,18 +33,18 @@ public class ServletController extends HttpServlet {
         if (action == null) action = "";
         switch (action) {
             case "home":
-                direct(request, response, "index.jsp");
-                break;
+                response.sendRedirect( "index.jsp");
+                return;
             case "shop":
-                direct(request, response, "shop-product.jsp");
-                break;
+                response.sendRedirect( "shop-product.jsp");
+                return;
             case "userDetail":
                 users.userDetail(request, response);
-                break;
+                return;
             case "logout":
                 users.logout(request, response);
+                return;
             default:
-                request.setAttribute("ac", new Object());
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
                 requestDispatcher.forward(request, response);
         }
@@ -66,19 +59,19 @@ public class ServletController extends HttpServlet {
         switch (action) {
             case "register":
                 users.register(request, response);
-                break;
+                return;
             case "login":
                 users.login(request, response);
-                break;
+                return;
             case "listService":
                 services.showServiceList(request, response);
-                break;
+                return;
             case "listPet":
                 pets.showPetList(request, response);
-                break;
+                return;
             case "petDetail":
                 pets.petDetail(request, response);
-                break;
+                return;
         }
     }
 }

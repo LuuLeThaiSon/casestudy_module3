@@ -1,4 +1,4 @@
-package com.example.pet_hospital.method;
+package com.example.pet_hospital.dao;
 
 import java.sql.Connection;
 import java.util.List;

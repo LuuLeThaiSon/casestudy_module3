@@ -1,6 +1,6 @@
 package com.example.pet_hospital.son;
 
-import com.example.pet_hospital.method.MyConnection;
+import com.example.pet_hospital.dao.MyConnection;
 import com.example.pet_hospital.model.Pets;
 import com.example.pet_hospital.model.Species;
 

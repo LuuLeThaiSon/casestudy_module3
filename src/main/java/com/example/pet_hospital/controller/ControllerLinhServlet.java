@@ -1,4 +1,4 @@
-package com.example.pet_hospital;
+package com.example.pet_hospital.controller;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

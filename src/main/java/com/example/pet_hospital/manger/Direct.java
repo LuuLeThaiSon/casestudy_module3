@@ -1,4 +1,4 @@
-package com.example.pet_hospital.method;
+package com.example.pet_hospital.manger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
