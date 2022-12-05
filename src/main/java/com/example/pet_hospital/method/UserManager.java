@@ -7,21 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-import java.util.regex.Pattern;
 
 public class UserManager extends Direct {
-    private Pattern pattern;
-    // Chứa Các phương thuc đăng ky dăng nhập, PHương thức đều là static
-    public void register(HttpServletRequest request, HttpServletResponse response){
-        //parameter:  Username(*),Password(*),PhoneNumber(*),Email(*),Address(*)
-        //check hết tất cả các dữ liệu
-        //updateUser từ DAO
-        //gán lại user cho attribute có tên là user
-        //điều hướng về trang chủ
-        // nếu quá trình đăng ký lỗi trong khi check điều hướng về login
-        String userName = request.getParameter("username");
+    public void register(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String userName = request.getParameter("userName");
         String password = request.getParameter("password");
+        String rePassword = request.getParameter("rePassword");
         String email = request.getParameter("email");
+<<<<<<< HEAD
         String phonenumber = request.getParameter("phonenumber");
         pattern = Pattern.compile(USERNAME_PATTERN);
         if (!validate(userName)){
@@ -29,12 +22,21 @@ public class UserManager extends Direct {
         pattern = Pattern.compile(EMAIL);
         if (!validate(email)){
         }
+=======
+        String phoneNumber = request.getParameter("phoneNumber");
+        String address = request.getParameter("address");
+
+        if (!password.equals(rePassword)){
+            response.sendRedirect("register.jsp");
+            return;
+        }
+
+        Users users = new Users(0, userName,password,email,phoneNumber,address,0);
+        DAO.updateUser(users);
+        response.sendRedirect("login.jsp");
+>>>>>>> 89c26048c2dc8644a70d2c8580709caf7724f59e
     }
     public void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        //parameter:  Username(*),Password(*)
-        //check hết tất cả các dữ liệu
-        //gán lại user cho attribute có tên là user
-        //điều hướng về trang chủ
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         List<Users> users = DAO.selectionUser();
@@ -79,7 +81,7 @@ public class UserManager extends Direct {
         Users users = (Users) request.getAttribute("user");
         if (users == null){
             response.sendRedirect("login.jsp");
-        }else{
+                    }else{
             response.sendRedirect("my-account.jsp");
         }
     }
@@ -102,17 +104,5 @@ public class UserManager extends Direct {
             }
         }
         response.sendRedirect("controller");
-    }
-
-
-    private static final String USERNAME_PATTERN = "^[a-z0-9._-]{3,15}$";
-    private static final String EMAIL = "\\b[A-Z0-9._%-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b";
-
-    public void UsernameValidator() {
-        pattern = Pattern.compile(USERNAME_PATTERN);
-    }
-
-    public boolean validate(final String check) {
-        return pattern.matcher(check).matches();
     }
 }
