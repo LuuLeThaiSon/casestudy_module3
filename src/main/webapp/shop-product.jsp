@@ -370,13 +370,15 @@
                     <div class="widget_inner">
                         <div class="widget-list mb-10">
                             <h3 class="widget-title mb-6">Search</h3>
-                            <div class="search-box">
-                                <input type="text" class="form-control" placeholder="Search Our Store"
-                                       aria-label="Search Our Store">
-                                <button class="search-icon" type="button">
-                                    <i class="icon-magnifier"></i>
-                                </button>
-                            </div>
+                            <form action="son?action=searchByName" method="post">
+                                <div class="search-box">
+                                    <input type="text" class="form-control" placeholder="Search by name"
+                                           aria-label="Search Our Store" name="search">
+                                    <button class="search-icon" type="submit">
+                                        <i class="icon-magnifier"></i>
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                         <div class="widget-list mb-10">
                             <h3 class="widget-title mb-6">Categories</h3>
