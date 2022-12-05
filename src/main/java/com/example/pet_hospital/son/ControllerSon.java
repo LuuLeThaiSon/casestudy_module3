@@ -4,6 +4,7 @@ import com.example.pet_hospital.method.MyConnection;
 import com.example.pet_hospital.model.Pets;
 import com.example.pet_hospital.model.Species;
 
+import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,7 +36,7 @@ public class ControllerSon {
         return null;
     }
 
-    public List<Pets> findAllPet() {
+    public List<Pets> findAllPet(HttpServletRequest request) {
         List<Pets> pets = new ArrayList<>();
         try(PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL_PETS)) {
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -48,7 +49,7 @@ public class ControllerSon {
                 Integer quantity = resultSet.getInt("quantity");
                 String img = resultSet.getString("img");
                 Long speciesId = resultSet.getLong("species_id");
-//                pets.add(id, name, age, price, description, quantity, img, findSpeciesById(speciesId));
+                pets.add(new Pets(id, name, age, price, description, quantity, img, findSpeciesById(speciesId)));
             }
         } catch (SQLException e) {
             e.printStackTrace();
