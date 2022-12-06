@@ -435,7 +435,7 @@
                                         </li>
                                         <li>
                                             <input type="radio" class="custom-control-input" id="select4" value="30000-999999" name="selectByPrice">
-                                            <label class="custom-control-label" for="select3">30000$ - Max</label>
+                                            <label class="custom-control-label" for="select4">30000$ - Max</label>
                                         </li>
                                     </ul>
                                     <button class="btn bg-bright mt-3">Submit</button>

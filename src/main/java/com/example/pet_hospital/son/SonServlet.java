@@ -1,5 +1,6 @@
 package com.example.pet_hospital.son;
 
+import com.example.pet_hospital.manger.PetManager;
 import com.example.pet_hospital.model.Pets;
 import com.example.pet_hospital.model.Species;
 
@@ -12,11 +13,11 @@ import java.util.List;
 
 @WebServlet(name = "SonServlet", value = "/son")
 public class SonServlet extends HttpServlet {
-    ControllerSon controllerSon;
+    PetManager petManager;
 
     @Override
     public void init(){
-        controllerSon = new ControllerSon();
+        petManager = new PetManager();
     }
 
     @Override
@@ -59,8 +60,8 @@ public class SonServlet extends HttpServlet {
     }
 
     public void findAllPets(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Pets> pets = controllerSon.findAllPet(request);
-        List<Species> species = controllerSon.findAllSpecies(request);
+        List<Pets> pets = petManager.findAllPet(request);
+        List<Species> species = petManager.findAllSpecies(request);
         request.setAttribute("pets", pets);
         request.setAttribute("species", species);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("shop-product.jsp");
@@ -68,8 +69,8 @@ public class SonServlet extends HttpServlet {
     }
 
     public void findPetsBySpecies(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Pets> pets = controllerSon.findPetsBySpeciesId(request);
-        List<Species> species = controllerSon.findAllSpecies(request);
+        List<Pets> pets = petManager.findPetsBySpeciesId(request);
+        List<Species> species = petManager.findAllSpecies(request);
         request.setAttribute("pets", pets);
         request.setAttribute("species", species);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("shop-product.jsp");
@@ -77,8 +78,8 @@ public class SonServlet extends HttpServlet {
     }
 
     public void findPetsByName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Pets> pets = controllerSon.findPetsByName(request);
-        List<Species> species = controllerSon.findAllSpecies(request);
+        List<Pets> pets = petManager.findPetsByName(request);
+        List<Species> species = petManager.findAllSpecies(request);
         request.setAttribute("pets", pets);
         request.setAttribute("species", species);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("shop-product.jsp");
@@ -86,16 +87,16 @@ public class SonServlet extends HttpServlet {
     }
 
     public void selectByPrice(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Pets> pets = controllerSon.selectByPrice(request);
-        List<Species> species = controllerSon.findAllSpecies(request);
+        List<Pets> pets = petManager.selectByPrice(request);
+        List<Species> species = petManager.findAllSpecies(request);
         request.setAttribute("pets", pets);
         request.setAttribute("species", species);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("shop-product.jsp");
         requestDispatcher.forward(request, response);
     }
     public void sortBy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Pets> pets = controllerSon.sortPets(request);
-        List<Species> species = controllerSon.findAllSpecies(request);
+        List<Pets> pets = petManager.sortPets(request);
+        List<Species> species = petManager.findAllSpecies(request);
         request.setAttribute("pets", pets);
         request.setAttribute("species", species);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("shop-product.jsp");
