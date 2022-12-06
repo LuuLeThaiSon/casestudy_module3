@@ -13,22 +13,22 @@ import java.util.List;
 public class CartManger {
 
     public void addPetCart(HttpServletRequest request, HttpServletResponse response, List<Pets> pets){
-        PetDAO petDAO = new PetDAO();
-        String petId = request.getParameter("petId");
-        if (petId == null) return;
-        try {
-            long id = Long.parseLong(petId);
-            Pets pets1 = petDAO.findPetsById(id);
-            if(pets1.getQuantity()<0){
-                RequestDispatcher requestDispatcher = request.getRequestDispatcher("shop-product.jsp");
-                request.setAttribute("alert", "Hết Hàng");
-                requestDispatcher.forward(request,response);
-            }
-            pets.add(pets1);
-            response.sendRedirect("shop-product.jsp");
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
+//        PetDAO petDAO = new PetDAO();
+//        String petId = request.getParameter("petId");
+//        if (petId == null) return;
+//        try {
+//            long id = Long.parseLong(petId);
+//            Pets pets1 = petDAO.findPetsById(id);
+//            if(pets1.getQuantity()<0){
+//                RequestDispatcher requestDispatcher = request.getRequestDispatcher("shop-product.jsp");
+//                request.setAttribute("alert", "Hết Hàng");
+//                requestDispatcher.forward(request,response);
+//            }
+//            pets.add(pets1);
+//            response.sendRedirect("shop-product.jsp");
+//        }catch (Exception e){
+//            System.out.println(e.getMessage());
+//        }
     }
 
     public void addServiceCart(HttpServletRequest request, HttpServletResponse response, List<Service> services){
