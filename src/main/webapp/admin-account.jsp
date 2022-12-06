@@ -170,7 +170,8 @@
                                                             <a class="me-1" data-bs-toggle="modal"
                                                                data-bs-target="#edit${p.getId()}"><i
                                                                     class="fas fa-edit"></i></a>
-                                                            <button style="border: none" onclick="checkDelete(${p.getName()}, 'admin?action=delete&id=${p.getId()}')"><i class="fas fa-trash-alt"></i></button>
+<%--                                                            <button style="border: none" onclick="checkDelete(${p.getName()}, 'admin?action=delete&id=${p.getId()}')"> <i class="fas fa-trash-alt"></i> </button>--%>
+                                                            <button style="border: none" onclick="checkDelete('${p.getName()}', 'admin?action=delete&id=${p.getId()}')"> <i class="fas fa-trash-alt"></i> </button>
                                                         </td>
                                                     </tr>
                                                     <%--Modal update pet start--%>
