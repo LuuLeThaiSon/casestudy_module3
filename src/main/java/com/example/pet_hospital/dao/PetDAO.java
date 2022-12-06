@@ -24,6 +24,7 @@ public class PetDAO extends MyConnection{
     private final String SORT_BY = "select * from pets order by ";
     private final String INSERT_INTO_PET = "insert into pets(name, age, price, description, quantity, img, species_id) value (?, ?, ?, ?,?, ?, ?);";
     private final String UPDATE_PET = "update pets set name = ?, age = ?, price = ?, description = ?, quantity = ?, img = ?, species_id = ? where id = ?;";
+    private final String DELETE_PET_BY_ID = "delete from pets where id = ?;";
 
     public PetDAO() {
         connection = MyConnection.getConnection();
@@ -191,6 +192,25 @@ public class PetDAO extends MyConnection{
             preparedStatement.setInt(2, pet.getAge());
             preparedStatement.setDouble(3, pet.getPrice());
             preparedStatement.setString(4, pet.getDescription());
+            preparedStatement.setInt(5, pet.getQuantity());
+            preparedStatement.setString(6, pet.getImg());
+            preparedStatement.setLong(7, pet.getSpecies().getId());
+            preparedStatement.setLong(8, pet.getId());
+
+            return preparedStatement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+        return false;
+    }
+
+    public boolean deletePet(Long id) {
+        try(PreparedStatement preparedStatement = connection.prepareStatement(DELETE_PET_BY_ID)) {
+            preparedStatement.setLong(1, id);
+            return preparedStatement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

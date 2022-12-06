@@ -59,7 +59,13 @@ public class PetManager {
 
         if (id == null) {
             return petDAO.insertIntoPet(new Pets(name, age, price, description, quantity, img, petDAO.findSpeciesById(speciesId)));
+        } else {
+            return petDAO.updatePet(new Pets(Long.parseLong(id), name, age, price, description, quantity, img, petDAO.findSpeciesById(speciesId)));
         }
-        return false;
+    }
+
+    public boolean deletePet(HttpServletRequest request) {
+        String id = request.getParameter("id");
+        return petDAO.deletePet(Long.parseLong(id));
     }
 }

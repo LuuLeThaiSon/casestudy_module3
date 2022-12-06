@@ -126,20 +126,8 @@
                         <!-- My Account Tab Content Start -->
                         <div class="col-lg-9 col-md-8">
                             <div class="tab-content" id="myaccountContent">
-
                                 <!-- Single Tab Content Start -->
-                                <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
-                                    <div class="myaccount-content">
-                                        <h3 class="title">Dashboard</h3>
-                                        <div class="welcome">
-                                            <p>Hello, <strong>Admin</strong></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Single Tab Content End -->
-
-                                <!-- Single Tab Content Start -->
-                                <div class="tab-pane fade" id="pets-list" role="tabpanel">
+                                <div class="tab-pane fade show active" id="pets-list" role="tabpanel">
                                     <div class="myaccount-content">
                                         <h3 class="title">Manager</h3>
                                         <button type="button" class="btn btn-dark btn-hover-primary mb-3"
@@ -172,7 +160,7 @@
                                                             <a class="me-2" data-bs-toggle="modal"
                                                                data-bs-target="#edit${p.getId()}"><i
                                                                     class="fas fa-edit"></i></a>
-                                                            <a href="cart.html"><i class="fas fa-trash-alt"></i></a>
+                                                            <a href="admin?action=delete&id=${p.getId()}"><i class="fas fa-trash-alt"></i></a>
                                                         </td>
                                                     </tr>
                                                     <%--Modal update pet start--%>
@@ -194,7 +182,7 @@
                                                                                    class="form-label">Id</label>
                                                                             <input type="text" class="form-control"
                                                                                    id="id${p.getId()}" name="id"
-                                                                                   value="${p.getId()}" disabled>
+                                                                                   value="${p.getId()}" readonly>
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label for="name${p.getId()}"

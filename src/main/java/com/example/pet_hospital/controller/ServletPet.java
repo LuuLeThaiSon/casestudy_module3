@@ -32,18 +32,17 @@ public class ServletPet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String action = request.getParameter("action");
-//        if (action == null) {
-//            action ="";
-//        }
-//
-//        switch (action) {
-//            case "showPet" :
-//                findAllPet(request, response);
-//                break;
-//        }
+        String action = request.getParameter("action");
+        if (action == null) {
+            action ="";
+        }
+
+        switch (action) {
+            case "delete" :
+                delete(request, response);
+                break;
+        }
         findAllPet(request, response);
-//        findAllService(request, response);
     }
 
     @Override
@@ -56,6 +55,9 @@ public class ServletPet extends HttpServlet {
         switch (action) {
             case "addNewPet" :
                 addNewPet(request, response);
+                break;
+            case "editPet" :
+                update(request, response);
                 break;
         }
         findAllPet(request, response);
@@ -75,5 +77,12 @@ public class ServletPet extends HttpServlet {
 
     public void addNewPet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         petManager.save(request);
+    }
+    public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        petManager.save(request);
+    }
+
+    public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        petManager.deletePet(request);
     }
 }
