@@ -40,7 +40,7 @@ public class ServletPet extends HttpServlet {
         switch (action) {
             case "delete" :
                 delete(request, response);
-                break;
+                return;
         }
         findAllPet(request, response);
     }
@@ -55,10 +55,10 @@ public class ServletPet extends HttpServlet {
         switch (action) {
             case "addNewPet" :
                 addNewPet(request, response);
-                break;
+                return;
             case "editPet" :
                 update(request, response);
-                break;
+                return;
         }
         findAllPet(request, response);
 
@@ -77,12 +77,16 @@ public class ServletPet extends HttpServlet {
 
     public void addNewPet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         petManager.save(request);
+        response.sendRedirect("/admin");
     }
     public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         petManager.save(request);
+        response.sendRedirect("/admin");
+
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         petManager.deletePet(request);
+        response.sendRedirect("/admin");
     }
 }

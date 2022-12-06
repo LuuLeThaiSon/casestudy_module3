@@ -45,6 +45,8 @@
 
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -161,6 +163,7 @@
                                                                data-bs-target="#edit${p.getId()}"><i
                                                                     class="fas fa-edit"></i></a>
                                                             <a href="admin?action=delete&id=${p.getId()}"><i class="fas fa-trash-alt"></i></a>
+                                                            <button style="border: none" onclick="checkDelete(${p.getName()}, 'admin?action=delete&id=${p.getId()}')"><i class="fas fa-trash-alt"></i></button>
                                                         </td>
                                                     </tr>
                                                     <%--Modal update pet start--%>
@@ -521,6 +524,14 @@
 
 <!--Main JS-->
 <script src="assets/js/main.js"></script>
+<script>
+    function checkDelete(name, path) {
+        if (confirm("Do you want delete " + name)) {
+            window.location.href = path;
+        }
+    }
+</script>
 </body>
 
 </html>
+
