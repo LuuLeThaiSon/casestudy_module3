@@ -21,7 +21,6 @@ public class PetDAO extends MyConnection{
     private final String FIND_PETS_BY_SPECIES_ID = "select * from pets where species_id = ?;";
     private final String FIND_PEST_BY_NAME = "select * from pets where name like concat('%',?,'%');";
     private final String SELECT_BY_PRICE = "select * from pets where price >= ? and price <= ?;";
-
     private final String SORT_BY = "select * from pets order by ";
 
     public PetDAO() {
