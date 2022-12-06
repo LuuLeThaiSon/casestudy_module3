@@ -63,9 +63,9 @@ public class ServletController extends HttpServlet {
             case "login":
                 users.login(request, response);
                 return;
-            case "listService":
-                services.showServiceList(request, response);
-                return;
+//            case "listService":
+//                services.showServiceList(request, response);
+//                return;
         }
     }
 }
