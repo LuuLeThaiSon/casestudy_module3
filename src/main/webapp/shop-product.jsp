@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -184,25 +186,30 @@
                                     <!-- Cart Product/Price Start -->
                                     <div class="cart-product-inner mb-4 pb-4 border-bottom">
 
-                                        <!-- Single Cart Product Start -->
-                                        <div class="single-cart-product">
-                                            <div class="cart-product-thumb">
-                                                <a href="single-product.html"><img
-                                                        src="assets/images/header/header-cart/2.png" alt="Cart Product"></a>
-                                            </div>
-                                            <div class="cart-product-content">
-                                                <h3 class="title"><a href="single-product.html">Wait, You Need This</a>
-                                                </h3>
-                                                <div class="product-quty-price">
-                                                    <span class="cart-quantity">Qty: <strong
-                                                            class="text-primary"> 1 </strong></span>
-                                                    <span class="price">
-															<span class="new">$80.00</span>
-                                                            </span>
+                                        <!-- Single Product Start -->
+                                        <div class="col-lg-4 col-md-4 col-sm-6 product">
+                                            <div class="product-inner">
+                                                <div class="thumb">
+                                                    <a href="single-product.html" class="image">
+                                                        <img class="fit-image"
+                                                             src="assets/images/products/medium-product/1.png"
+                                                             alt="Product"/>
+                                                    </a>
+                                                    <div class="action-wrapper">
+                                                        <a href="cart.html" class="action cart" title="Cart"><i
+                                                                class="ti-shopping-cart"></i></a>
+                                                    </div>
+                                                    <div class="content">
+                                                        <h5 class="title"><a href="#"></a></h5>
+                                                        <span class="price">
+                                            <span class="new"></span>
+                                    </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Single Cart Product End -->
+                                        <!-- Single Product End -->
+
 
                                         <!-- Product Remove Start -->
                                         <div class="cart-product-remove">
@@ -321,19 +328,35 @@
 
                 <!-- Shop Wrapper Start -->
                 <div class="row shop_wrapper grid_3">
-
                     <!-- Single Product Start -->
-                    <div class="col-lg-4 col-md-4 col-sm-6 product">
-                        <div class="product-inner">
-                            <div class="thumb">
-                                <a href="single-product.html" class="image">
-                                    <img class="fit-image" src="assets/images/products/medium-product/1.png"
-                                         alt="Product"/>
-                                </a>
-                                <div class="action-wrapper">
-                                    <a href="cart.html" class="action cart" title="Cart"><i
-                                            class="ti-shopping-cart"></i></a>
+                    <c:forEach items="${pets}" var="p">
+                        <div class="col-lg-4 col-md-4 col-sm-6 product">
+                            <div class="product-inner">
+                                <div class="thumb">
+                                    <a href="single-product.html" class="image">
+                                        <img class="fit-image" src="assets/images/products/medium-product/1.png"
+                                             alt="Product"/>
+                                    </a>
+                                    <div class="action-wrapper">
+                                        <a href="cart.html" class="action cart" title="Cart"><i
+                                                class="ti-shopping-cart"></i></a>
+                                    </div>
+                                    <div class="content">
+                                        <h5 class="title"><a href="single-product.html">${p.getName()}</a></h5>
+                                        <span class="price">
+                                            <span class="new">$${p.getPrice()}</span>
+                                        </span>
+                                        <span class="price">
+                                            <c:if test="${p.getQuantity() > 0}">
+                                                <span class="new">Quantity:${p.getQuantity()} </span>
+                                            </c:if>
+                                            <c:if test="${p.getQuantity() == 0}">
+                                                <span class="new">Quantity: Empty </span>
+                                            </c:if>
+                                        </span>
+                                    </div>
                                 </div>
+<<<<<<< HEAD
                                 <div class="content">
                                     <h5 class="title"><a href="single-product.html">An Animal Album</a></h5>
                                     <span class="price">
@@ -341,9 +364,11 @@
                                     </span>
                                 </div>
 
+=======
+>>>>>>> 89c26048c2dc8644a70d2c8580709caf7724f59e
                             </div>
                         </div>
-                    </div>
+                    </c:forEach>
                     <!-- Single Product End -->
                 </div>
                 <!-- Shop Wrapper End -->
@@ -430,7 +455,8 @@
                         <!-- Soclial Link Start -->
                         <div class="widget-social justify-content-start mb-n2">
                             <a title="Twitter" href="#/"><i class="icon-social-twitter"></i></a>
-                            <a title="Instagram" href="https://www.instagram.com/lee.daegil.165//"><i class="icon-social-instagram"></i></a>
+                            <a title="Instagram" href="https://www.instagram.com/lee.daegil.165//"><i
+                                    class="icon-social-instagram"></i></a>
                             <a title="Linkedin" href="#/"><i class="icon-social-linkedin"></i></a>
                             <a title="Skype" href="#/"><i class="icon-social-skype"></i></a>
                             <a title="Dribble" href="#/"><i class="icon-social-dribbble"></i></a>

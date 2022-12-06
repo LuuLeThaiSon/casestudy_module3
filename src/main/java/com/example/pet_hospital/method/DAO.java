@@ -13,6 +13,7 @@ public class DAO {
     private static Connection connection;
     private static final String SELECT_ALL_USER = "select * from users ;";//sai đường dẫn
     private static final String SELECT_ONE_USER = "select * from users where (id = ?);";//sai đường dẫn
+    private static final String INSERT_USER = "INSERT INTO users (userName, password, phone_number, email, address, role) VALUES (?, ?, ?, ?, ?, ?);";
 
     public static Connection getConnection() {
         try {
@@ -36,6 +37,8 @@ public class DAO {
 
 
     static public boolean updatePets(Pets pets) {
+
+
         return false;
     }
 
@@ -90,6 +93,22 @@ public class DAO {
     static public boolean updateUserPet(UserPet userPet) {
         return false;
     }
+    static public boolean updateUser(Users user){
+        //        "INSERT INTO users (userName, password, phoneNumber, email, address, role) VALUES (?, ?, ?, ?, ?, ?);";
+        try (PreparedStatement preparedStatement = getConnection().prepareStatement(INSERT_USER)) {
+            preparedStatement.setString(1, user.getUserName());
+            preparedStatement.setString(2, user.getPassWord());
+            preparedStatement.setString(3, user.getPhoneNumber());
+            preparedStatement.setString(4, user.getEmail());
+            preparedStatement.setString(5, user.getAddress());
+            preparedStatement.setInt(6, user.getRole());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
 
     static public List<Users> selectionUser() {
         List<Users> users = new ArrayList<>();
@@ -137,9 +156,6 @@ public class DAO {
         return false;
     }
 
-    static public boolean updateUser(Users users) {
-        return false;
-    }
 
     static public List<Species> selectionSpecies() {
         return null;
