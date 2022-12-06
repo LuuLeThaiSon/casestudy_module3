@@ -169,58 +169,94 @@
                                                         <td><c:out value="${p.getSpecies().getName()}"/></td>
                                                         <td>
                                                             <a href="#" class="me-2"><i class="fas fa-eye"></i></a>
-                                                            <button id="#edit${p.getId()}" role="button" class="me-2"><i class="fas fa-edit"></i></button>
+                                                            <a class="me-2" data-bs-toggle="modal"
+                                                               data-bs-target="#edit${p.getId()}"><i
+                                                                    class="fas fa-edit"></i></a>
                                                             <a href="cart.html"><i class="fas fa-trash-alt"></i></a>
                                                         </td>
                                                     </tr>
                                                     <%--Modal update pet start--%>
-                                                    <div class="modal fade" id="edit${p.getId()}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal fade" id="edit${p.getId()}" tabindex="-1"
+                                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h1 class="modal-title fs-5" id="editPet">Edit pet form</h1>
-                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    <h1 class="modal-title fs-5" id="editPet">Edit pet
+                                                                        form</h1>
+                                                                    <button type="button" class="btn-close"
+                                                                            data-bs-dismiss="modal"
+                                                                            aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <form action="admin?action=editPet" method="post">
                                                                         <div class="mb-3">
-                                                                            <label for="id${p.getId()}" class="form-label">Id</label>
-                                                                            <input type="text" class="form-control" id="id${p.getId()}" name="id" disabled>
+                                                                            <label for="id${p.getId()}"
+                                                                                   class="form-label">Id</label>
+                                                                            <input type="text" class="form-control"
+                                                                                   id="id${p.getId()}" name="id"
+                                                                                   value="${p.getId()}" disabled>
                                                                         </div>
                                                                         <div class="mb-3">
-                                                                            <label for="name${p.getId()}" class="form-label">Pet name</label>
-                                                                            <input type="text" class="form-control" id="name${p.getId()}" name="name">
+                                                                            <label for="name${p.getId()}"
+                                                                                   class="form-label">Pet name</label>
+                                                                            <input type="text" class="form-control"
+                                                                                   id="name${p.getId()}" name="name"
+                                                                                   value="${p.getName()}">
                                                                         </div>
                                                                         <div class="mb-3">
-                                                                            <label for="age${p.getId()}" class="form-label">Age</label>
-                                                                            <input type="text" class="form-control" id="age${p.getId()}" name="age">
+                                                                            <label for="age${p.getId()}"
+                                                                                   class="form-label">Age</label>
+                                                                            <input type="text" class="form-control"
+                                                                                   id="age${p.getId()}" name="age"
+                                                                                   value="${p.getAge()}">
                                                                         </div>
                                                                         <div class="mb-3">
-                                                                            <label class="form-label" for="price${p.getId()}">Price</label>
-                                                                            <input type="text" class="form-control" id="price${p.getId()}" name="price">
+                                                                            <label class="form-label"
+                                                                                   for="price${p.getId()}">Price</label>
+                                                                            <input type="text" class="form-control"
+                                                                                   id="price${p.getId()}" name="price"
+                                                                                   value="${p.getPrice()}">
                                                                         </div>
                                                                         <div class="mb-3">
-                                                                            <label class="form-label" for="description${p.getId()}">Description</label>
-                                                                            <input type="text" class="form-control" id="description${p.getId()}" name="description">
+                                                                            <label class="form-label"
+                                                                                   for="description${p.getId()}">Description</label>
+                                                                            <input type="text" class="form-control"
+                                                                                   id="description${p.getId()}"
+                                                                                   name="description"
+                                                                                   value="${p.getDescription()}">
                                                                         </div>
                                                                         <div class="mb-3">
-                                                                            <label class="form-label" for="quantity${p.getId()}">Quantity</label>
-                                                                            <input type="text" class="form-control" id="quantity${p.getId()}" name="quantity">
+                                                                            <label class="form-label"
+                                                                                   for="quantity${p.getId()}">Quantity</label>
+                                                                            <input type="text" class="form-control"
+                                                                                   id="quantity${p.getId()}"
+                                                                                   name="quantity"
+                                                                                   value="${p.getQuantity()}">
                                                                         </div>
                                                                         <div class="mb-3">
-                                                                            <label class="form-label" for="img${p.getId()}">Image</label>
-                                                                            <input type="text" class="form-control" id="img${p.getId()}" name="img">
+                                                                            <label class="form-label"
+                                                                                   for="img${p.getId()}">Image</label>
+                                                                            <input type="text" class="form-control"
+                                                                                   id="img${p.getId()}" name="img"
+                                                                                   value="${p.getImg()}">
                                                                         </div>
-                                                                        <select class="form-select" aria-label="Default select example" name="species">
-                                                                            <option value="${s.getId()}">${s.getName()}</option>
+                                                                        <select class="form-select"
+                                                                                aria-label="Default select example"
+                                                                                name="species">
+                                                                            <option value="${p.getSpecies().getId()}">${p.getSpecies().getName()}</option>
                                                                             <c:forEach items="${species}" var="s">
                                                                                 <option value="${s.getId()}">${s.getName()}</option>
                                                                             </c:forEach>
                                                                         </select>
 
                                                                         <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                                                            <button type="button"
+                                                                                    class="btn btn-secondary"
+                                                                                    data-bs-dismiss="modal">Close
+                                                                            </button>
+                                                                            <button type="submit"
+                                                                                    class="btn btn-primary">Save changes
+                                                                            </button>
                                                                         </div>
                                                                     </form>
                                                                 </div>
@@ -314,43 +350,43 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                                <form action="admin?action=addNewPet" method="post">
-                                    <div class="mb-3">
-                                        <label for="name" class="form-label">Pet name</label>
-                                        <input type="text" class="form-control" id="name" name="name">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="age" class="form-label">Age</label>
-                                        <input type="text" class="form-control" id="age" name="age">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="price">Price</label>
-                                        <input type="text" class="form-control" id="price" name="price">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="description">Description</label>
-                                        <input type="text" class="form-control" id="description" name="description">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="quantity">Quantity</label>
-                                            <input type="text" class="form-control" id="quantity" name="quantity">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label" for="img">Image</label>
-                                            <input type="text" class="form-control" id="img" name="img">
-                                    </div>
-                                    <select class="form-select" aria-label="Default select example" name="species">
-                                        <option selected>Select specie</option>
-                                        <c:forEach items="${species}" var="s">
-                                            <option value="${s.getId()}">${s.getName()}</option>
-                                        </c:forEach>
-                                    </select>
+                <form action="admin?action=addNewPet" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Pet name</label>
+                        <input type="text" class="form-control" id="name" name="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="age" class="form-label">Age</label>
+                        <input type="text" class="form-control" id="age" name="age">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="price">Price</label>
+                        <input type="text" class="form-control" id="price" name="price">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="description">Description</label>
+                        <input type="text" class="form-control" id="description" name="description">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="quantity">Quantity</label>
+                        <input type="text" class="form-control" id="quantity" name="quantity">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="img">Image</label>
+                        <input type="text" class="form-control" id="img" name="img">
+                    </div>
+                    <select class="form-select" aria-label="Default select example" name="species">
+                        <option selected>Select specie</option>
+                        <c:forEach items="${species}" var="s">
+                            <option value="${s.getId()}">${s.getName()}</option>
+                        </c:forEach>
+                    </select>
 
-                                    <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
-                                </div>
-                                </form>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
             </div>
 
         </div>

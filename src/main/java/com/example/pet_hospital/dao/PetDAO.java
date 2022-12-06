@@ -23,6 +23,7 @@ public class PetDAO extends MyConnection{
     private final String SELECT_BY_PRICE = "select * from pets where price >= ? and price <= ?;";
     private final String SORT_BY = "select * from pets order by ";
     private final String INSERT_INTO_PET = "insert into pets(name, age, price, description, quantity, img, species_id) value (?, ?, ?, ?,?, ?, ?);";
+    private final String UPDATE_PET = "update pets set name = ?, age = ?, price = ?, description = ?, quantity = ?, img = ?, species_id = ? where id = ?;";
 
     public PetDAO() {
         connection = MyConnection.getConnection();
@@ -184,4 +185,12 @@ public class PetDAO extends MyConnection{
         return false;
     }
 
+    public boolean updatePet(Pets pet) {
+        try(PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_PET)) {
+            preparedStatement.setString(1, pet.getName());
+            preparedStatement.setInt(2, pet.getAge());
+            preparedStatement.setDouble(3, pet.getPrice());
+            preparedStatement.setString(4, pet.getDescription());
+        }
+    }
 }
