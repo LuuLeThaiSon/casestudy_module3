@@ -142,6 +142,9 @@
                                 <div class="tab-pane fade" id="pets-list" role="tabpanel">
                                     <div class="myaccount-content">
                                         <h3 class="title">Manager</h3>
+                                        <button type="button" class="btn btn-dark btn-hover-primary mb-3"
+                                                data-bs-toggle="modal" data-bs-target="#addNewPet">Add new pet
+                                        </button>
                                         <div class="myaccount-table table-responsive text-center">
                                             <table class="table table-bordered">
                                                 <thead class="thead-light">
@@ -165,11 +168,67 @@
                                                         <td><c:out value="${p.getQuantity()}"/></td>
                                                         <td><c:out value="${p.getSpecies().getName()}"/></td>
                                                         <td>
-                                                            <a href="cart.html" class="me-2"><i class="fas fa-eye"></i></a>
-                                                            <a href="cart.html" class="me-2"><i class="fas fa-edit"></i></a>
+                                                            <a href="#" class="me-2"><i class="fas fa-eye"></i></a>
+                                                            <button id="#edit${p.getId()}" role="button" class="me-2"><i class="fas fa-edit"></i></button>
                                                             <a href="cart.html"><i class="fas fa-trash-alt"></i></a>
                                                         </td>
                                                     </tr>
+                                                    <%--Modal update pet start--%>
+                                                    <div class="modal fade" id="edit${p.getId()}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h1 class="modal-title fs-5" id="editPet">Edit pet form</h1>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <form action="admin?action=editPet" method="post">
+                                                                        <div class="mb-3">
+                                                                            <label for="id${p.getId()}" class="form-label">Id</label>
+                                                                            <input type="text" class="form-control" id="id${p.getId()}" name="id" disabled>
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="name${p.getId()}" class="form-label">Pet name</label>
+                                                                            <input type="text" class="form-control" id="name${p.getId()}" name="name">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="age${p.getId()}" class="form-label">Age</label>
+                                                                            <input type="text" class="form-control" id="age${p.getId()}" name="age">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label class="form-label" for="price${p.getId()}">Price</label>
+                                                                            <input type="text" class="form-control" id="price${p.getId()}" name="price">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label class="form-label" for="description${p.getId()}">Description</label>
+                                                                            <input type="text" class="form-control" id="description${p.getId()}" name="description">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label class="form-label" for="quantity${p.getId()}">Quantity</label>
+                                                                            <input type="text" class="form-control" id="quantity${p.getId()}" name="quantity">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label class="form-label" for="img${p.getId()}">Image</label>
+                                                                            <input type="text" class="form-control" id="img${p.getId()}" name="img">
+                                                                        </div>
+                                                                        <select class="form-select" aria-label="Default select example" name="species">
+                                                                            <option value="${s.getId()}">${s.getName()}</option>
+                                                                            <c:forEach items="${species}" var="s">
+                                                                                <option value="${s.getId()}">${s.getName()}</option>
+                                                                            </c:forEach>
+                                                                        </select>
+
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <%--Modal update pet end--%>
                                                 </c:forEach>
 
                                                 </tbody>
@@ -196,18 +255,20 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Aug 22, 2018</td>
-                                                    <td>Pending</td>
-                                                    <td>$3000</td>
-                                                    <td>$3000</td>
-                                                    <td>
-                                                        <a href="cart.html" class="me-2"><i class="fas fa-eye"></i></a>
-                                                        <a href="cart.html" class="me-2"><i class="fas fa-edit"></i></a>
-                                                        <a href="cart.html"><i class="fas fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
+                                                <c:forEach items="${services}" var="s">
+                                                    <tr>
+                                                        <td>${s.getId()}</td>
+                                                        <td>${s.getName()}</td>
+                                                        <td>${s.getTime_box()}</td>
+                                                        <td>${s.getPrice()}</td>
+                                                        <td>${s.getServiceCategory().getName()}</td>
+                                                        <td>
+                                                            <a href="cart.html" class="me-2"><i class="fas fa-eye"></i></a>
+                                                            <a href="cart.html" class="me-2"><i class="fas fa-edit"></i></a>
+                                                            <a href="cart.html"><i class="fas fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                </c:forEach>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -243,6 +304,59 @@
     </div>
 </div>
 <!-- My Account Section End -->
+
+<%--Modal create new pet start--%>
+<div class="modal fade" id="addNewPet" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add new pet form</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                                <form action="admin?action=addNewPet" method="post">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Pet name</label>
+                                        <input type="text" class="form-control" id="name" name="name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="age" class="form-label">Age</label>
+                                        <input type="text" class="form-control" id="age" name="age">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="price">Price</label>
+                                        <input type="text" class="form-control" id="price" name="price">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="description">Description</label>
+                                        <input type="text" class="form-control" id="description" name="description">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="quantity">Quantity</label>
+                                            <input type="text" class="form-control" id="quantity" name="quantity">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="img">Image</label>
+                                            <input type="text" class="form-control" id="img" name="img">
+                                    </div>
+                                    <select class="form-select" aria-label="Default select example" name="species">
+                                        <option selected>Select specie</option>
+                                        <c:forEach items="${species}" var="s">
+                                            <option value="${s.getId()}">${s.getName()}</option>
+                                        </c:forEach>
+                                    </select>
+
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<%--Modal create new pet end--%>
 
 <!-- Footer Section Start -->
 <footer class="section footer-section">
@@ -341,6 +455,7 @@
     <!-- Footer Bottom End -->
 </footer>
 <!-- Footer Section End -->
+
 
 <!-- Scroll Top Start -->
 <a href="#" class="scroll-top show" id="scroll-top">

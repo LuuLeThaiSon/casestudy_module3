@@ -46,4 +46,20 @@ public class PetManager {
         String sort = request.getParameter("value");
         return petDAO.sortPets(sort);
     }
+
+    public boolean save(HttpServletRequest request) {
+        String id = request.getParameter("id");
+        String name = request.getParameter("name");
+        Integer age = Integer.parseInt(request.getParameter("age"));
+        Double price = Double.parseDouble(request.getParameter("price"));
+        String description = request.getParameter("description");
+        Integer quantity = Integer.parseInt(request.getParameter("quantity"));
+        String img = request.getParameter("img");
+        Long speciesId = Long.parseLong(request.getParameter("species"));
+
+        if (id == null) {
+            return petDAO.insertIntoPet(new Pets(name, age, price, description, quantity, img, petDAO.findSpeciesById(speciesId)));
+        }
+        return false;
+    }
 }

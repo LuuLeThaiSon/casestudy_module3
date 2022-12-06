@@ -23,6 +23,15 @@ public class Pets {
         this.img = img;
         this.species = species;
     }
+    public Pets(String name, int age, double price, String description, int quantity, String img, Species species) {
+        this.name = name;
+        this.age = age;
+        this.price = price;
+        this.description = description;
+        this.quantity = quantity;
+        this.img = img;
+        this.species = species;
+    }
 
     public long getId() {
         return id;
