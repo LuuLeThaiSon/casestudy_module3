@@ -1,8 +1,9 @@
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <%--
   Created by IntelliJ IDEA.
   User: borntoreign
   Date: 03/12/2022
-  Time: 10:04
+  Time: 10:07
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -10,8 +11,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Amber - Pet Care Bootstrap 5 Template</title>
 
     <!-- Favicons -->
@@ -20,48 +21,40 @@
     <!-- Vendor CSS (Icon Font) -->
 
 
-    <link rel="stylesheet" href="assets/css/vendor/fontawesome.min.css" />
-    <link rel="stylesheet" href="assets/css/vendor/simple-line-icons.min.css" />
-    <link rel="stylesheet" href="assets/css/vendor/themify-icons-min.css" />
-
+    <link rel="stylesheet" href="assets/css/vendor/fontawesome.min.css"/>
+    <link rel="stylesheet" href="assets/css/vendor/simple-line-icons.min.css"/>
+    <link rel="stylesheet" href="assets/css/vendor/themify-icons-min.css"/>
 
 
     <!-- Plugins CSS (All Plugins Files) -->
 
 
-
-    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/animate.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/aos.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/nice-select.min.css" />
-
+    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css"/>
+    <link rel="stylesheet" href="assets/css/plugins/lightgallery.min.css"/>
+    <link rel="stylesheet" href="assets/css/plugins/aos.min.css"/>
+    <link rel="stylesheet" href="assets/css/plugins/nice-select.min.css"/>
 
 
     <!-- Main Style CSS -->
 
 
-    <link rel="stylesheet" href="assets/css/style.css" />
-
+    <link rel="stylesheet" href="assets/css/style.css"/>
 
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
 
 
     <!--
-<link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
-<link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
-<link rel="stylesheet" href="assets/css/style.min.css">
--->
+  <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
+  <link rel="stylesheet" href="assets/css/style.min.css">
+  -->
 
 
 </head>
 
 <body>
-
-
-
-
 <!-- Header Section Start -->
 <div class="header section">
 
@@ -89,7 +82,7 @@
                 <!-- Header Logo Start -->
                 <div class="col-lg-3 col-md-4 col-6">
                     <div class="header-logo">
-                        <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
+                        <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo"/></a>
                     </div>
                 </div>
                 <!-- Header Logo End -->
@@ -130,10 +123,10 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="breadcrumb-wrapper">
-                    <h2 class="breadcrumb-title">Login</h2>
+                    <h2 class="breadcrumb-title">Create Account</h2>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li>Login</li>
+                        <li>Create Account</li>
                     </ul>
                 </div>
             </div>
@@ -142,50 +135,59 @@
 </div>
 <!-- Breadcrumb Area End -->
 
-<!-- Login Section Start -->
+<!-- Register Section Start -->
 <div class="section section-margin">
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-8 m-auto">
                 <div class="login-wrapper">
 
-                    <!-- Login Title & Content Start -->
+                    <!-- Register Title & Content Start -->
                     <div class="section-content text-center mb-6">
-                        <h2 class="title mb-2">Login</h2>
+                        <h2 class="title mb-2">Pet Info</h2>
                     </div>
-                    <!-- Login Title & Content End -->
+                    <!-- Register Title & Content End -->
 
                     <!-- Form Action Start -->
-                    <form action="ServletUser?action=login" method="post">
+                    <form action="ServletSendPet?action=add" method="post">
+
 
                         <!-- Input Email Start -->
                         <div class="single-input-item mb-2">
-                            <input type="text" name="userName" placeholder="Email or Username">
+                            <input type="text" placeholder="Pet Name" name="petName">
                         </div>
                         <!-- Input Email End -->
 
                         <!-- Input Password Start -->
                         <div class="single-input-item mb-2">
-                            <input type="password" name="password" placeholder="Enter your Password">
+                            <input type="number" name="petAge" placeholder="Pet Age">
                         </div>
                         <!-- Input Password End -->
 
+                        <!-- Input rePassword Start -->
+                        <div class="single-input-item mb-2">
+                            <input type="text" name="hobbit" placeholder="Hobbit">
+                        </div>
+
+
+                        <!-- Input Address Start -->
+                        <div style="margin-bottom: 15px">
+                            Species -
+                            <select name="species">
+                                <c:forEach items="${species}" var="s">
+                                    <option value="${s.getId()}">${s.getName()}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+
                         <!-- Button/Forget Password Start -->
-                        <div class="single-input-item mb-3">
+                        <div class="single-input-item">
                             <div class="login-reg-form-meta mb-n3">
-
-                                <button class="btn btn btn-gray-deep btn-hover-primary mb-3">Sign In</button>
-                                <a href="#" class="forget-pwd mb-3">Forget Password?</a>
-
+                                <button class="btn btn btn-gray-deep btn-hover-primary mb-3">Create</button>
                             </div>
                         </div>
                         <!-- Button/Forget Password End -->
 
-                        <!-- Lost Password & Creat New Account Start -->
-                        <div class="lost-password">
-                            <a href="register.jsp">Creat Account</a>
-                        </div>
-                        <!-- Lost Password & Creat New Account End -->
                     </form>
                     <!-- Form Action End -->
 
@@ -194,7 +196,7 @@
         </div>
     </div>
 </div>
-<!-- Login Section End -->
+<!-- Register Section End -->
 
 <!-- Footer Section Start -->
 <footer class="section footer-section">
@@ -205,7 +207,8 @@
                 <div class="col-12 col-sm-6 col-lg-3 mb-8" data-aos="fade-up" data-aos-duration="1000">
                     <div class="single-footer-widget">
                         <h1 class="widget-title">About Us</h1>
-                        <p class="desc-content">Lorem ipsum dolor sit amet, co adipisi elit, sed eiusmod tempor incididunt ut labore et dolore</p>
+                        <p class="desc-content">Lorem ipsum dolor sit amet, co adipisi elit, sed eiusmod tempor
+                            incididunt ut labore et dolore</p>
                         <!-- Soclial Link Start -->
                         <div class="widget-social justify-content-start mb-n2">
                             <a title="Twitter" href="#/"><i class="icon-social-twitter"></i></a>
@@ -243,11 +246,13 @@
                     <div class="single-footer-widget">
                         <h2 class="widget-title">Send newsletter</h2>
                         <div class="widget-body">
-                            <p class="desc-content mb-4">Subscribe to our newsletter and get 10% off your first purchase..</p>
+                            <p class="desc-content mb-4">Subscribe to our newsletter and get 10% off your first
+                                purchase..</p>
                             <!-- Newsletter Form Start -->
                             <div class="newsletter-form-wrap pt-1">
                                 <form id="mc-form" class="mc-form">
-                                    <input type="email" id="mc-email" class="form-control email-box" placeholder="demo@example.com" name="EMAIL">
+                                    <input type="email" id="mc-email" class="form-control email-box"
+                                           placeholder="demo@example.com" name="EMAIL">
                                     <button id="mc-submit" class="newsletter-btn" type="submit">Send</button>
                                 </form>
                                 <!-- mailchimp-alerts Start -->
@@ -273,7 +278,8 @@
             <div class="row align-items-center mb-n4">
                 <div class="col-md-6 text-center text-md-start order-2 order-md-1 mb-4">
                     <div class="copyright-content">
-                        <p class="mb-0">© 2021 <strong>Amber </strong> Made with <i class="fa fa-heart text-danger"></i> by <a href="https://hasthemes.com/">HasThemes.</a></p>
+                        <p class="mb-0">© 2021 <strong>Amber </strong> Made with <i class="fa fa-heart text-danger"></i>
+                            by <a href="https://hasthemes.com/">HasThemes.</a></p>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-md-end order-1 order-md-2 mb-4">
@@ -330,6 +336,7 @@
 
 <!--Main JS-->
 <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>
