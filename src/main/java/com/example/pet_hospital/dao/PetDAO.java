@@ -29,17 +29,18 @@ public class PetDAO extends MyConnection{
 
 
     public Species findSpeciesById(Long id) {
+        Species species = null;
         try(PreparedStatement preparedStatement = connection.prepareStatement(FIND_SPECIES_BY_ID)) {
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 String name = resultSet.getString("name");
-                return new Species(id, name);
+                species = new Species(id, name);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return species;
     }
 
     public List<Pets> findAllPet() {
@@ -47,12 +48,12 @@ public class PetDAO extends MyConnection{
         try(PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL_PETS)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                Long id = resultSet.getLong("id");
+                long id = resultSet.getLong("id");
                 String name = resultSet.getString("name");
-                Integer age = resultSet.getInt("age");
-                Double price = resultSet.getDouble("price");
+                int age = resultSet.getInt("age");
+                double price = resultSet.getDouble("price");
                 String description = resultSet.getString("description");
-                Integer quantity = resultSet.getInt("quantity");
+                int quantity = resultSet.getInt("quantity");
                 String img = resultSet.getString("img");
                 Long speciesId = resultSet.getLong("species_id");
                 pets.add(new Pets(id, name, age, price, description, quantity, img, findSpeciesById(speciesId)));
@@ -68,7 +69,7 @@ public class PetDAO extends MyConnection{
         try(PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL_SPECIES)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                Long id = resultSet.getLong("id");
+                long id = resultSet.getLong("id");
                 String name = resultSet.getString("name");
                 species.add(new Species(id, name));
             }
@@ -84,12 +85,12 @@ public class PetDAO extends MyConnection{
             preparedStatement.setLong(1, Long.parseLong(speciesId));
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                Long id = resultSet.getLong("id");
+                long id = resultSet.getLong("id");
                 String name = resultSet.getString("name");
-                Integer age = resultSet.getInt("age");
-                Double price = resultSet.getDouble("price");
+                int age = resultSet.getInt("age");
+                double price = resultSet.getDouble("price");
                 String description = resultSet.getString("description");
-                Integer quantity = resultSet.getInt("quantity");
+                int quantity = resultSet.getInt("quantity");
                 String img = resultSet.getString("img");
                 pets.add(new Pets(id, name, age, price, description, quantity, img, findSpeciesById(Long.parseLong(speciesId))));
             }
@@ -105,12 +106,12 @@ public class PetDAO extends MyConnection{
             preparedStatement.setString(1, searchKeyWord);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                Long id = resultSet.getLong("id");
+                long id = resultSet.getLong("id");
                 String name = resultSet.getString("name");
-                Integer age = resultSet.getInt("age");
-                Double price = resultSet.getDouble("price");
+                int age = resultSet.getInt("age");
+                double price = resultSet.getDouble("price");
                 String description = resultSet.getString("description");
-                Integer quantity = resultSet.getInt("quantity");
+                int quantity = resultSet.getInt("quantity");
                 String img = resultSet.getString("img");
                 Long speciesId = resultSet.getLong("species_id");
                 pets.add(new Pets(id, name, age, price, description, quantity, img, findSpeciesById(speciesId)));
@@ -129,12 +130,12 @@ public class PetDAO extends MyConnection{
             preparedStatement.setInt(2, Integer.parseInt(selectArr[1]));
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                Long id = resultSet.getLong("id");
+                long id = resultSet.getLong("id");
                 String name = resultSet.getString("name");
-                Integer age = resultSet.getInt("age");
-                Double price = resultSet.getDouble("price");
+                int age = resultSet.getInt("age");
+                double price = resultSet.getDouble("price");
                 String description = resultSet.getString("description");
-                Integer quantity = resultSet.getInt("quantity");
+                int quantity = resultSet.getInt("quantity");
                 String img = resultSet.getString("img");
                 Long speciesId = resultSet.getLong("species_id");
                 pets.add(new Pets(id, name, age, price, description, quantity, img, findSpeciesById(speciesId)));
@@ -150,12 +151,12 @@ public class PetDAO extends MyConnection{
         try(PreparedStatement preparedStatement = connection.prepareStatement(SORT_BY + sort );) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                Long id = resultSet.getLong("id");
+                long id = resultSet.getLong("id");
                 String name = resultSet.getString("name");
-                Integer age = resultSet.getInt("age");
-                Double price = resultSet.getDouble("price");
+                int age = resultSet.getInt("age");
+                double price = resultSet.getDouble("price");
                 String description = resultSet.getString("description");
-                Integer quantity = resultSet.getInt("quantity");
+                int quantity = resultSet.getInt("quantity");
                 String img = resultSet.getString("img");
                 Long speciesId = resultSet.getLong("species_id");
                 pets.add(new Pets(id, name, age, price, description, quantity, img, findSpeciesById(speciesId)));
