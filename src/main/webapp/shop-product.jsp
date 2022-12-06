@@ -354,7 +354,6 @@
                                         </span>
                                     </div>
                                 </div>
-<<<<<<< HEAD
                                 <div class="content">
                                     <h5 class="title"><a href="single-product.html">An Animal Album</a></h5>
                                     <span class="price">
@@ -362,8 +361,6 @@
                                     </span>
                                 </div>
 
-=======
->>>>>>> 89c26048c2dc8644a70d2c8580709caf7724f59e
                             </div>
                         </div>
                     </c:forEach>
