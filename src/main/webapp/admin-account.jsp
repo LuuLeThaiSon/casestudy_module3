@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -149,25 +150,28 @@
                                                     <th>Name</th>
                                                     <th>Age</th>
                                                     <th>Price</th>
-                                                    <th>quantity</th>
+                                                    <th>Quantity</th>
                                                     <th>Species</th>
                                                     <th>Action</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Aug 22, 2018</td>
-                                                    <td>Pending</td>
-                                                    <td>$3000</td>
-                                                    <td>$3000</td>
-                                                    <td>$3000</td>
-                                                    <td>
-                                                        <a href="cart.html" class="me-2"><i class="fas fa-eye"></i></a>
-                                                        <a href="cart.html" class="me-2"><i class="fas fa-edit"></i></a>
-                                                        <a href="cart.html"><i class="fas fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
+                                                <c:forEach items="${pets}" var="p">
+                                                    <tr>
+                                                        <td><c:out value="${p.getId()}"/></td>
+                                                        <td><c:out value="${p.getName()}"/></td>
+                                                        <td><c:out value="${p.getAge()}"/></td>
+                                                        <td><c:out value="${p.getPrice()}"/></td>
+                                                        <td><c:out value="${p.getQuantity()}"/></td>
+                                                        <td><c:out value="${p.getSpecies().getName()}"/></td>
+                                                        <td>
+                                                            <a href="cart.html" class="me-2"><i class="fas fa-eye"></i></a>
+                                                            <a href="cart.html" class="me-2"><i class="fas fa-edit"></i></a>
+                                                            <a href="cart.html"><i class="fas fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                </c:forEach>
+
                                                 </tbody>
                                             </table>
                                         </div>
