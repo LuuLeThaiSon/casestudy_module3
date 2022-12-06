@@ -3,12 +3,7 @@ package com.example.pet_hospital.manger;
 import com.example.pet_hospital.dao.PetDAO;
 import com.example.pet_hospital.model.Pets;
 import com.example.pet_hospital.model.Species;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.List;
 
 public class PetManager {
@@ -67,5 +62,10 @@ public class PetManager {
     public boolean deletePet(HttpServletRequest request) {
         String id = request.getParameter("id");
         return petDAO.deletePet(Long.parseLong(id));
+    }
+
+    public Pets petDetail(HttpServletRequest request) {
+        Long id = Long.parseLong(request.getParameter("id"));
+        return petDAO.findPetById(id);
     }
 }
