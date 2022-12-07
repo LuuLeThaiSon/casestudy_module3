@@ -3,6 +3,7 @@ package com.example.pet_hospital.manger;
 import com.example.pet_hospital.dao.UserDAO;
 import com.example.pet_hospital.model.Users;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,7 +42,12 @@ public class UserManager extends Direct {
             }
         }
         if (user == null){
-            response.sendRedirect("login.jsp" );
+            request.setAttribute("tit", "Wrong UserName Or Password");
+            try {
+                request.getRequestDispatcher("login.jsp").forward(request,response);
+            } catch (ServletException e) {
+                throw new RuntimeException(e);
+            }
         }else {
             response.addCookie(new Cookie("userId", String.valueOf(user.getId())));
             response.addCookie(new Cookie("userName", user.getUserName()));

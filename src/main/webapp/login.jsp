@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: borntoreign
@@ -127,7 +128,7 @@
                 <div class="breadcrumb-wrapper">
                     <h2 class="breadcrumb-title">Login</h2>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.jsp">Home</a></li>
                         <li>Login</li>
                     </ul>
                 </div>
@@ -164,6 +165,14 @@
                             <input type="password" name="password" placeholder="Enter your Password">
                         </div>
                         <!-- Input Password End -->
+
+                        <%----------------------------%>
+                        <c:if test="${tit != null}">
+                        <div class="alert alert-danger" role="alert">
+                            <c:out value="${tit}"/>
+                        </div>
+                        </c:if>
+                        <%----------------------------%>
 
                         <!-- Button/Forget Password Start -->
                         <div class="single-input-item mb-3">
