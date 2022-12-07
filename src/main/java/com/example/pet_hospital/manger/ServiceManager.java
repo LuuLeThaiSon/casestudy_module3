@@ -29,7 +29,7 @@ public class ServiceManager {
         return serviceFullDAO.findServicesbyCategoryID(id);
  }
   public List<Service> searchServiceByName(HttpServletRequest request) {
-        String name = request.getParameter("name");
+        String name = request.getParameter("search");
         return serviceFullDAO.searchServicesName(name);
   }
 }

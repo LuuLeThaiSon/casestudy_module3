@@ -7,9 +7,6 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-
-import static jdk.nashorn.internal.objects.NativeString.search;
-
 @WebServlet(name = "ControllerLinhServlet", value = "/ControllerLinhServlet")
 public class ControllerLinhServlet extends HttpServlet {
     private ServiceManager serviceManager;
@@ -78,8 +75,8 @@ public class ControllerLinhServlet extends HttpServlet {
         requestDispatcher.forward(request, response);
     }
     public void searchServiceByName(HttpServletRequest request, HttpServletResponse response) throws IOException,ServletException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("shop-service1.jsp");
-        request.setAttribute("search",serviceManager.searchServiceByName(request));
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("shop-service.jsp");
+        request.setAttribute("showallservicecategory",serviceManager.searchServiceByName(request));
         request.setAttribute("listservicecategory", serviceManager.showServiceCategoryList(request));
         requestDispatcher.forward(request, response) ;
     }
