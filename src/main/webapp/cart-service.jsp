@@ -232,7 +232,6 @@
             <div class="header-action-btn header-action-btn-cart d-flex d-sm-none">
               <a href="ServletCart">
                 <i class="icon-handbag icons"></i>
-                <span class="header-action-num">3</span>
               </a>
             </div>
             <!-- Header Action Button End -->
