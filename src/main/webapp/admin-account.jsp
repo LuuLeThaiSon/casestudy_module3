@@ -192,28 +192,28 @@
                                                                                    class="form-label">Id</label>
                                                                             <input type="text" class="form-control"
                                                                                    id="id${p.getId()}" name="id"
-                                                                                   value="${p.getId()}" readonly>
+                                                                                   value="${p.getId()}" readonly required minlength="1">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label for="name${p.getId()}"
                                                                                    class="form-label">Pet name</label>
                                                                             <input type="text" class="form-control"
                                                                                    id="name${p.getId()}" name="name"
-                                                                                   value="${p.getName()}">
+                                                                                   value="${p.getName()}" required minlength="1">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label for="age${p.getId()}"
                                                                                    class="form-label">Age</label>
                                                                             <input type="text" class="form-control"
                                                                                    id="age${p.getId()}" name="age"
-                                                                                   value="${p.getAge()}">
+                                                                                   value="${p.getAge()}" required minlength="1">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label class="form-label"
                                                                                    for="price${p.getId()}">Price</label>
                                                                             <input type="text" class="form-control"
                                                                                    id="price${p.getId()}" name="price"
-                                                                                   value="${p.getPrice()}">
+                                                                                   value="${p.getPrice()}" required minlength="1">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label class="form-label"
@@ -221,7 +221,7 @@
                                                                             <input type="text" class="form-control"
                                                                                    id="description${p.getId()}"
                                                                                    name="description"
-                                                                                   value="${p.getDescription()}">
+                                                                                   value="${p.getDescription()}" required minlength="1">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label class="form-label"
@@ -229,14 +229,14 @@
                                                                             <input type="text" class="form-control"
                                                                                    id="quantity${p.getId()}"
                                                                                    name="quantity"
-                                                                                   value="${p.getQuantity()}">
+                                                                                   value="${p.getQuantity()}" required minlength="1">
                                                                         </div>
                                                                         <div class="mb-3">
                                                                             <label class="form-label"
                                                                                    for="img${p.getId()}">Image</label>
                                                                             <input type="text" class="form-control"
                                                                                    id="img${p.getId()}" name="img"
-                                                                                   value="${p.getImg()}">
+                                                                                   value="${p.getImg()}" required minlength="1">
                                                                         </div>
                                                                         <select class="form-select"
                                                                                 aria-label="Default select example"
@@ -351,30 +351,30 @@
                 <form action="admin?action=addNewPet" method="post">
                     <div class="mb-3">
                         <label for="name" class="form-label">Pet name</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <input type="text" class="form-control" id="name" name="name" required minlength="1">
                     </div>
                     <div class="mb-3">
                         <label for="age" class="form-label">Age</label>
-                        <input type="number" class="form-control" id="age" name="age">
+                        <input type="number" class="form-control" id="age" name="age" required minlength="1">
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="price">Price</label>
-                        <input type="number" class="form-control" id="price" name="price">
+                        <input type="number" class="form-control" id="price" name="price" required minlength="1">
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="description">Description</label>
-                        <input type="text" class="form-control" id="description" name="description">
+                        <input type="text" class="form-control" id="description" name="description" required minlength="1">
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="quantity">Quantity</label>
-                        <input type="text" class="form-control" id="quantity" name="quantity">
+                        <input type="text" class="form-control" id="quantity" name="quantity" required minlength="1">
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="img">Image</label>
-                        <input type="text" class="form-control" id="img" name="img">
+                        <input type="text" class="form-control" id="img" name="img" required minlength="1">
                     </div>
-                    <select class="form-select" aria-label="Default select example" name="species">
-                        <option selected>Select specie</option>
+                    <select class="form-select" aria-label="Default select example" name="species" required>
+                        <option value="">Select specie</option>
                         <c:forEach items="${species}" var="s">
                             <option value="${s.getId()}">${s.getName()}</option>
                         </c:forEach>
