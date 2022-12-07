@@ -306,7 +306,7 @@
                         <h4 class="title me-2">Sort By: </h4>
 
                         <div class="shop-short-by">
-                                <select onchange="sort()" class="nice-select" aria-label=".form-select-sm example" name="sort" id="sort">
+                                <select onchange="sortBy()" class="nice-select" aria-label=".form-select-sm example" name="sort" id="sort">
                                     <option value="">Sort by Default</option>
                                     <option value="son?action=sortBy&value=price">Sort by Price</option>
                                     <option value="son?action=sortBy&value=name">Sort by Name</option>
@@ -327,7 +327,9 @@
                             <div class="product-inner">
                                 <div class="thumb">
                                     <a href="single-product.html" class="image">
-                                        <img class="fit-image" src="assets/images/products/medium-product/1.png"
+<%--                                        <img class="fit-image" src="assets/images/products/medium-product/1.png"--%>
+<%--                                             alt="Product"/>--%>
+                                        <img class="fit-image" src="${p.getImg()}"
                                              alt="Product"/>
                                     </a>
                                     <div class="action-wrapper">
@@ -335,7 +337,7 @@
                                                 class="ti-shopping-cart"></i></a>
                                     </div>
                                     <div class="content">
-                                        <h5 class="title"><a href="single-product.html">${p.getName()}</a></h5>
+                                        <h5 class="title"><a href="son?action=detail&id=${p.getId()}">${p.getName()}</a></h5>
                                         <span class="price">
                                             <span class="new">$${p.getPrice()}</span>
                                         </span>
@@ -349,13 +351,6 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="content">
-                                    <h5 class="title"><a href="single-product.html">An Animal Album</a></h5>
-                                    <span class="price">
-                                                <span class="new">$80.50</span>
-                                    </span>
-                                </div>
-
                             </div>
                         </div>
                     </c:forEach>
@@ -384,7 +379,7 @@
                             <h3 class="widget-title mb-6">Categories</h3>
                             <div class="sidebar-body">
                                 <ul class="sidebar-list">
-                                    <li><a href="son?action=selectAllPets">All Product</a></li>
+                                    <li><a href="son">All Product</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -588,8 +583,8 @@
 
 </html>
 <script>
-    function sort() {
-        let path = document.getElementById("sort").value;
+    function sortBy() {
+        let path = document.getElementById('sort').value;
         window.location.href = path;
     }
 </script>

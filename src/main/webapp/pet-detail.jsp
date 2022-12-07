@@ -289,7 +289,7 @@
                     <!-- Single Product Image Start -->
                     <div class="single-product-img swiper-container product-gallery-top">
                         <div class="swiper-wrapper popup-gallery">
-                            <img class="w-100" src="assets/images/products/large-product/1.png" alt="Product">
+                            <img class="w-100" src="${pet.getImg()}" alt="Product">
                         </div>
                     </div>
                     <!-- Single Product Image End -->

@@ -59,6 +59,9 @@ public class ServletPet extends HttpServlet {
             case "editPet" :
                 update(request, response);
                 return;
+            case "delete" :
+                delete(request, response);
+                return;
         }
         findAllPet(request, response);
 

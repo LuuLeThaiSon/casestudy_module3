@@ -28,19 +28,15 @@ public class SonServlet extends HttpServlet {
         }
 
         switch (action) {
-            case "selectAllPets" :
-                findAllPets(request, response);
-                break;
             case "sortBy":
                 sortBy(request, response);
                 break;
             case "detail":
                 detail(request, response);
                 break;
-
+            default:
+                findAllPets(request, response);
         }
-        findAllPets(request, response);
-
     }
 
     @Override
@@ -59,8 +55,9 @@ public class SonServlet extends HttpServlet {
             case "selectByPrice":
                 selectByPrice(request, response);
                 break;
+            default:
+                findAllPets(request, response);
         }
-        findAllPets(request, response);
     }
 
     public void findAllPets(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
