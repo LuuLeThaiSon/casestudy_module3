@@ -59,14 +59,18 @@ public class ServletSendPet extends HttpServlet {
     }
 
     public void createPetService(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Users users = new UserManager().getUserCookie(request);
+        if(users != null ){
+            long idService = Long.parseLong(request.getParameter("idService"));
+            UserPet userPet = updateUserPet(request);
+            Service service = new ServiceDAO().findServiceById(idService);
+            PetService petService = new PetService(service, userPet, 0);
 
-        long idService = Long.parseLong(request.getParameter("idService"));
-        UserPet userPet = updateUserPet(request);
-        Service service = new ServiceDAO().findServiceById(idService);
-        PetService petService = new PetService(service, userPet, 0);
-
-        new PetServiceDAO().updatePetService(petService);
-        request.setAttribute("petService", petService);
-        response.sendRedirect("ControllerLinhServlet");
+            new PetServiceDAO().updatePetService(petService);
+            request.setAttribute("petService", petService);
+            response.sendRedirect("ControllerLinhServlet");
+        }else{
+            response.sendRedirect("login.jsp");
+        }
     }
 }
