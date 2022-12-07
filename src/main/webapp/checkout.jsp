@@ -81,7 +81,7 @@
                 <!-- Header Logo Start -->
                 <div class="col-lg-3 col-md-4 col-6">
                     <div class="header-logo">
-                        <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo"/></a>
+                        <a href="index.jsp"><img src="assets/images/logo/logo.png" alt="Site Logo"/></a>
                     </div>
                 </div>
                 <!-- Header Logo End -->
@@ -94,16 +94,11 @@
                                 <a href="#">Home</a>
                             </li>
                             <li class="has-children position-static">
-                                <a href="#">Shop</a>
+                                <a href="son">Shop</a>
                             </li>
                             <li class="has-children">
-                                <a href="#">Pages</a>
+                                <a href="ControllerLinhServlet">Service</a>
                             </li>
-                            <li class="has-children">
-                                <a href="#">Blog</a>
-                            </li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -131,14 +126,14 @@
                         <!-- Header Action Search Button End -->
 
                         <!-- Header My Account Button Start -->
-                        <a href="my-account.html" class="header-action-btn header-action-btn-wishlist">
+                        <a href="ServletUser?action=userDetail" class="header-action-btn header-action-btn-wishlist">
                             <i class="icon-user icons"></i>
                         </a>
                         <!-- Header My Account Button End -->
 
                         <!-- Header Action Button Start -->
                         <div class="header-action-btn header-action-btn-cart d-none d-sm-flex">
-                            <a class="cart-visible" href="javascript:void(0)">
+                            <a class="cart-visible" href="ServletCart">
                                 <i class="icon-handbag icons"></i>
                                 <span class="header-action-num">3</span>
                             </a>
@@ -236,7 +231,7 @@
 
                         </div>
                         <div class="header-action-btn header-action-btn-cart d-flex d-sm-none">
-                            <a href="cart.html">
+                            <a href="ServletCart">
                                 <i class="icon-handbag icons"></i>
                                 <span class="header-action-num">3</span>
                             </a>

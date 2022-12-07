@@ -95,19 +95,14 @@
           <div class="main-menu">
             <ul>
               <li class="has-children">
-                <a href="#">Home</a>
+                <a href="index.jsp">Home</a>
               </li>
               <li class="has-children position-static">
-                <a href="#">Shop</a>
+                <a href="son">Shop</a>
               </li>
               <li class="has-children">
-                <a href="#">Pages</a>
+                <a href="ControllerLinhServlet">Sevice</a>
               </li>
-              <li class="has-children">
-                <a href="#">Blog</a>
-              </li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -169,24 +164,24 @@
 
             <!-- Input rePassword Start -->
             <div class="single-input-item mb-2">
-              <input type="password" name="rePassword" placeholder="Password" maxlength="8" minlength="6">
+              <input type="password" name="rePassword" placeholder="Re-Password" maxlength="8" minlength="6">
             </div>
             <!-- Input rePassword End -->
 
             <!-- Input Email Start -->
             <div class="single-input-item mb-2">
-              <input type="email" placeholder="Email" name="email">
+              <input type="email" placeholder="Email" name="email" minlength="1" maxlength="99">
             </div>
             <!-- Input Email End -->
 
             <!-- Input Address Start -->
             <div class="single-input-item mb-2">
-              <input type="text" placeholder="Address" name="address">
+              <input type="text" placeholder="Address" name="address" minlength="1" maxlength="999">
             </div>
             <!-- Input Address End -->
             <!-- Input Address Start -->
             <div class="single-input-item mb-2">
-              <input type="tel" placeholder="Number" name="phoneNumber">
+              <input type="tel" placeholder="Number" name="phoneNumber" minlength="1" maxlength="99">
             </div>
             <!-- Input Address End -->
 

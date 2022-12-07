@@ -166,11 +166,11 @@
                                                         <td><c:out value="${p.getQuantity()}"/></td>
                                                         <td><c:out value="${p.getSpecies().getName()}"/></td>
                                                         <td>
-                                                            <a href="son?action=detail&id=${p.getId()}" class="me-2"><i class="fas fa-eye"></i></a>
+<%--                                                            <a href="son?action=detail&id=${p.getId()}" class="me-2"><i class="fas fa-eye"></i></a>--%>
                                                             <a class="me-1" data-bs-toggle="modal"
                                                                data-bs-target="#edit${p.getId()}"><i
                                                                     class="fas fa-edit"></i></a>
-                                                            <button style="border: none" onclick="checkDelete(${p.getName()}, 'admin?action=delete&id=${p.getId()}')"><i class="fas fa-trash-alt"></i></button>
+                                                            <button style="border: none" onclick="checkDelete('${p.getName()}', 'admin?action=delete&id=${p.getId()}')"> <i class="fas fa-trash-alt"></i> </button>
                                                         </td>
                                                     </tr>
                                                     <%--Modal update pet start--%>

@@ -1,3 +1,6 @@
+<%@ page import="java.util.List" %>
+<%@ page import="com.example.pet_hospital.model.PetService" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: borntoreign
@@ -85,7 +88,7 @@
         <!-- Header Logo Start -->
         <div class="col-lg-3 col-md-4 col-6">
           <div class="header-logo">
-            <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
+            <a href="index.jsp"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
           </div>
         </div>
         <!-- Header Logo End -->
@@ -101,7 +104,7 @@
                 <a href="son">Shop</a>
               </li>
               <li class="has-children">
-                <a href="ControllerLinhServlet">Pages</a>
+                <a href="ControllerLinhServlet">Sevice</a>
               </li>
             </ul>
           </div>
@@ -136,7 +139,7 @@
 
             <!-- Header Action Button Start -->
             <div class="header-action-btn header-action-btn-cart d-none d-sm-flex">
-              <a class="cart-visible" href="ServletCart">
+              <a class="cart-visible" href="javascript:void(0)">
                 <i class="icon-handbag icons"></i>
                 <span class="header-action-num">3</span>
               </a>
@@ -284,11 +287,11 @@
             <!-- Table Head Start -->
             <thead>
             <tr>
-              <th class="pro-thumbnail">Image</th>
+              <th class="pro-thumbnail">Pet Name</th>
               <th class="pro-title">Product</th>
               <th class="pro-price">Price</th>
-              <th class="pro-quantity">Quantity</th>
-              <th class="pro-subtotal">Total</th>
+              <th class="pro-quantity">Time Box</th>
+              <th class="pro-subtotal">Category</th>
               <th class="pro-remove">Remove</th>
             </tr>
             </thead>
@@ -296,26 +299,21 @@
 
             <!-- Table Body Start -->
             <tbody>
+            <c:forEach items="${service}" var="s">
             <tr>
-              <td class="pro-thumbnail"><a href="#"><img class="fit-image" src="assets/images/products/small-product/6.png" alt="Product" /></a></td>
-              <td class="pro-title"><a href="#">Learn About Fish Farming</a></td>
-              <td class="pro-price"><span>$95.00</span></td>
-              <td class="pro-quantity">
-                <div class="quantity">
-                  <div class="cart-plus-minus">
-                    <input class="cart-plus-minus-box" value="1" type="text">
-                    <div class="dec qtybutton">-</div>
-                    <div class="inc qtybutton">+</div>
-                  </div>
-                </div>
-              </td>
-              <td class="pro-subtotal"><span>$95.00</span></td>
-              <td class="pro-remove"><a href="#"><i class="ti-trash"></i></a></td>
+              <td class="pro-title">${s.getUserPet().getName()}</td>
+              <td class="pro-title"><a href="#">${s.getService().getName()}</a></td>
+              <td class="pro-price"><span>$${s.getService().getPrice()}</span></td>
+              <td class="pro-quantity">${s.getService().getTime_box()} HOUR</td>
+              <td class="pro-subtotal"><span>${s.getService().getServiceCategory().getName()}</span></td>
+              <td class="pro-remove"><button onclick="accept('ServletCart?action=delete&userPetId=${s.getUserPet().getId()}&serviceId=${s.getService().getId()}')"><i class="ti-trash"></i></button></td>
             </tr>
+            </c:forEach>
             </tbody>
             <!-- Table Body End -->
           </table>
         </div>
+
         <!-- Cart Table End -->
 
         <!-- Cart Button Start -->
@@ -352,13 +350,19 @@
             <!-- Cart Calculate Items Title Start -->
             <h3 class="title">Cart Totals</h3>
             <!-- Cart Calculate Items Title End -->
-
+<%
+  List<PetService> a = (List<PetService>) request.getAttribute("service");
+  Double total = 0d;
+  for (PetService petService: a){
+    total += petService.getService().getPrice();
+  }
+%>
             <!-- Responsive Table Start -->
             <div class="table-responsive">
               <table class="table">
                 <tr>
                   <td>Sub Total</td>
-                  <td>$230</td>
+                  <td>$<%=total%></td>
                 </tr>
                 <tr>
                   <td>Shipping</td>
@@ -366,7 +370,7 @@
                 </tr>
                 <tr class="total">
                   <td>Total</td>
-                  <td class="total-amount">$300</td>
+                  <td class="total-amount">$<%=total+70%></td>
                 </tr>
               </table>
             </div>
@@ -376,7 +380,7 @@
           <!-- Cart Calculate Items End -->
 
           <!-- Cart Checkout Button Start -->
-          <a href="checkout.html" class="btn btn btn-gray-deep btn-hover-primary mt-6">Proceed To Checkout</a>
+          <a href="ServletCart?action=buy" class="btn btn btn-gray-deep btn-hover-primary mt-6">ACCEPT BUY ALL</a>
           <!-- Cart Checkout Button End -->
 
         </div>
@@ -522,6 +526,13 @@
 
 <!--Main JS-->
 <script src="Web_Pet/JS/JsRegex.js"></script>
+<script>
+  function accept(path){
+    if(confirm("OK to Delete")){
+      window.location = path;
+    }
+  }
+</script>
 </body>
 
 </html>

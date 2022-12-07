@@ -2,14 +2,24 @@ package com.example.pet_hospital.model;
 
 public class PetService {
     private Service service;
-    private Pets pets;
+    private UserPet userPet;
+    private int sell;
 
     public PetService() {
     }
 
-    public PetService(Service service, Pets pets) {
+    public PetService(Service service, UserPet userPet, int sell) {
         this.service = service;
-        this.pets = pets;
+        this.userPet = userPet;
+        this.sell = sell;
+    }
+
+    public int getSell() {
+        return sell;
+    }
+
+    public void setSell(int sell) {
+        this.sell = sell;
     }
 
     public Service getService() {
@@ -20,11 +30,11 @@ public class PetService {
         this.service = service;
     }
 
-    public Pets getPets() {
-        return pets;
+    public UserPet getUserPet() {
+        return userPet;
     }
 
-    public void setPets(Pets pets) {
-        this.pets = pets;
+    public void setUserPet(UserPet userPet) {
+        this.userPet = userPet;
     }
 }

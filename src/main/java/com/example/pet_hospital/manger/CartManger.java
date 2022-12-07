@@ -12,7 +12,7 @@ import java.util.List;
 
 public class CartManger {
 
-    public void addPetCart(HttpServletRequest request, HttpServletResponse response, List<Pets> pets){
+//    public void addPetCart(HttpServletRequest request, HttpServletResponse response, List<Pets> pets){
 //        PetDAO petDAO = new PetDAO();
 //        String petId = request.getParameter("petId");
 //        if (petId == null) return;
@@ -29,7 +29,7 @@ public class CartManger {
 //        }catch (Exception e){
 //            System.out.println(e.getMessage());
 //        }
-    }
+//    }
 
     public void addServiceCart(HttpServletRequest request, HttpServletResponse response, List<Service> services){
         ServiceDAO serviceDAO = new ServiceDAO();

@@ -50,7 +50,8 @@
 <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
 <link rel="stylesheet" href="assets/css/style.min.css">
 -->
-
+  <link rel="stylesheet" href="assets/bootstrap-5.2.1-dist/css/bootstrap.min.css">
+  <script src="assets/bootstrap-5.2.1-dist/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -92,19 +93,14 @@
           <div class="main-menu">
             <ul>
               <li class="has-children">
-                <a href="#">Home</a>
+                <a href="index.jsp">Home</a>
               </li>
               <li class="has-children position-static">
-                <a href="#">Shop</a>
+                <a href="son">Shop</a>
               </li>
               <li class="has-children">
-                <a href="#">Pages</a>
+                <a href="ControllerLinhServlet">Pages</a>
               </li>
-              <li class="has-children">
-                <a href="#">Blog</a>
-              </li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -139,7 +135,7 @@
 
             <!-- Header Action Button Start -->
             <div class="header-action-btn header-action-btn-cart d-none d-sm-flex">
-              <a class="cart-visible" href="javascript:void(0)">
+              <a class="cart-visible" href="ServletCart">
                 <i class="icon-handbag icons"></i>
                 <span class="header-action-num">3</span>
               </a>
@@ -226,7 +222,7 @@
 
                 <!-- Cart Product Button Start -->
                 <div class="cart-product-btn mt-4">
-                  <a href="cart.html" class="btn btn-outline-light btn-hover-primary w-100">View
+                  <a href="ServletCart" class="btn btn-outline-light btn-hover-primary w-100">View
                     cart</a>
                   <a href="checkout.html" class="btn btn-outline-light btn-hover-primary w-100 mt-4">Checkout</a>
                 </div>
@@ -237,7 +233,7 @@
 
             </div>
             <div class="header-action-btn header-action-btn-cart d-flex d-sm-none">
-              <a href="cart.html">
+              <a href="ServletCart">
                 <i class="icon-handbag icons"></i>
                 <span class="header-action-num">3</span>
               </a>
@@ -271,7 +267,7 @@
         <div class="breadcrumb-wrapper">
           <h2 class="breadcrumb-title">Shop Sidebar</h2>
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.jsp">Home</a></li>
             <li>Shop Sidebar</li>
           </ul>
         </div>
@@ -333,8 +329,8 @@
                          alt="Product"/>
                   </a>
                   <div class="action-wrapper">
-                    <a href="cart.html" class="action cart" title="Cart"><i
-                            class="ti-shopping-cart"></i></a>
+                    <button href="ServletSendPet?idService=" data-bs-toggle="modal" data-bs-target="#staticBackdrop${showallservicecategory.getId()}" class="action cart" title="Cart"><i
+                            class="ti-shopping-cart"></i></button>
                   </div>
                   <div class="content">
                     <h5 class="title"><a href="single-product.html"><c:out
@@ -349,6 +345,83 @@
               </div>
             </div>
             <!-- Single Product End -->
+            <%---------------------------------------------------------%>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop${showallservicecategory.getId()}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Pet Info Use Sevice</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Register Section Start -->
+                    <div class="section section-margin">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-lg-7 col-md-8 m-auto">
+                            <div class="login-wrapper">
+
+                              <!-- Register Title & Content Start -->
+                              <div class="section-content text-center mb-6">
+                                <h2 class="title mb-2">Pet Info</h2>
+                              </div>
+                              <!-- Register Title & Content End -->
+
+                              <!-- Form Action Start -->
+                              <form action="ServletSendPet?action=add&idService=${showallservicecategory.getId()}" method="post">
+
+
+                                <!-- Input Email Start -->
+                                <div class="single-input-item mb-2">
+                                  <input type="text" placeholder="Pet Name" name="petName" minlength="1" maxlength="99">
+                                </div>
+                                <!-- Input Email End -->
+
+                                <!-- Input Password Start -->
+                                <div class="single-input-item mb-2">
+                                  <input type="number" name="petAge" placeholder="Pet Age" minlength="1" maxlength="99">
+                                </div>
+                                <!-- Input Password End -->
+
+                                <!-- Input rePassword Start -->
+                                <div class="single-input-item mb-2">
+                                  <input type="text" name="hobbit" placeholder="Hobbit" minlength="1" maxlength="99">
+                                </div>
+
+
+                                <!-- Input Address Start -->
+                                <div style="margin-bottom: 15px">
+                                  Species -
+                                  <select name="species">
+                                    <c:forEach items="${species}" var="s">
+                                      <option value="${s.getId()}">${s.getName()}</option>
+                                    </c:forEach>
+                                  </select>
+                                </div>
+
+                                <!-- Button/Forget Password Start -->
+                                <div class="single-input-item">
+                                  <div class="login-reg-form-meta mb-n3">
+                                    <button class="btn btn btn-gray-deep btn-hover-primary mb-3">Create</button>
+                                  </div>
+                                </div>
+                                <!-- Button/Forget Password End -->
+
+                              </form>
+                              <!-- Form Action End -->
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Register Section End -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <%---------------------------------------------------------%>
           </c:forEach>
 
         </div>

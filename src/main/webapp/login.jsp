@@ -89,7 +89,7 @@
                 <!-- Header Logo Start -->
                 <div class="col-lg-3 col-md-4 col-6">
                     <div class="header-logo">
-                        <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
+                        <a href="index.jsp"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
                     </div>
                 </div>
                 <!-- Header Logo End -->
@@ -99,19 +99,14 @@
                     <div class="main-menu">
                         <ul>
                             <li class="has-children">
-                                <a href="#">Home</a>
+                                <a href="index.jsp">Home</a>
                             </li>
                             <li class="has-children position-static">
-                                <a href="#">Shop</a>
+                                <a href="son">Shop</a>
                             </li>
                             <li class="has-children">
-                                <a href="#">Pages</a>
+                                <a href="ControllerLinhServlet">Pages</a>
                             </li>
-                            <li class="has-children">
-                                <a href="#">Blog</a>
-                            </li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
                 </div>

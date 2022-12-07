@@ -82,7 +82,7 @@
                 <!-- Header Logo Start -->
                 <div class="col-lg-3 col-md-4 col-6">
                     <div class="header-logo">
-                        <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo"/></a>
+                        <a href="index.jsp"><img src="assets/images/logo/logo.png" alt="Site Logo"/></a>
                     </div>
                 </div>
                 <!-- Header Logo End -->
@@ -92,13 +92,13 @@
                     <div class="main-menu">
                         <ul>
                             <li class="has-children">
-                                <a href="#">Home</a>
+                                <a href="index.jsp">Home</a>
                             </li>
                             <li class="has-children position-static">
                                 <a href="son">Shop</a>
                             </li>
                             <li class="has-children">
-                                <a href="#">Service</a>
+                                <a href="ControllerLinhServlet">Service</a>
                             </li>
                         </ul>
                     </div>
@@ -127,14 +127,14 @@
                         <!-- Header Action Search Button End -->
 
                         <!-- Header My Account Button Start -->
-                        <a href="my-account.html" class="header-action-btn header-action-btn-wishlist">
+                        <a href="ServletUser?action=userDetail" class="header-action-btn header-action-btn-wishlist">
                             <i class="icon-user icons"></i>
                         </a>
                         <!-- Header My Account Button End -->
 
                         <!-- Header Action Button Start -->
                         <div class="header-action-btn header-action-btn-cart d-none d-sm-flex">
-                            <a class="cart-visible" href="javascript:void(0)">
+                            <a class="cart-visible" href="ServletCart">
                                 <i class="icon-handbag icons"></i>
                                 <span class="header-action-num">3</span>
                             </a>
@@ -232,7 +232,7 @@
 
                         </div>
                         <div class="header-action-btn header-action-btn-cart d-flex d-sm-none">
-                            <a href="cart.html">
+                            <a href="ServletCart">
                                 <i class="icon-handbag icons"></i>
                                 <span class="header-action-num">3</span>
                             </a>
@@ -289,7 +289,7 @@
                     <!-- Single Product Image Start -->
                     <div class="single-product-img swiper-container product-gallery-top">
                         <div class="swiper-wrapper popup-gallery">
-                            <img class="w-100" src="assets/images/products/large-product/1.png" alt="Product">
+                            <img class="w-100" src="${pet.getImg()}" alt="Product">
                         </div>
                     </div>
                     <!-- Single Product Image End -->
