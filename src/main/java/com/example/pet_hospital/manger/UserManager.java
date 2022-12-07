@@ -1,5 +1,6 @@
-package com.example.pet_hospital.method;
+package com.example.pet_hospital.manger;
 
+import com.example.pet_hospital.dao.UserDAO;
 import com.example.pet_hospital.model.Users;
 
 import javax.servlet.http.Cookie;
@@ -7,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class UserManager extends Direct {
     public void register(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -21,15 +23,16 @@ public class UserManager extends Direct {
             response.sendRedirect("register.jsp");
             return;
         }
-
+        UserDAO userDAO = new UserDAO();
         Users users = new Users(0, userName,password,email,phoneNumber,address,0);
-        DAO.updateUser(users);
+        userDAO.updateUser(users);
         response.sendRedirect("login.jsp");
     }
     public void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        UserDAO userDAO = new UserDAO();
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
-        List<Users> users = DAO.selectionUser();
+        List<Users> users = userDAO.findAllUser();
         Users user = null;
         for (Users u : users){
             if(u.getUserName().equals(userName) && u.getPassWord().equals(password)){
@@ -43,7 +46,11 @@ public class UserManager extends Direct {
             response.addCookie(new Cookie("userId", String.valueOf(user.getId())));
             response.addCookie(new Cookie("userName", user.getUserName()));
             response.addCookie(new Cookie("userPassword", user.getPassWord()));
-            response.sendRedirect("controller");
+            if (user.getRole() == 1) {
+                response.sendRedirect("/admin");
+            } else {
+                response.sendRedirect("controller");
+            }
         }
 
     }
@@ -60,7 +67,8 @@ public class UserManager extends Direct {
                 if(cookie.getName().equals("userPassword")) password = cookie.getValue();
             }
         }
-        user = DAO.selectOneUser(id);
+        UserDAO userDAO = new UserDAO();
+        user = userDAO.findUserById(id);
         if (user == null || !user.getUserName().equals(userName) || !user.getPassWord().equals(password)){
             user = null;
         }

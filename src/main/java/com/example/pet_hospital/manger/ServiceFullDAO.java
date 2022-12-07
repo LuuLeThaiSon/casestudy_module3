@@ -1,5 +1,7 @@
-package com.example.pet_hospital.method;
+package com.example.pet_hospital.manger;
 
+import com.example.pet_hospital.dao.MyConnection;
+import com.example.pet_hospital.manger.ServiceCategoryDAO;
 import com.example.pet_hospital.model.Service;
 import com.example.pet_hospital.model.ServiceCategory;
 

@@ -1,6 +1,7 @@
-package com.example.pet_hospital;
+package com.example.pet_hospital.controller;
 
-import com.example.pet_hospital.method.ServiceManager;
+
+import com.example.pet_hospital.manger.ServiceManager;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

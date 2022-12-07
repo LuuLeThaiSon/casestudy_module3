@@ -1,8 +1,9 @@
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <%--
   Created by IntelliJ IDEA.
   User: borntoreign
   Date: 03/12/2022
-  Time: 10:06
+  Time: 10:07
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -13,8 +14,6 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Amber - Pet Care Bootstrap 5 Template</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -44,6 +43,15 @@
 
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+
+
+    <!--
+  <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
+  <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
+  <link rel="stylesheet" href="assets/css/style.min.css">
+  -->
+
+
 </head>
 
 <body>
@@ -79,6 +87,28 @@
                 </div>
                 <!-- Header Logo End -->
 
+                <!-- Header Menu Start -->
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="main-menu">
+                        <ul>
+                            <li class="has-children">
+                                <a href="#">Home</a>
+                            </li>
+                            <li class="has-children position-static">
+                                <a href="#">Shop</a>
+                            </li>
+                            <li class="has-children">
+                                <a href="#">Pages</a>
+                            </li>
+                            <li class="has-children">
+                                <a href="#">Blog</a>
+                            </li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Header Menu End -->
             </div>
         </div>
     </div>
@@ -93,7 +123,11 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="breadcrumb-wrapper">
-                    <h2 class="breadcrumb-title">ADMIN Account</h2>
+                    <h2 class="breadcrumb-title">Create Account</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>Create Account</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -101,144 +135,68 @@
 </div>
 <!-- Breadcrumb Area End -->
 
-<!-- My Account Section Start -->
+<!-- Register Section Start -->
 <div class="section section-margin">
     <div class="container">
-
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-7 col-md-8 m-auto">
+                <div class="login-wrapper">
 
-                <!-- My Account Page Start -->
-                <div class="myaccount-page-wrapper">
-                    <div class="row">
-
-                        <!-- My Account Tab Menu Start -->
-                        <div class="col-lg-2 col-md-4">
-                            <div class="myaccount-tab-menu nav" role="tablist">
-                                <a href="#pets-list" data-bs-toggle="tab"><i class="fas fa-paw"></i> Pets list</a>
-                                <a href="#service" data-bs-toggle="tab"><i class="fas fa-hand-holding-heart"></i>Service</a>
-                                <a href="login.html"><i class="fa fa-sign-out"></i> Logout</a>
-                            </div>
-                        </div>
-                        <!-- My Account Tab Menu End -->
-
-                        <!-- My Account Tab Content Start -->
-                        <div class="col-lg-9 col-md-8">
-                            <div class="tab-content" id="myaccountContent">
-
-                                <!-- Single Tab Content Start -->
-                                <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
-                                    <div class="myaccount-content">
-                                        <h3 class="title">Dashboard</h3>
-                                        <div class="welcome">
-                                            <p>Hello, <strong>Admin</strong></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Single Tab Content End -->
-
-                                <!-- Single Tab Content Start -->
-                                <div class="tab-pane fade" id="pets-list" role="tabpanel">
-                                    <div class="myaccount-content">
-                                        <h3 class="title">Manager</h3>
-                                        <div class="myaccount-table table-responsive text-center">
-                                            <table class="table table-bordered">
-                                                <thead class="thead-light">
-                                                <tr>
-                                                    <th>Id</th>
-                                                    <th>Name</th>
-                                                    <th>Age</th>
-                                                    <th>Price</th>
-                                                    <th>quantity</th>
-                                                    <th>Species</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Aug 22, 2018</td>
-                                                    <td>Pending</td>
-                                                    <td>$3000</td>
-                                                    <td>$3000</td>
-                                                    <td>$3000</td>
-                                                    <td>
-                                                        <a href="cart.html" class="me-2"><i class="fas fa-eye"></i></a>
-                                                        <a href="cart.html" class="me-2"><i class="fas fa-edit"></i></a>
-                                                        <a href="cart.html"><i class="fas fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Single Tab Content End -->
-
-                                <!-- Single Tab Content Start -->
-                                <div class="tab-pane fade" id="service" role="tabpanel">
-                                    <div class="myaccount-content">
-                                        <h3 class="title">Manager</h3>
-                                        <div class="myaccount-table table-responsive text-center">
-                                            <table class="table table-bordered">
-                                                <thead class="thead-light">
-                                                <tr>
-                                                    <th>Id</th>
-                                                    <th>Name</th>
-                                                    <th>Time box</th>
-                                                    <th>Price</th>
-                                                    <th>Category</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Aug 22, 2018</td>
-                                                    <td>Pending</td>
-                                                    <td>$3000</td>
-                                                    <td>$3000</td>
-                                                    <td>
-                                                        <a href="cart.html" class="me-2"><i class="fas fa-eye"></i></a>
-                                                        <a href="cart.html" class="me-2"><i class="fas fa-edit"></i></a>
-                                                        <a href="cart.html"><i class="fas fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Single Tab Content End -->
-
-                                <!-- Single Tab Content Start -->
-                                <div class="tab-pane fade" id="address-edit" role="tabpanel">
-                                    <div class="myaccount-content">
-                                        <h3 class="title">Billing Address</h3>
-                                        <address>
-                                            <p><strong>Alex Aya</strong></p>
-                                            <p>1234 Market ##, Suite 900 <br>Lorem Ipsum, ## 12345</p>
-                                            <p>Mobile: (123) 123-456789</p>
-                                        </address>
-                                        <a href="#" class="btn btn btn-dark btn-hover-primary rounded-0"><i
-                                                class="fa fa-edit me-2"></i>Edit Address</a>
-                                    </div>
-                                </div>
-                                <!-- Single Tab Content End -->
-                            </div>
-                        </div>
-                        <!-- My Account Tab Content End -->
-
+                    <!-- Register Title & Content Start -->
+                    <div class="section-content text-center mb-6">
+                        <h2 class="title mb-2">Pet Info</h2>
                     </div>
-                </div>
-                <!-- My Account Page End -->
+                    <!-- Register Title & Content End -->
 
+                    <!-- Form Action Start -->
+                    <form action="ServletSendPet?action=add" method="post">
+
+
+                        <!-- Input Email Start -->
+                        <div class="single-input-item mb-2">
+                            <input type="text" placeholder="Pet Name" name="petName">
+                        </div>
+                        <!-- Input Email End -->
+
+                        <!-- Input Password Start -->
+                        <div class="single-input-item mb-2">
+                            <input type="number" name="petAge" placeholder="Pet Age">
+                        </div>
+                        <!-- Input Password End -->
+
+                        <!-- Input rePassword Start -->
+                        <div class="single-input-item mb-2">
+                            <input type="text" name="hobbit" placeholder="Hobbit">
+                        </div>
+
+
+                        <!-- Input Address Start -->
+                        <div style="margin-bottom: 15px">
+                            Species -
+                            <select name="species">
+                                <c:forEach items="${species}" var="s">
+                                    <option value="${s.getId()}">${s.getName()}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+
+                        <!-- Button/Forget Password Start -->
+                        <div class="single-input-item">
+                            <div class="login-reg-form-meta mb-n3">
+                                <button class="btn btn btn-gray-deep btn-hover-primary mb-3">Create</button>
+                            </div>
+                        </div>
+                        <!-- Button/Forget Password End -->
+
+                    </form>
+                    <!-- Form Action End -->
+
+                </div>
             </div>
         </div>
-
     </div>
 </div>
-<!-- My Account Section End -->
+<!-- Register Section End -->
 
 <!-- Footer Section Start -->
 <footer class="section footer-section">
@@ -378,6 +336,7 @@
 
 <!--Main JS-->
 <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>

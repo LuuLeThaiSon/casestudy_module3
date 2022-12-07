@@ -76,19 +76,14 @@
                     <div class="main-menu">
                         <ul>
                             <li class="has-children">
-                                <a href="controller?action=home">Home</a>
+                                <a href="index.jsp">Home</a>
                             </li>
                             <li class="has-children position-static">
-                                <a href="controller?action=shop">Shop</a>
+                                <a href="son">Shop</a>
                             </li>
                             <li class="has-children">
-                                <a href="#">Pages</a>
+                                <a href="#">Service</a>
                             </li>
-                            <li class="has-children">
-                                <a href="#">Blog</a>
-                            </li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -116,7 +111,7 @@
                         <!-- Header Action Search Button End -->
 
                         <!-- Header My Account Button Start -->
-                        <a href="controller?action=userDetail" class="header-action-btn header-action-btn-wishlist">
+                        <a href="ServletUser?action=userDetail" class="header-action-btn header-action-btn-wishlist">
                             <i class="icon-user icons"></i>
                         </a>
                         <!-- Header My Account Button End -->
@@ -592,7 +587,7 @@
 -->
 
 <!--Main JS-->
-<script src="assets/js/main.js"></script>
+<script src="Web_Pet/JS/JsRegex.js"></script>
 </body>
 
 </html>

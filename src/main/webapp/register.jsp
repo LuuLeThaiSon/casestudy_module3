@@ -152,7 +152,7 @@
           <!-- Register Title & Content End -->
 
           <!-- Form Action Start -->
-          <form action="controller?action=register" method="post">
+          <form action="ServletUser?action=register" method="post">
 
 
             <!-- Input Email Start -->
@@ -163,13 +163,13 @@
 
             <!-- Input Password Start -->
             <div class="single-input-item mb-2">
-              <input type="password" name="password" placeholder="Password">
+              <input type="password" name="password" placeholder="Password" maxlength="8" minlength="6">
             </div>
             <!-- Input Password End -->
 
             <!-- Input rePassword Start -->
             <div class="single-input-item mb-2">
-              <input type="password" name="rePassword" placeholder="Password">
+              <input type="password" name="rePassword" placeholder="Password" maxlength="8" minlength="6">
             </div>
             <!-- Input rePassword End -->
 
@@ -341,44 +341,8 @@
 -->
 
 <!--Main JS-->
-<script src="assets/js/main.js"></script>
-<script>
-  var username = document.getElementById("username");
-  var password = document.getElementById("password")
-  var phonenumber = document.getElementById("phonenumber")
-  var email = document.getElementById("email")
-  ValidateEmail(email)
-  function ValidateEmail(email)
-  {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
-    {
-      return (true)
-    }
-    alert("You have entered an invalid email address!")
-    return (false)
-  }
-  function ValidatePhoneNumber(phonenumber) {
-    if(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/.test(phonenumber))
-    {
-      return (true)
+<script src="Web_Pet/JS/JsRegex.js"></script>
 
-    }
-    alert("You have entered an invalid PhoneNumber address!")
-
-  }
-  function ValidateUsername(username) {
-
-    const res = /^[a-z0-9_\.]+$/.exec(username);
-    const valid = !!res;
-    return valid;
-  }
-  function ValidatePassword(password){
-    if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/.test(password)){
-      return(true)
-    }
-    alert("You have entered an invalid Password address")
-  }
-</script>
 </body>
 
 </html>

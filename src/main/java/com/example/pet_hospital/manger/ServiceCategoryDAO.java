@@ -1,5 +1,6 @@
-package com.example.pet_hospital.method;
+package com.example.pet_hospital.manger;
 
+import com.example.pet_hospital.dao.MyConnection;
 import com.example.pet_hospital.model.ServiceCategory;
 
 import java.sql.Connection;
@@ -17,6 +18,7 @@ public class ServiceCategoryDAO {
     public ServiceCategoryDAO() {
         this.connection = MyConnection.getConnection();
     }
+
     public List<ServiceCategory> serviceCategories () {
         List<ServiceCategory> serviceCategories= new ArrayList<>();
         try(PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_SERVICES_CATEGORY)) {

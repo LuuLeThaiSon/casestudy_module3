@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: borntoreign
@@ -12,7 +13,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Amber - Pet Care Bootstrap 5 Template</title>
+    <title>DEMOOOAmber - Pet Care Bootstrap 5 Template</title>
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -94,16 +95,11 @@
                                 <a href="#">Home</a>
                             </li>
                             <li class="has-children position-static">
-                                <a href="#">Shop</a>
+                                <a href="son">Shop</a>
                             </li>
                             <li class="has-children">
-                                <a href="#">Pages</a>
+                                <a href="#">Service</a>
                             </li>
-                            <li class="has-children">
-                                <a href="#">Blog</a>
-                            </li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -309,37 +305,30 @@
 
                     <!-- Product Head Start -->
                     <div class="product-head mb-3">
-                        <h2 class="product-title">Single product title</h2>
+                        <h2 class="product-title">${pet.getName()}</h2>
                     </div>
                     <!-- Product Head End -->
 
-                    <!-- Rating Start -->
-                    <span class="rating justify-content-start mb-2">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-o"></i>
-                                <i class="fa fa-star-o"></i>
-                            </span>
-                    <!-- Rating End -->
-
                     <!-- Price Box Start -->
                     <div class="price-box mb-2">
-                        <span class="regular-price">$70.00</span>
-                        <span class="old-price"><del>$85.00</del></span>
+                        <span class="regular-price">${pet.getPrice()}$</span>
                     </div>
                     <!-- Price Box End -->
 
                     <!-- Description Start -->
-                    <p class="desc-content mb-5">There are many variations of passages of Lorem Ipsum available, but the
-                        majority have suffered alteration in some form, by injected humour, or randomised words which
-                        don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need
-                        to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                    <p class="desc-content mb-5">${pet.getDescription()}</p>
                     <!-- Description End -->
 
                     <!-- Quantity Start -->
                     <div class="quantity d-flex align-items-center mb-5">
-                        <span class="me-2"><strong>Quantity: 10 </strong></span>
+                        <span class="me-2"><strong>
+                            <c:if test="${pet.getQuantity() > 0}">
+                                Quantity: ${pet.getQuantity()}
+                            </c:if>
+                            <c:if test="${pet.getQuantity() == 0}">
+                                Quantity: Empty
+                            </c:if>
+                        </strong></span>
                     </div>
                     <!-- Quantity End -->
 
@@ -746,7 +735,7 @@
 -->
 
 <!--Main JS-->
-<script src="assets/js/main.js"></script>
+<script src="Web_Pet/JS/JsRegex.js"></script>
 </body>
 
 </html>

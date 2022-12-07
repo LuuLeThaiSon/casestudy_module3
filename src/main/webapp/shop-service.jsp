@@ -567,7 +567,7 @@
 -->
 
 <!--Main JS-->
-<script src="assets/js/main.js"></script>
+<script src="Web_Pet/JS/JsRegex.js"></script>
 </body>
 
 </html>

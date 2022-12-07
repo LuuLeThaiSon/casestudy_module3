@@ -58,6 +58,10 @@
 </head>
 
 <body>
+
+
+
+
 <!-- Header Section Start -->
 <div class="header section">
 
@@ -152,7 +156,7 @@
                     <!-- Login Title & Content End -->
 
                     <!-- Form Action Start -->
-                    <form action="controller?action=login" method="post">
+                    <form action="ServletUser?action=login" method="post">
 
                         <!-- Input Email Start -->
                         <div class="single-input-item mb-2">
@@ -325,7 +329,7 @@
 -->
 
 <!--Main JS-->
-<script src="assets/js/main.js"></script>
+<script src="Web_Pet/JS/JsRegex.js"></script>
 </body>
 
 </html>
