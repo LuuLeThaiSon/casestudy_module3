@@ -95,19 +95,14 @@
           <div class="main-menu">
             <ul>
               <li class="has-children">
-                <a href="#">Home</a>
+                <a href="index.jsp">Home</a>
               </li>
               <li class="has-children position-static">
-                <a href="#">Shop</a>
+                <a href="son">Shop</a>
               </li>
               <li class="has-children">
-                <a href="#">Pages</a>
+                <a href="ControllerLinhServlet">Pages</a>
               </li>
-              <li class="has-children">
-                <a href="#">Blog</a>
-              </li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -134,14 +129,14 @@
             <!-- Header Action Search Button End -->
 
             <!-- Header My Account Button Start -->
-            <a href="my-account.html" class="header-action-btn header-action-btn-wishlist">
+            <a href="ServletUser?action=userDetail" class="header-action-btn header-action-btn-wishlist">
               <i class="icon-user icons"></i>
             </a>
             <!-- Header My Account Button End -->
 
             <!-- Header Action Button Start -->
             <div class="header-action-btn header-action-btn-cart d-none d-sm-flex">
-              <a class="cart-visible" href="javascript:void(0)">
+              <a class="cart-visible" href="ServletCart">
                 <i class="icon-handbag icons"></i>
                 <span class="header-action-num">3</span>
               </a>
@@ -232,7 +227,7 @@
 
             </div>
             <div class="header-action-btn header-action-btn-cart d-flex d-sm-none">
-              <a href="cart.html">
+              <a href="ServletCart">
                 <i class="icon-handbag icons"></i>
                 <span class="header-action-num">3</span>
               </a>

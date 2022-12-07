@@ -71,4 +71,14 @@ public class PetServiceDAO extends MyConnection {
         }
         return rowDeleted;
     }
+
+    public void upSell(long serviceId, long userPetId ){
+        try(PreparedStatement pre = getConnection().prepareStatement("update pet_service set sell = 1 where service_id = ? and user_pet_id = ?;")){
+            pre.setLong(1,serviceId);
+            pre.setLong(2,userPetId);
+            pre.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

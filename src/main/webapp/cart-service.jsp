@@ -1,3 +1,5 @@
+<%@ page import="java.util.List" %>
+<%@ page import="com.example.pet_hospital.model.PetService" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -86,7 +88,7 @@
         <!-- Header Logo Start -->
         <div class="col-lg-3 col-md-4 col-6">
           <div class="header-logo">
-            <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
+            <a href="index.jsp"><img src="assets/images/logo/logo.png" alt="Site Logo" /></a>
           </div>
         </div>
         <!-- Header Logo End -->
@@ -96,19 +98,14 @@
           <div class="main-menu">
             <ul>
               <li class="has-children">
-                <a href="#">Home</a>
+                <a href="index.jsp">Home</a>
               </li>
               <li class="has-children position-static">
-                <a href="#">Shop</a>
+                <a href="son">Shop</a>
               </li>
               <li class="has-children">
-                <a href="#">Pages</a>
+                <a href="ControllerLinhServlet">Sevice</a>
               </li>
-              <li class="has-children">
-                <a href="#">Blog</a>
-              </li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -135,7 +132,7 @@
             <!-- Header Action Search Button End -->
 
             <!-- Header My Account Button Start -->
-            <a href="my-account.html" class="header-action-btn header-action-btn-wishlist">
+            <a href="ServletUser?action=userDetail" class="header-action-btn header-action-btn-wishlist">
               <i class="icon-user icons"></i>
             </a>
             <!-- Header My Account Button End -->
@@ -233,7 +230,7 @@
 
             </div>
             <div class="header-action-btn header-action-btn-cart d-flex d-sm-none">
-              <a href="cart.html">
+              <a href="ServletCart">
                 <i class="icon-handbag icons"></i>
                 <span class="header-action-num">3</span>
               </a>
@@ -353,13 +350,19 @@
             <!-- Cart Calculate Items Title Start -->
             <h3 class="title">Cart Totals</h3>
             <!-- Cart Calculate Items Title End -->
-
+<%
+  List<PetService> a = (List<PetService>) request.getAttribute("service");
+  Double total = 0d;
+  for (PetService petService: a){
+    total += petService.getService().getPrice();
+  }
+%>
             <!-- Responsive Table Start -->
             <div class="table-responsive">
               <table class="table">
                 <tr>
                   <td>Sub Total</td>
-                  <td>$230</td>
+                  <td>$<%=total%></td>
                 </tr>
                 <tr>
                   <td>Shipping</td>
@@ -367,7 +370,7 @@
                 </tr>
                 <tr class="total">
                   <td>Total</td>
-                  <td class="total-amount">$300</td>
+                  <td class="total-amount">$<%=total+70%></td>
                 </tr>
               </table>
             </div>
@@ -377,7 +380,7 @@
           <!-- Cart Calculate Items End -->
 
           <!-- Cart Checkout Button Start -->
-          <a href="checkout.html" class="btn btn btn-gray-deep btn-hover-primary mt-6">Proceed To Checkout</a>
+          <a href="ServletCart?action=buy" class="btn btn btn-gray-deep btn-hover-primary mt-6">ACCEPT BUY ALL</a>
           <!-- Cart Checkout Button End -->
 
         </div>

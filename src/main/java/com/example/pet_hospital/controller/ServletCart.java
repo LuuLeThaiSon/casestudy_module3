@@ -30,6 +30,9 @@ public class ServletCart extends HttpServlet {
             case "delete":
                 delete(request,response);
                 return;
+            case "buy":
+                buy(request,response);
+                return;
             default:
                 showListCart(request,response);
         }
@@ -46,7 +49,7 @@ public class ServletCart extends HttpServlet {
         request.setAttribute("service", petServices);
         rd.forward(request,response);
     }
-    private void delete(HttpServletRequest request, HttpServletResponse response) {
+    private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String userPetId = request.getParameter("userPetId");
         String serviceId = request.getParameter("serviceId");
         try {
@@ -54,14 +57,15 @@ public class ServletCart extends HttpServlet {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        response.sendRedirect("ServletCart");
+    }
 
+    private void buy(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Users user = new UserManager().getUserCookie(request);
         List<PetService> petServices = new PetServiceDAO().findAllServiceByUser(user.getId());
-        request.setAttribute("service", petServices);
-        try {
-            response.sendRedirect("cart-service.jsp");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        for(PetService a : petServices){
+            new PetServiceDAO().upSell(a.getService().getId(), a.getUserPet().getId());
         }
+        response.sendRedirect("ServletCart");
     }
 }

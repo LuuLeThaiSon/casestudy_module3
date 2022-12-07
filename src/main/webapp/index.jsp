@@ -66,7 +66,7 @@
                 <!-- Header Logo Start -->
                 <div class="col-lg-3 col-md-4 col-6">
                     <div class="header-logo">
-                        <a href="index.html"><img src="assets/images/logo/logo.png" alt="Site Logo"/></a>
+                        <a href="index.jsp"><img src="assets/images/logo/logo.png" alt="Site Logo"/></a>
                     </div>
                 </div>
                 <!-- Header Logo End -->
@@ -82,7 +82,7 @@
                                 <a href="son">Shop</a>
                             </li>
                             <li class="has-children">
-                                <a href="#">Service</a>
+                                <a href="ControllerLinhServlet">Service</a>
                             </li>
                         </ul>
                     </div>
@@ -118,7 +118,7 @@
 
                         <!-- Header Action Button Start -->
                         <div class="header-action-btn header-action-btn-cart d-none d-sm-flex">
-                            <a class="cart-visible" href="javascript:void(0)">
+                            <a class="cart-visible" href="ServletCart">
                                 <i class="icon-handbag icons"></i>
                                 <span class="header-action-num">3</span>
                             </a>
@@ -216,7 +216,7 @@
 
                         </div>
                         <div class="header-action-btn header-action-btn-cart d-flex d-sm-none">
-                            <a href="cart.html">
+                            <a href="ServletCart">
                                 <i class="icon-handbag icons"></i>
                                 <span class="header-action-num">3</span>
                             </a>
