@@ -66,10 +66,8 @@ public class ControllerLinhServlet extends HttpServlet {
     }
     private void displayListService(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("shop-service.jsp");
-        request.setAttribute("servicecategory", serviceManager.showServiceList(request));
         List<Species> species = new PetDAO().findAllSpecies();
         request.setAttribute("species", species);
-        requestDispatcher.forward(request,response);
         request.setAttribute("showallservicecategory", serviceManager.showServiceList(request));
         request.setAttribute("listservicecategory", serviceManager.showServiceCategoryList(request));
         requestDispatcher.forward(request, response);
