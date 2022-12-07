@@ -34,6 +34,10 @@ public class SonServlet extends HttpServlet {
             case "sortBy":
                 sortBy(request, response);
                 break;
+            case "detail":
+                detail(request, response);
+                break;
+
         }
         findAllPets(request, response);
 
@@ -100,6 +104,13 @@ public class SonServlet extends HttpServlet {
         request.setAttribute("pets", pets);
         request.setAttribute("species", species);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("shop-product.jsp");
+        requestDispatcher.forward(request, response);
+    }
+
+    public void detail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Pets pet = petManager.petDetail(request);
+        request.setAttribute("pet", pet);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("pet-detail.jsp");
         requestDispatcher.forward(request, response);
     }
 }

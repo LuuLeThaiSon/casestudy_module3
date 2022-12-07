@@ -79,16 +79,11 @@
                                 <a href="index.jsp">Home</a>
                             </li>
                             <li class="has-children position-static">
-                                <a href="shop-service.jsp">Shop</a>
+                                <a href="son">Shop</a>
                             </li>
                             <li class="has-children">
-                                <a href="#">Pages</a>
+                                <a href="#">Service</a>
                             </li>
-                            <li class="has-children">
-                                <a href="#">Blog</a>
-                            </li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
                 </div>

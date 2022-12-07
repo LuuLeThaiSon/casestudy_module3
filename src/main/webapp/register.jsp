@@ -163,13 +163,13 @@
 
             <!-- Input Password Start -->
             <div class="single-input-item mb-2">
-              <input type="password" name="password" placeholder="Password">
+              <input type="password" name="password" placeholder="Password" maxlength="8" minlength="6">
             </div>
             <!-- Input Password End -->
 
             <!-- Input rePassword Start -->
             <div class="single-input-item mb-2">
-              <input type="password" name="rePassword" placeholder="Password">
+              <input type="password" name="rePassword" placeholder="Password" maxlength="8" minlength="6">
             </div>
             <!-- Input rePassword End -->
 

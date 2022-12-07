@@ -4,6 +4,7 @@ import com.example.pet_hospital.model.Pets;
 import com.example.pet_hospital.model.Service;
 import com.example.pet_hospital.model.Species;
 
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -25,6 +26,7 @@ public class PetDAO extends MyConnection{
     private final String INSERT_INTO_PET = "insert into pets(name, age, price, description, quantity, img, species_id) value (?, ?, ?, ?,?, ?, ?);";
     private final String UPDATE_PET = "update pets set name = ?, age = ?, price = ?, description = ?, quantity = ?, img = ?, species_id = ? where id = ?;";
     private final String DELETE_PET_BY_ID = "delete from pets where id = ?;";
+    private final String FIND_PET_BY_ID = "select * from pets where id = ?;";
 
     public PetDAO() {
         connection = MyConnection.getConnection();
@@ -213,5 +215,25 @@ public class PetDAO extends MyConnection{
             e.printStackTrace();
         }
         return false;
+    }
+
+    public Pets findPetById(Long id) {
+        try(PreparedStatement preparedStatement = connection.prepareStatement(FIND_PET_BY_ID)) {
+            preparedStatement.setLong(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String name = resultSet.getString("name");
+                int age = resultSet.getInt("age");
+                double price = resultSet.getDouble("price");
+                String description = resultSet.getString("description");
+                int quantity = resultSet.getInt("quantity");
+                String img = resultSet.getString("img");
+                Long speciesId = resultSet.getLong("species_id");
+                return new Pets(id, name, age, price, description, quantity, img, findSpeciesById(speciesId));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

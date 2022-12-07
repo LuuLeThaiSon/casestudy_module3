@@ -49,6 +49,14 @@
 
 </head>
 
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
+
 <body>
 <!-- Header Section Start -->
 <div class="header section">
@@ -120,7 +128,7 @@
                             <div class="myaccount-tab-menu nav" role="tablist">
                                 <a href="#pets-list" data-bs-toggle="tab"><i class="fas fa-paw"></i> Pets list</a>
                                 <a href="#service" data-bs-toggle="tab"><i class="fas fa-hand-holding-heart"></i>Service</a>
-                                <a href="login.html"><i class="fa fa-sign-out"></i> Logout</a>
+                                <a href="ServletUser?action=logout"><i class="fa fa-sign-out"></i> Logout</a>
                             </div>
                         </div>
                         <!-- My Account Tab Menu End -->
@@ -158,11 +166,10 @@
                                                         <td><c:out value="${p.getQuantity()}"/></td>
                                                         <td><c:out value="${p.getSpecies().getName()}"/></td>
                                                         <td>
-                                                            <a href="#" class="me-2"><i class="fas fa-eye"></i></a>
-                                                            <a class="me-2" data-bs-toggle="modal"
+                                                            <a href="son?action=detail&id=${p.getId()}" class="me-2"><i class="fas fa-eye"></i></a>
+                                                            <a class="me-1" data-bs-toggle="modal"
                                                                data-bs-target="#edit${p.getId()}"><i
                                                                     class="fas fa-edit"></i></a>
-                                                            <a href="admin?action=delete&id=${p.getId()}"><i class="fas fa-trash-alt"></i></a>
                                                             <button style="border: none" onclick="checkDelete(${p.getName()}, 'admin?action=delete&id=${p.getId()}')"><i class="fas fa-trash-alt"></i></button>
                                                         </td>
                                                     </tr>
@@ -348,11 +355,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="age" class="form-label">Age</label>
-                        <input type="text" class="form-control" id="age" name="age">
+                        <input type="number" class="form-control" id="age" name="age">
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="price">Price</label>
-                        <input type="text" class="form-control" id="price" name="price">
+                        <input type="number" class="form-control" id="price" name="price">
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="description">Description</label>

@@ -46,7 +46,11 @@ public class UserManager extends Direct {
             response.addCookie(new Cookie("userId", String.valueOf(user.getId())));
             response.addCookie(new Cookie("userName", user.getUserName()));
             response.addCookie(new Cookie("userPassword", user.getPassWord()));
-            response.sendRedirect("controller");
+            if (user.getRole() == 1) {
+                response.sendRedirect("/admin");
+            } else {
+                response.sendRedirect("controller");
+            }
         }
 
     }
