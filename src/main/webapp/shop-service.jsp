@@ -457,14 +457,14 @@
                 <aside class="sidebar_widget mt-10 mt-lg-0">
                     <div class="widget_inner">
                         <div class="widget-list mb-10">
-                            <form action="search" method="post">
+                            <form action="ControllerLinhServlet?action=search" method="post">
                                 <h3 class="widget-title mb-6">Search</h3>
                                 <div class="search-box">
-                                    <input type="text" class="form-control" placeholder="Search Our Store"
+                                    <input name="search" type="text" class="form-control" placeholder="Search Our Store"
                                            aria-label="Search Our Store">
-                                    <button class="search-icon" type="button">
-                                        <i class="icon-magnifier"></i>
-                                    </button>
+                                    <input class="search-icon" type="submit" value="Find">
+<%--                                        <i class="icon-magnifier"></i>--%>
+                                    </input>
                                 </div>
                             </form>
 
@@ -478,19 +478,6 @@
                                             <c:out value="${p.getName()}"/>
                                         </a></li>
                                     </c:forEach>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="widget-list mb-10">
-                            <h3 class="widget-title mb-6">Species</h3>
-                            <div class="sidebar-body">
-                                <ul class="checkbox-container categories-list">
-                                    <li>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck12">
-                                            <label class="custom-control-label" for="customCheck12">black (20)</label>
-                                        </div>
-                                    </li>
                                 </ul>
                             </div>
                         </div>

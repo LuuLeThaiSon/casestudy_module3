@@ -80,11 +80,13 @@ public class ServiceFullDAO {
     private void  getlistSearchServices(List<Service> searchservices, PreparedStatement preparedStatement) throws SQLException {
         ResultSet resultSet = preparedStatement.executeQuery();
         while (resultSet.next()) {
-            Long id = Long.parseLong(resultSet.getString("id"));
+            Long id2 = Long.parseLong(resultSet.getString("id"));
             String name = resultSet.getString("name");
             Double price = Double.parseDouble(resultSet.getString("price"));
-            Integer quantity = Integer.parseInt(resultSet.getString("quantity"));
-            searchservices.add(new Service(id, name, price, quantity));
+            Integer timeBox = Integer.parseInt(resultSet.getString("time_box"));
+            Long category_id = resultSet.getLong("category_id");
+            ServiceCategory serviceCategory = serviceCategoryDao.findServiceById(category_id);
+            searchservices.add(new Service(id2,name,price,timeBox,serviceCategory));
         }
     }
 }

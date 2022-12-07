@@ -14,10 +14,12 @@ import java.util.List;
 @WebServlet(name = "ControllerLinhServlet", value = "/ControllerLinhServlet")
 public class ServletSevice extends HttpServlet {
     private ServiceManager serviceManager;
+
     @Override
     public void init() {
         serviceManager = new ServiceManager();
     }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -42,7 +44,6 @@ public class ServletSevice extends HttpServlet {
     }
 
 
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -64,6 +65,7 @@ public class ServletSevice extends HttpServlet {
         }
 
     }
+
     private void displayListService(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("shop-service.jsp");
         List<Species> species = new PetDAO().findAllSpecies();
@@ -81,8 +83,8 @@ public class ServletSevice extends HttpServlet {
         requestDispatcher.forward(request, response);
     }
     public void searchServiceByName(HttpServletRequest request, HttpServletResponse response) throws IOException,ServletException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("shop-service1.jsp");
-        request.setAttribute("search",serviceManager.searchServiceByName(request));
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("shop-service.jsp");
+        request.setAttribute("showallservicecategory",serviceManager.searchServiceByName(request));
         request.setAttribute("listservicecategory", serviceManager.showServiceCategoryList(request));
         requestDispatcher.forward(request, response) ;
     }
