@@ -77,6 +77,7 @@ create table pet_service
 (
     service_id  bigint,
     user_pet_id bigint,
+    sell tinyint(1),
     foreign key (service_id) references service (id),
     foreign key (user_pet_id) references user_pet (id)
 );
