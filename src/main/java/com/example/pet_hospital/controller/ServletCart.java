@@ -16,7 +16,6 @@ import java.util.List;
 @WebServlet(name = "ServletCart", value = "/ServletCart")
 public class ServletCart extends HttpServlet {
 
-    private List<Pets> pets;
 
     @Override
     public void init() throws ServletException {
@@ -44,10 +43,14 @@ public class ServletCart extends HttpServlet {
     }
     private void showListCart(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Users user = new UserManager().getUserCookie(request);
-        List<PetService> petServices = new PetServiceDAO().findAllServiceByUser(user.getId());
-        RequestDispatcher rd = request.getRequestDispatcher("cart-service.jsp");
-        request.setAttribute("service", petServices);
-        rd.forward(request,response);
+        if(user != null){
+            List<PetService> petServices = new PetServiceDAO().findAllServiceByUser(user.getId());
+            RequestDispatcher rd = request.getRequestDispatcher("cart-service.jsp");
+            request.setAttribute("service", petServices);
+            rd.forward(request,response);
+        }else {
+            response.sendRedirect("login.jsp");
+        }
     }
     private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String userPetId = request.getParameter("userPetId");
