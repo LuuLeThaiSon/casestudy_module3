@@ -45,11 +45,8 @@
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
 
 
-    <!--
-  <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
-  <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
-  <link rel="stylesheet" href="assets/css/style.min.css">
-  -->
+    <link rel="stylesheet" href="assets/bootstrap-5.2.1-dist/css/bootstrap.min.css">
+    <script src="assets/bootstrap-5.2.1-dist/js/bootstrap.min.js"></script>
 
 
 </head>
@@ -134,69 +131,89 @@
     </div>
 </div>
 <!-- Breadcrumb Area End -->
+<%---------------------------------------------------------%>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Launch static backdrop modal
+</button>
+<%---------------------------------------------------------%>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Pet Info Use Sevice</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Register Section Start -->
+                <div class="section section-margin">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-7 col-md-8 m-auto">
+                                <div class="login-wrapper">
 
-<!-- Register Section Start -->
-<div class="section section-margin">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7 col-md-8 m-auto">
-                <div class="login-wrapper">
+                                    <!-- Register Title & Content Start -->
+                                    <div class="section-content text-center mb-6">
+                                        <h2 class="title mb-2">Pet Info</h2>
+                                    </div>
+                                    <!-- Register Title & Content End -->
 
-                    <!-- Register Title & Content Start -->
-                    <div class="section-content text-center mb-6">
-                        <h2 class="title mb-2">Pet Info</h2>
-                    </div>
-                    <!-- Register Title & Content End -->
-
-                    <!-- Form Action Start -->
-                    <form action="ServletSendPet?action=add" method="post">
-
-
-                        <!-- Input Email Start -->
-                        <div class="single-input-item mb-2">
-                            <input type="text" placeholder="Pet Name" name="petName">
-                        </div>
-                        <!-- Input Email End -->
-
-                        <!-- Input Password Start -->
-                        <div class="single-input-item mb-2">
-                            <input type="number" name="petAge" placeholder="Pet Age">
-                        </div>
-                        <!-- Input Password End -->
-
-                        <!-- Input rePassword Start -->
-                        <div class="single-input-item mb-2">
-                            <input type="text" name="hobbit" placeholder="Hobbit">
-                        </div>
+                                    <!-- Form Action Start -->
+                                    <form action="ServletSendPet?action=add" method="post">
 
 
-                        <!-- Input Address Start -->
-                        <div style="margin-bottom: 15px">
-                            Species -
-                            <select name="species">
-                                <c:forEach items="${species}" var="s">
-                                    <option value="${s.getId()}">${s.getName()}</option>
-                                </c:forEach>
-                            </select>
-                        </div>
+                                        <!-- Input Email Start -->
+                                        <div class="single-input-item mb-2">
+                                            <input type="text" placeholder="Pet Name" name="petName">
+                                        </div>
+                                        <!-- Input Email End -->
 
-                        <!-- Button/Forget Password Start -->
-                        <div class="single-input-item">
-                            <div class="login-reg-form-meta mb-n3">
-                                <button class="btn btn btn-gray-deep btn-hover-primary mb-3">Create</button>
+                                        <!-- Input Password Start -->
+                                        <div class="single-input-item mb-2">
+                                            <input type="number" name="petAge" placeholder="Pet Age">
+                                        </div>
+                                        <!-- Input Password End -->
+
+                                        <!-- Input rePassword Start -->
+                                        <div class="single-input-item mb-2">
+                                            <input type="text" name="hobbit" placeholder="Hobbit">
+                                        </div>
+
+
+                                        <!-- Input Address Start -->
+                                        <div style="margin-bottom: 15px">
+                                            Species -
+                                            <select name="species">
+                                                <c:forEach items="${species}" var="s">
+                                                    <option value="${s.getId()}">${s.getName()}</option>
+                                                </c:forEach>
+                                            </select>
+                                        </div>
+
+                                        <!-- Button/Forget Password Start -->
+                                        <div class="single-input-item">
+                                            <div class="login-reg-form-meta mb-n3">
+                                                <button class="btn btn btn-gray-deep btn-hover-primary mb-3">Create</button>
+                                            </div>
+                                        </div>
+                                        <!-- Button/Forget Password End -->
+
+                                    </form>
+                                    <!-- Form Action End -->
+
+                                </div>
                             </div>
                         </div>
-                        <!-- Button/Forget Password End -->
-
-                    </form>
-                    <!-- Form Action End -->
-
+                    </div>
                 </div>
+                <!-- Register Section End -->
             </div>
         </div>
     </div>
 </div>
-<!-- Register Section End -->
+<%---------------------------------------------------------%>
+
 
 <!-- Footer Section Start -->
 <footer class="section footer-section">

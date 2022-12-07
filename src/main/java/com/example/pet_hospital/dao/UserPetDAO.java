@@ -4,6 +4,7 @@ import com.example.pet_hospital.model.UserPet;
 import com.example.pet_hospital.model.Users;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserPetDAO extends MyConnection {
@@ -25,6 +26,20 @@ public class UserPetDAO extends MyConnection {
             return false;
         }
         return true;
+    }
+
+    public long getMamId(){
+        long a = 0;
+        try(PreparedStatement pre = getConnection().prepareStatement("select max(id) as a from user_pet;"))
+        {
+            ResultSet rs = pre.executeQuery();
+            while (rs.next()){
+                a = rs.getLong("a");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return  a;
     }
 
 }
