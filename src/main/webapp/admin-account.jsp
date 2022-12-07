@@ -348,7 +348,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="admin?action=addNewPet" method="post">
+                <form action="admin?action=addNewPet" method="post" id="createForm">
                     <div class="mb-3">
                         <label for="name" class="form-label">Pet name</label>
                         <input type="text" class="form-control" id="name" name="name" required minlength="1">
@@ -382,7 +382,7 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary" id="createBtn">Save changes</button>
                     </div>
                 </form>
             </div>
@@ -537,8 +537,34 @@
             window.location.href = path;
         }
     }
+
+    // document.querySelector('#createBtn').addEventListener('click', (event) => {
+    //     event.preventDefault();
+    //     let timerInterval
+    //     Swal.fire({
+    //         title: 'Update Successfully!',
+    //         icon: 'success',
+    //         html: 'Loading page ...',
+    //         timer: 2500,
+    //         timerProgressBar: true,
+    //         didOpen: () => {
+    //             Swal.showLoading()
+    //             const b = Swal.getHtmlContainer().querySelector('b')
+    //             timerInterval = setInterval(() => {
+    //                 b.textContent = Swal.getTimerLeft()
+    //             }, 100)
+    //         },
+    //         willClose: () => {
+    //             clearInterval(timerInterval)
+    //         }
+    //     }).then((result) => {
+    //         /* Read more about handling dismissals below */
+    //         document.querySelector('#createForm').submit();
+    //     })
+    // })
 </script>
 <script src="Web_Pet/JS/JsRegex.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>
