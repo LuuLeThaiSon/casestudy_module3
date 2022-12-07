@@ -337,7 +337,7 @@
                                                 class="ti-shopping-cart"></i></a>
                                     </div>
                                     <div class="content">
-                                        <h5 class="title"><a href="single-product.html">${p.getName()}</a></h5>
+                                        <h5 class="title"><a href="son?action=detail&id=${p.getId()}">${p.getName()}</a></h5>
                                         <span class="price">
                                             <span class="new">$${p.getPrice()}</span>
                                         </span>
@@ -351,13 +351,6 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="content">
-                                    <h5 class="title"><a href="single-product.html">An Animal Album</a></h5>
-                                    <span class="price">
-                                                <span class="new">$80.50</span>
-                                    </span>
-                                </div>
-
                             </div>
                         </div>
                     </c:forEach>
