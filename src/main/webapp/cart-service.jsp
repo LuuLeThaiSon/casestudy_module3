@@ -141,7 +141,7 @@
             <div class="header-action-btn header-action-btn-cart d-none d-sm-flex">
               <a class="cart-visible" href="javascript:void(0)">
                 <i class="icon-handbag icons"></i>
-                <span class="header-action-num">3</span>
+
               </a>
 
               <!-- Header Cart Content Start -->
